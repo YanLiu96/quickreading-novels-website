@@ -1,0 +1,15 @@
+{% block header %}
+<title>{{ title }} - 最简洁清新的搜索阅读体验</title>
+<link rel="stylesheet" href="static/novels/css/index.css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form action="/search" method="get" class="home_search center-block">
+        <div class="search center-block">
+            <input type="text" name="wd" class="form-control center-block" placeholder="请输入小说名">
+            <input class="btn btn-default" type="submit" value="Search">
+        </div>
+    </form>
+</div>
+{% endblock %}

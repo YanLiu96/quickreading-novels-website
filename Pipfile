@@ -6,6 +6,20 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+sanic = "*"
+aiohttp = "*"
+bs4 = "*"
+aiocache = "*"
+arrow = "*"
+cchardet = "*"
+requests = "*"
+schedule = "*"
+aiocache-log = "*"
+gunicorn = "*"
+msgpackserializer = "*"
+msgpack = "*"
+jinja2 = "*"
+html5lib = "*"
 
 [requires]
 python_version = "3.6"
