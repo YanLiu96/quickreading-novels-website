@@ -25,7 +25,7 @@ class DevConfig(Config):
         MONGO_PORT=int(os.getenv('MONGO_PORT', 27017)),
         MONGO_USERNAME=os.getenv('MONGO_USERNAME', ""),
         MONGO_PASSWORD=os.getenv('MONGO_PASSWORD', ""),
-        DATABASE='quickreading',
+        DATABASE='quickReading',
     )
 
     # website

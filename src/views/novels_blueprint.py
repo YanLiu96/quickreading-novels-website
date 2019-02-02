@@ -1,14 +1,12 @@
-#!/usr/bin/env python
 import time
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 from operator import itemgetter
 from sanic import Blueprint
-from sanic.response import redirect, html, text, json
-from src.fetcher.function import get_time, get_netloc
+from sanic.response import redirect, html
 from src.config import ENGINE_PRIORITY, CONFIG
 from src.fetcher.novels_tools import get_novels_info
-
+from src.utils import ver_question
 novels_bp = Blueprint('novels_blueprint')
 novels_bp.static('/static/novels', CONFIG.BASE_DIR + '/static/novels')
 
@@ -27,6 +25,32 @@ def template(tpl, **kwargs):
 @novels_bp.route("/")
 async def index(request):
     return template('index.html', title='quick reading - search and enjoy')
+
+
+@novels_bp.route("/register")
+async def owllook_register(request):
+    """
+    用户登录
+    :param request:
+    :return:
+        :   -1  用户名或密码不能为空
+        :   0   用户名或密码错误
+        :   1   登陆成功
+    """
+    user = request['session'].get('user', None)
+    if user:
+        return redirect('/')
+    else:
+        ver_que_ans = ver_question()
+        if ver_que_ans:
+            request['session']['index'] = ver_que_ans
+            return template(
+                'register.html',
+                title='quick reading websit - register - novels searching and reading website',
+                question=ver_que_ans[1]
+            )
+        else:
+            return redirect('/')
 
 
 @novels_bp.route("/search", methods=['GET'])
@@ -76,3 +100,4 @@ async def owllook_search(request):
             count=len(parse_result))
     else:
         return html("No Result！请将小说名反馈给本站，谢谢！")
+
