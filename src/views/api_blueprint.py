@@ -7,12 +7,7 @@ from src.fetcher.extract_novels import extract_chapters
 from src.fetcher.function import get_time, get_netloc
 from src.fetcher.novels_tools import get_novels_info
 from src.fetcher import UniResponse, ResponseField
-from src.fetcher.decorators import response_handle
-"""
-from src.fetcher.decorators import response_handle
-from src.fetcher import UniResponse, ResponseField
-from src.fetcher.novels_tools import get_novels_info
-"""
+from src.fetcher.decorators import response_handle, authenticator
 
 from src.config import LOGGER
 
@@ -20,6 +15,7 @@ api_bp = Blueprint('api_blueprint', url_prefix='api')
 
 
 @api_bp.route("/owl_bd_novels/<name>")
+@authenticator('QuickReading-Api-Key')
 async def owl_bd_novels(request, name):
     """
     百度小说信息接口
@@ -41,7 +37,8 @@ async def owl_bd_novels(request, name):
         return response_handle(request, UniResponse.SERVER_UNKNOWN_ERR, 500)
 
 
-@api_bp.route("/google_novels/<name>")
+@api_bp.route("/owl_so_novels/<name>")
+@authenticator('QuickReading-Api-Key')
 async def owl_so_novels(request, name):
     """
     360小说信息接口

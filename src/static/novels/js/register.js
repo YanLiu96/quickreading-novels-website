@@ -38,13 +38,13 @@ $(function () {
                             window.location.href = '/';
                         }
                         if (data.status == -1) {
-                            alert('用户名已存在 换个更好的名字吧');
+                            alert('The username has already existed');
                         }
                         if (data.status == -2) {
-                            alert('回答错了^_^');
+                            alert('Wrong answer');
                         }
                         if (data.status == 0) {
-                            alert('注册失败');
+                            alert('Registration failed');
                         }
                     }
                 });

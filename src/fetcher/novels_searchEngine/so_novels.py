@@ -80,7 +80,6 @@ class SoNovels(BaseNovels):
             return []
 
 
-@cached(ttl=259200, key_from_attr='novels_name', serializer=PickleSerializer(), namespace="novels_name")
 async def start(novels_name):
     """
     Start spider

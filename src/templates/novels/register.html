@@ -20,7 +20,10 @@
                 <input type="text" class="sign" name="email" placeholder="Your E-mail">
                 <i class="glyphicon glyphicon-envelope icon"></i>
             </div>
-
+            <div class="input-group">
+                <input type="text" class="sign" name="answer" placeholder="小说 {{question}} 的作者是？">
+                <i class="glyphicon glyphicon-question-sign icon"></i>
+            </div>
             <div class="input-group">
                 <input type="password" class="sign" name="password" placeholder="Your Password">
                 <i class="glyphicon glyphicon-lock icon"></i>
@@ -31,9 +34,9 @@
                 <i class="glyphicon glyphicon-lock icon"></i>
             </div>
             <p id="errorInfo0" class="errorInfo errorHidden0">Password(>5) && UserName(>2)</p>
-            <p id="errorInfo1" class="errorInfo errorHidden1">密码不一致</p>
-            <p id="errorInfo2" class="errorInfo errorHidden2">不能有内容为空</p>
-            <p id="errorInfo3" class="errorInfo errorHidden3">邮箱格式错误</p>
+            <p id="errorInfo1" class="errorInfo errorHidden1">Different password</p>
+            <p id="errorInfo2" class="errorInfo errorHidden2">Not Null</p>
+            <p id="errorInfo3" class="errorInfo errorHidden3">wrong email format</p>
         </form>
         <button class="btn btn-success submitBtn">Register</button>
     </div>

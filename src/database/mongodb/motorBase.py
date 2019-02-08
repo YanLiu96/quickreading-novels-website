@@ -60,7 +60,6 @@ class MotorBase:
 class MotorBaseOld:
     """
     use motor to connect mongodb
-    2017-09-21 deleted
     """
     _db = None
     MONGODB = CONFIG.MONGODB

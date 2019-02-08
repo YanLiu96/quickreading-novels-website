@@ -1,10 +1,10 @@
+{% extends "main.html" %}
 {% block header %}
 <title>{{ title }} - enjoy reading</title>
 <link rel="stylesheet" href="static/novels/css/index.css">
 {% endblock %}
 
 {% block content %}
-
 <div class="header">
     {% if is_login %}
     {% include "login.html" %}
@@ -14,7 +14,6 @@
     </div>
     {% endif %}
 </div>
-
 <div class="container">
     <form action="/search" method="get" class="home_search center-block">
         <div class="search center-block">

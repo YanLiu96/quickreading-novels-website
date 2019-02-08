@@ -54,16 +54,3 @@ $(document).ready(function () {
         });
     })
 });
-
-$('.we-button').popover({
-    trigger: 'hover',
-    html: true,
-    content: "<img width='120px' height='120px' src='static/novels/img/lcxs.jpg'><p style='text-align: center'><span>关注后回复进群</span></p>"
-});
-
-$('.lcxs-button').popover({
-    trigger: 'hover',
-    html: true,
-    content: "<img width='120px' height='120px' src='static/novels/img/lcxs.jpg'><p style='text-align: center'><span>微信关注粮草小说</span></p>"
-});
-

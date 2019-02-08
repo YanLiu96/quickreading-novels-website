@@ -8,7 +8,8 @@ verify_ssl = true
 [packages]
 gunicorn = "*"
 sanic = "*"
-aiocache = "*"
+aioredis = "==0.3.3"
+aiocache = "==0.3.2"
 msgpack = "*"
 bs4 = "*"
 aiohttp = "*"
@@ -18,8 +19,10 @@ requests = "*"
 jinja2 = "*"
 html5lib = "*"
 pymongo = "*"
-motor = "*"
-mdui = "*"
+motor = "==1.1"
+sanic-session = "*"
+asyncio-redis = "*"
+paypalrestsdk = "*"
 
 [requires]
 python_version = "3.6"

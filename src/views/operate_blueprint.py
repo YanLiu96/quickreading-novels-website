@@ -1,4 +1,8 @@
 import datetime
+# Some of the most used hash functions are: MD5: Message digest algorithm producing a 128 bit hash value. This is
+# widely used to check data integrity. It is not suitable for use in other fields due to the security vulnerabilities
+#  of MD5.
+
 import hashlib
 
 from jinja2 import Environment, PackageLoader, select_autoescape
