@@ -3,13 +3,14 @@ import time
 from jinja2 import Environment, PackageLoader, select_autoescape
 from operator import itemgetter
 from sanic import Blueprint
-from sanic.response import redirect, html
+from sanic.response import redirect, html, text, json
 
 from src.database.mongodb import MotorBase
-from src.config import ENGINE_PRIORITY, CONFIG, LOGGER
-from src.fetcher.function import get_time
+from src.config import ENGINE_PRIORITY, CONFIG, LOGGER, RULES, REPLACE_RULES
+from src.fetcher.function import get_time, get_netloc
 from src.fetcher.novels_tools import get_novels_info
 from src.utils import ver_question
+from src.fetcher.cache import cache_novels_content, cache_novels_chapter
 
 novels_bp = Blueprint('novels_blueprint')
 novels_bp.static('/static/novels', CONFIG.BASE_DIR + '/static/novels')
@@ -182,3 +183,165 @@ async def owllook_search(request):
         return html("No Result！请将小说名反馈给本站，谢谢！")
 
 
+@novels_bp.route("/chapter")
+async def chapter(request):
+    """
+    返回小说章节目录页
+    : content_url   这决定当前U页面url的生成方式
+    : url           章节目录页源url
+    : novels_name   小说名称
+    :return: 小说章节内容页
+    """
+    url = request.args.get('url', None)
+    novels_name = request.args.get('novels_name', None)
+    netloc = get_netloc(url)
+    if netloc not in RULES.keys():
+        return redirect(url)
+    if netloc in REPLACE_RULES.keys():
+        url = url.replace(REPLACE_RULES[netloc]['old'], REPLACE_RULES[netloc]['new'])
+    content_url = RULES[netloc].content_url
+    content = await cache_novels_chapter(url=url, netloc=netloc)
+    if content:
+        content = str(content).strip('[],, Jjs').replace(', ', '').replace('onerror', '').replace('js', '').replace(
+            '加入书架', '')
+        return template(
+            'chapter.html', novels_name=novels_name, url=url, content_url=content_url, soup=content)
+    else:
+        return text('解析失败，请将失败页面反馈给本站，请重新刷新一次，或者访问源网页：{url}'.format(url=url))
+
+
+@novels_bp.route("/quickreading_content")
+async def quickreading_content(request):
+    """
+    返回小说章节内容页
+    : content_url   这决定当前U页面url的生成方式
+    : url           章节内容页源url
+    : chapter_url   小说目录源url
+    : novels_name   小说名称
+    :return: 小说章节内容页
+    """
+    url = request.args.get('url', None)
+    chapter_url = request.args.get('chapter_url', None)
+    novels_name = request.args.get('novels_name', None)
+    name = request.args.get('name', '')
+    is_ajax = request.args.get('is_ajax', '')
+    # 当小说内容url不在解析规则内 跳转到原本url
+    netloc = get_netloc(url)
+    if netloc not in RULES.keys():
+        return redirect(url)
+    user = request['session'].get('user', None)
+    # 拼接小说目录url
+    book_url = "/chapter?url={chapter_url}&novels_name={novels_name}".format(
+        chapter_url=chapter_url,
+        novels_name=novels_name)
+    motor_db = motor_base.get_db()
+    if url == chapter_url:
+        # 阅读到最后章节时候 在数据库中保存最新阅读章节
+        if user and is_ajax == "owl_cache":
+            owl_referer = request.headers.get('Referer', '').split('quickreading_content')[1]
+            if owl_referer:
+                latest_read = "/quickreading_content" + owl_referer
+                await motor_db.user_message.update_one(
+                    {'user': user, 'books_url.book_url': book_url},
+                    {'$set': {'books_url.$.last_read_url': latest_read}})
+        return redirect(book_url)
+    content_url = RULES[netloc].content_url
+    content_data = await cache_novels_content(url=url, netloc=netloc)
+    if content_data:
+        try:
+            content = content_data.get('content', '获取失败')
+            next_chapter = content_data.get('next_chapter', [])
+            title = content_data.get('title', '').replace(novels_name, '')
+            name = title if title else name
+            # 拼接小说书签url
+            bookmark_url = "{path}?url={url}&name={name}&chapter_url={chapter_url}&novels_name={novels_name}".format(
+                path=request.path,
+                url=url,
+                name=name,
+                chapter_url=chapter_url,
+                novels_name=novels_name
+            )
+            # 破坏广告链接
+            content = str(content).strip('[]Jjs,').replace('http', 'hs')
+            if user:
+                bookmark = await motor_db.user_message.find_one({'user': user, 'bookmarks.bookmark': bookmark_url})
+                book = await motor_db.user_message.find_one({'user': user, 'books_url.book_url': book_url})
+                bookmark = 1 if bookmark else 0
+                if book:
+                    # 当书架中存在该书源
+                    book = 1
+                    # 保存最后一次阅读记录
+                    if is_ajax == "owl_cache":
+                        owl_referer = request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
+                        latest_read = "/quickreading_content" + owl_referer
+                        await motor_db.user_message.update_one(
+                            {'user': user, 'books_url.book_url': book_url},
+                            {'$set': {'books_url.$.last_read_url': latest_read}})
+                else:
+                    book = 0
+                if is_ajax == "owl_cache":
+                    owl_cache_dict = dict(
+                        is_login=1,
+                        user=user,
+                        name=name,
+                        url=url,
+                        bookmark=bookmark,
+                        book=book,
+                        content_url=content_url,
+                        chapter_url=chapter_url,
+                        novels_name=novels_name,
+                        next_chapter=next_chapter,
+                        soup=content
+                    )
+                    return json(owl_cache_dict)
+                return template(
+                    'content.html',
+                    is_login=1,
+                    user=user,
+                    name=name,
+                    url=url,
+                    bookmark=bookmark,
+                    book=book,
+                    content_url=content_url,
+                    chapter_url=chapter_url,
+                    novels_name=novels_name,
+                    next_chapter=next_chapter,
+                    soup=content)
+            else:
+                if is_ajax == "owl_cache":
+                    owl_cache_dict = dict(
+                        is_login=0,
+                        name=name,
+                        url=url,
+                        bookmark=0,
+                        book=0,
+                        content_url=content_url,
+                        chapter_url=chapter_url,
+                        novels_name=novels_name,
+                        next_chapter=next_chapter,
+                        soup=content
+                    )
+                    return json(owl_cache_dict)
+                return template(
+                    'content.html',
+                    is_login=0,
+                    name=name,
+                    url=url,
+                    bookmark=0,
+                    book=0,
+                    content_url=content_url,
+                    chapter_url=chapter_url,
+                    novels_name=novels_name,
+                    next_chapter=next_chapter,
+                    soup=content)
+        except Exception as e:
+            LOGGER.exception(e)
+            return redirect(book_url)
+    else:
+        if user:
+            is_login = 1
+            user = user
+            return template('parse_error.html', url=url, is_login=is_login, user=user)
+        else:
+            is_login = 0
+            return template('parse_error.html', url=url, is_login=is_login)

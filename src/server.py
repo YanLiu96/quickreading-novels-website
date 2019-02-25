@@ -6,7 +6,7 @@ import sys
 from sanic import Sanic
 from sanic.response import html, redirect
 from sanic_session import RedisSessionInterface
-from src.views import api_bp, novels_bp, operate_bp, paypal_bp
+from src.views import api_bp, novels_bp, operate_bp, paypal_bp, userAdmin_bp, md_bp
 from src.database.redies import RedisSession
 from src.config import LOGGER, CONFIG
 
@@ -18,6 +18,8 @@ app.blueprint(novels_bp)
 app.blueprint(operate_bp)
 app.blueprint(api_bp)
 app.blueprint(paypal_bp)
+app.blueprint(userAdmin_bp)
+app.blueprint(md_bp)
 
 
 @app.listener('before_server_start')

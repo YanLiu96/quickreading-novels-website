@@ -225,3 +225,36 @@ async def owllook_register(request):
     # }
     # motor_db = motor_base.get_db()
     # await motor_db.user.save(data)
+
+
+@operate_bp.route("/add_bookmark", methods=['POST'])
+async def owllook_add_bookmark(request):
+    """
+    添加书签
+    :param request:
+    :return:
+        :   -1  用户session失效  需要重新登录
+        :   0   添加书签失败
+        :   1   添加书签成功
+    """
+    user = request['session'].get('user', None)
+    data = parse_qs(str(request.body, encoding='utf-8'))
+    bookmark_url = data.get('bookmark_url', '')
+    if user and bookmark_url:
+        url = unquote(bookmark_url[0])
+        time = get_time()
+        try:
+            motor_db = motor_base.get_db()
+            res = await motor_db.user_message.update_one({'user': user}, {'$set': {'last_update_time': time}},
+                                                         upsert=True)
+            if res:
+                await motor_db.user_message.update_one(
+                    {'user': user, 'bookmarks.bookmark': {'$ne': url}},
+                    {'$push': {'bookmarks': {'bookmark': url, 'add_time': time}}})
+                LOGGER.info('书签添加成功')
+                return json({'status': 1})
+        except Exception as e:
+            LOGGER.exception(e)
+            return json({'status': 0})
+    else:
+        return json({'status': -1})

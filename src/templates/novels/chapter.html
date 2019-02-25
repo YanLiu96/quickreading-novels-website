@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block header %}
+<title>{{ novels_name }} - quick reading website</title>
+<link rel="stylesheet" href="static/novels/css/chapter.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-warning center-block">
+    <p class="close" data-dismiss="alert">
+        &times;
+    </p>
+    <p style="text-align: center">
+        <strong>Warning！</strong>The chapter comes frome<a target="_blank" href="{{url}}">{{url}}</a>，All the content is not for business, only for learning
+        <a href="{{url}}">The original website</a>
+    </p>
+</div>
+
+<div class="container all-chapter">
+    <input id="content_url" type="hidden" value="{{content_url}}">
+    <input id="url" type="hidden" value="{{url}}">
+    <input id="novels_name" type="hidden" value="{{novels_name}}">
+    {% for item in soup -%}
+    {{item|safe}}
+    {%- endfor %}
+    <div class="move">
+        <div class="move_up">
+            <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+        </div>
+        <div class="move_down">
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="static/novels/js/chapter.js"></script>
+{% endblock %}
+
+
