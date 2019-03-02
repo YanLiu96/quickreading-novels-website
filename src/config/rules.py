@@ -1,6 +1,7 @@
 """
 Created by Yan Liu at 2019.1.17
 """
+# reference https://docs.python.org/2/library/collections.html
 from collections import namedtuple
 
 # The resource website domain
@@ -32,46 +33,7 @@ RESOURCE_DOMAIN = ['www.17k.com', 'mm.17k.com', 'www.xs8.cn', 'www.zongheng.com'
                    "www.yaojingweiba.com", "www.qb5200.com", "www.520tingshu.com", "www.567zw.com", "www.zjrxz.com",
                    "v.qq.com", "blog.sina.com.cn", "www.hackhome.com", "news.fznews.com.cn", "www.jingyu.com",
                    "news.so.com", "www.sodu3.com", "vipreader.qidian.com", "www.mozhua9.com", "www.iqiyi.com",
-                   "xs.sogou.com"]
-
-REPLACE_RULES = {
-    "www.miaobige.com": {
-        'old': 'miaobige.com/book/',
-        'new': 'miaobige.com/read/'
-    },
-    "www.5ccc.net": {
-        'old': '5ccc.net/wksz_info/',
-        'new': '5ccc.net/xiaoshuo/'
-    },
-    "www.7kankan.com": {
-        'old': '7kankan.com/files/article/info/',
-        'new': '7kankan.com/files/article/html/'
-    },
-    "www.xqingdou.net": {
-        'old': 'xqingdou.net/book_',
-        'new': 'xqingdou.net/chapter_'
-    },
-    "www.wuyanxia.net": {
-        'old': 'wuyanxia.net/book/',
-        'new': 'wuyanxia.net/read/'
-    },
-    "www.263zw.com": {
-        'old': '263zw.com/402770/',
-        'new': '263zw.com/402770/list/'
-    },
-}
-ENGINE_PRIORITY = ['360', 'baidu', 'google', 'bing', 'duck_go']
-Rules = namedtuple('Rules', 'content_url chapter_selector content_selector')
-RULES = {
-    # demo  'name': Rules('content_url', {chapter_selector}, {content_selector})
-    # content_url=1 表示章节链接使用本身自带的链接，不用拼接
-    # content_url=0 表示章节网页需要当前页面url拼接
-    # 'www.biqule.com': Rules('www.biqule.com', {'class': 'box_con'},{}),
-    # 'www.lingdiankanshu.com': Rules('www.lingdiankanshu.com', {'class': 'box_con'}, {}),
-    # 'www.hhlwx.com': Rules('www.hhlwx.co', {'class': 'chapterlist'},{}),
-    # 已解析
-    'www.biquge.com': Rules('http://www.biquge.com/', {'class': 'box_con'}, {'id': 'content'})
-}
+                   "xs.sogou.com", "www.novel.tingroom.com"]
 
 REPLACE_RULES = {
     "www.miaobige.com": {
@@ -100,10 +62,9 @@ REPLACE_RULES = {
     },
 }
 
-# 搜索引擎检索优先级
-ENGINE_PRIORITY = ['360', 'baidu', 'bing', 'duck_go']
 
-# Rules
+ENGINE_PRIORITY = ['360', 'baidu', 'bing']
+
 Rules = namedtuple('Rules', 'content_url chapter_selector content_selector')
 LatestRules = namedtuple('LatestRules', 'plan meta_value selector')
 
@@ -240,6 +201,8 @@ RULES = {
     # 'www.biqule.com': Rules('www.biqule.com', {'class': 'box_con'},{}),
     # 'www.lingdiankanshu.com': Rules('www.lingdiankanshu.com', {'class': 'box_con'}, {}),
     # 'www.hhlwx.com': Rules('www.hhlwx.co', {'class': 'chapterlist'},{}),
+
+    'www.novel.tingroom.com': Rules('0', {'class': 'box1'}, {''}),
     'www.biquwu.cc': Rules('https://www.biquwu.cc/', {'class': 'box_con'}, {'id': 'content'}),
     # 已解析
     'www.biqugex.com': Rules('http://www.biqugex.com/', {'class': 'listmain'}, {'id': 'content'}),

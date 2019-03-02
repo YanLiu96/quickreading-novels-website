@@ -11,8 +11,9 @@ class Config():
     VAL_HOST = os.getenv('VAL_HOST', 'true')
     FORBIDDEN = ['139.199.198.228']
     HOST = ['127.0.0.1:8001', '0.0.0.0:8001', '127.0.0.1:8002', '0.0.0.0:8002']
-    TIMEZONE = 'Asia/Shanghai'
+    TIMEZONE = 'Europe/Ireland'
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+    # 影响链接
     USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36'
     WEBSITE = dict(
         IS_RUNNING=True,

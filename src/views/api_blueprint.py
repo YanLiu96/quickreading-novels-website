@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from urllib.parse import unquote
-
 from sanic import Blueprint
 
 from src.fetcher.extract_novels import extract_chapters
@@ -10,7 +9,7 @@ from src.fetcher import UniResponse, ResponseField
 from src.fetcher.decorators import response_handle, authenticator
 
 from src.config import LOGGER
-
+# a reference to the Sanic application object that is handling this request.
 api_bp = Blueprint('api_blueprint', url_prefix='api')
 
 

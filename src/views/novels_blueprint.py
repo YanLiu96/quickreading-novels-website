@@ -125,12 +125,14 @@ async def owllook_search(request):
                 parse_result = await get_novels_info(class_name='baidu', novels_name=novels_name)
                 if parse_result:
                     break
+            """ 
             # for duckduckgo
             if each_engine == "duck_go":
                 novels_name = '{name} 小说 阅读 最新章节'.format(name=name)
                 parse_result = await get_novels_info(class_name='duck_go', novels_name=novels_name)
                 if parse_result:
                     break
+             """
     if parse_result:
         # result_sorted = sorted(
         #     parse_result, reverse=True, key=lambda res: res['timestamp']) if ':baidu' not in name else parse_result

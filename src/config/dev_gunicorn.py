@@ -1,6 +1,8 @@
 # gunicorn config
 import os
-
+# Number of worker processes to spawn.By default,
+# Sanic listens in the main process using only one CPU core.
+# To crank up the juice, just specify the number of workers in the run arguments.
 WORKERS = os.getenv('WORKERS', 2)
 TIMEOUT = os.getenv('TIMEOUT', 60)
 

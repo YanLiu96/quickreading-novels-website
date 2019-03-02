@@ -8,6 +8,7 @@ from src.database.mongodb import MotorBase
 from src.fetcher.cache import get_the_latest_chapter
 from src.config import LOGGER, CONFIG
 userAdmin_bp = Blueprint('userAdmin_blueprint', url_prefix='userAdmin')
+
 userAdmin_bp.static('/static/novels', CONFIG.BASE_DIR + '/static/novels')
 
 

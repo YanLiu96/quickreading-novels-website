@@ -2,7 +2,6 @@ import asyncio
 
 from pymongo import MongoClient
 from motor.motor_asyncio import AsyncIOMotorClient
-
 from src.config import CONFIG
 from src.utils.tools import singleton
 

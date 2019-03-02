@@ -4,7 +4,10 @@ import datetime
 #  of MD5.
 
 import hashlib
-
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import email.utils
 from jinja2 import Environment, PackageLoader, select_autoescape
 from sanic import Blueprint
 from sanic.response import html, json
@@ -23,6 +26,48 @@ except:
     from json import dumps as json_dumps
 
 operate_bp = Blueprint('operate_blueprint', url_prefix='operate')
+
+# Replace sender@example.com with your "From" address.
+# This address must be verified.
+SENDER = '278899085@qq.com'
+SENDERNAME = 'Yan Liu'
+
+# Replace recipient@example.com with a "To" address. If your account
+# is still in the sandbox, this address must be verified.
+#RECIPIENT  = '352886335@qq.com'
+
+# Replace smtp_username with your Amazon SES SMTP user name.
+USERNAME_SMTP = "AKIAJIH6FB7JSFHH3RFQ"
+
+# Replace smtp_password with your Amazon SES SMTP password.
+PASSWORD_SMTP = "BJHpzXYnj9k74KyT3I9SJW7719f8h+zOSOxpAZNCJU0H"
+# If you're using Amazon SES in an AWS Region other than 美国西部（俄勒冈）,
+# replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
+# endpoint in the appropriate region.
+HOST = "email-smtp.eu-west-1.amazonaws.com"
+PORT = 587
+
+# The subject line of the email.
+SUBJECT = 'Test for email'
+
+# The email body for recipients with non-HTML email clients.
+BODY_TEXT = ("Yan Liu says\r\n"
+             "SBSBSBSBSBSBSB "
+             "Interface using the Python smtplib package."
+            )
+
+# The HTML body of the email.
+BODY_HTML = """<html>
+<head></head>
+<body>
+  <h1>Liu Yan test email</h1>
+  <p>This email was sent with Amazon SES using the
+    <a href='https://www.python.org/'>Python</a>
+    <a href='https://docs.python.org/3/library/smtplib.html'>
+    smtplib</a> library.</p>
+</body>
+</html>
+            """
 
 
 @operate_bp.listener('before_server_start')
@@ -185,10 +230,10 @@ async def owllook_register(request):
     register_data = parse_qs(str(request.body, encoding='utf-8'))
     user = register_data.get('user', [None])[0]
     pwd = register_data.get('pwd', [None])[0]
-    email = register_data.get('email', [None])[0]
+    Email = register_data.get('email', [None])[0]
     answer = register_data.get('answer', [None])[0]
     reg_index = request.cookies.get('reg_index')
-    if user and pwd and email and answer and reg_index and len(user) > 2 and len(pwd) > 5:
+    if user and pwd and Email and answer and reg_index and len(user) > 2 and len(pwd) > 5:
         motor_db = motor_base.get_db()
         is_exist = await motor_db.user.find_one({'user': user})
         if not is_exist:
@@ -201,9 +246,41 @@ async def owllook_register(request):
                 data = {
                     "user": user,
                     "password": password,
-                    "email": email,
+                    "email": Email,
                     "register_time": time,
                 }
+                RECIPIENT = Email
+                # Create message container - the correct MIME type is multipart/alternative.
+                msg = MIMEMultipart('alternative')
+                msg['Subject'] = SUBJECT
+                msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
+                msg['To'] = RECIPIENT
+                # Comment or delete the next line if you are not using a configuration set
+                # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
+
+                # Record the MIME types of both parts - text/plain and text/html.
+                part1 = MIMEText(BODY_TEXT, 'plain')
+                part2 = MIMEText(BODY_HTML, 'html')
+
+                # Attach parts into message container.
+                # According to RFC 2046, the last part of a multipart message, in this case
+                # the HTML message, is best and preferred.
+                msg.attach(part1)
+                msg.attach(part2)
+                try:
+                    server = smtplib.SMTP(HOST, PORT)
+                    server.ehlo()
+                    server.starttls()
+                    # stmplib docs recommend calling ehlo() before & after starttls()
+                    server.ehlo()
+                    server.login(USERNAME_SMTP, PASSWORD_SMTP)
+                    server.sendmail(SENDER, RECIPIENT, msg.as_string())
+                    server.close()
+                # Display an error message if something goes wrong.
+                except Exception as e:
+                    print("Error: ", e)
+                else:
+                    print("Email sent!")
                 await motor_db.user.save(data)
                 return json({'status': 1})
             else:

@@ -4,15 +4,16 @@ Created by Yan Liu at 2019.1.17
 
 import os
 import logging
-
 from .rules import *
-
+"""
 logging_format = "[%(asctime)s] %(process)d-%(levelname)s "
 logging_format += "%(module)s::%(funcName)s():l%(lineno)d: "
 logging_format += "%(message)s"
-
+"""
 logging.basicConfig(
-    format=logging_format,
+
+    # format=logging_format,
+
     level=logging.DEBUG
 )
 LOGGER = logging.getLogger()
@@ -24,7 +25,7 @@ def load_config():
     """
 
     mode = os.environ.get('MODE', 'DEV')
-    LOGGER.info('Project Boot mode：{}'.format(mode))
+    LOGGER.info('The mode of project running is：{}'.format(mode))
     try:
         if mode == 'PRO':
             from .pro_config import ProConfig
