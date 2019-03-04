@@ -7,7 +7,7 @@ import asyncio
 from aiocache.serializers import PickleSerializer
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-
+from src.fetcher.decorators import cached
 from src.fetcher.function import get_random_user_agent
 from src.fetcher.novels_searchEngine.base_novels import BaseNovels
 
@@ -69,6 +69,7 @@ class BingNovels(BaseNovels):
             return []
 
 
+@cached(ttl=259200, key_from_attr='novels_name', serializer=PickleSerializer(), namespace="novels_name")
 async def start(novels_name):
     """
     Start spider

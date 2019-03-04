@@ -74,3 +74,54 @@ async def bookmarks(request):
             return redirect('/')
     else:
         return redirect('/')
+
+
+@md_bp.route("/bookshelf")
+async def books(request):
+    user = request['session'].get('user', None)
+    if user:
+        try:
+            motor_db = motor_base.get_db()
+            data = await motor_db.user_message.find_one({'user': user})
+            if data:
+                books_url = data.get('books_url', None)
+                if books_url:
+                    result = []
+                    for i in books_url:
+                        item_result = {}
+                        book_url = i.get('book_url', None)
+                        last_read_url = i.get("last_read_url", "")
+                        book_query = parse_qs(urlparse(book_url).query)
+                        last_read_chapter_name = parse_qs(
+                            last_read_url).get('name', ['暂无'])[0]
+                        item_result['novels_name'] = book_query.get('novels_name', '')[0] if book_query.get(
+                            'novels_name', '') else ''
+                        item_result['book_url'] = book_url
+                        latest_data = await motor_db.latest_chapter.find_one({'quickreading_chapter_url': book_url})
+                        if latest_data:
+                            item_result['latest_chapter_name'] = latest_data['data']['latest_chapter_name']
+                            item_result['quickreading_content_url'] = latest_data['data']['quickreading_content_url']
+                        else:
+                            get_latest_data = await get_the_latest_chapter(book_url) or {}
+                            item_result['latest_chapter_name'] = get_latest_data.get(
+                                'latest_chapter_name', '暂未获取，请反馈')
+                            item_result['quickreading_content_url'] = get_latest_data.get(
+                                'quickreading_content_url', '')
+                        item_result['add_time'] = i.get('add_time', '')
+                        item_result["last_read_url"] = last_read_url if last_read_url else book_url
+                        item_result["last_read_chapter_name"] = last_read_chapter_name
+                        result.append(item_result)
+                    return template('admin_bookshelf.html', title='{user}的书架 - owllook'.format(user=user),
+                                    is_login=1,
+                                    user=user,
+                                    is_bookmark=1,
+                                    result=result[::-1])
+            return template('admin_bookshelf.html', title='{user}的书架 - owllook'.format(user=user),
+                            is_login=1,
+                            user=user,
+                            is_bookmark=0)
+        except Exception as e:
+            LOGGER.error(e)
+            return redirect('/')
+    else:
+        return redirect('/')

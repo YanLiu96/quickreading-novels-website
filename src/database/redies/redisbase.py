@@ -5,6 +5,7 @@ from src.config import CONFIG
 
 
 # Token from https://github.com/subyraman/sanic_session
+# Reference https://sanic-session.readthedocs.io/en/latest/
 class RedisSession:
     """
     A simple wrapper class that allows you to share a connection
@@ -20,5 +21,4 @@ class RedisSession:
                 poolsize=int(REDIS_DICT.get('POOLSIZE', 10)), password=REDIS_DICT.get('REDIS_PASSWORD', None),
                 db=REDIS_DICT.get('SESSION_DB', None)
             )
-
         return self._pool

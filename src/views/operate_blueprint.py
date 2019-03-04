@@ -158,7 +158,7 @@ async def change_pass(request):
 
 
 @operate_bp.route("/login", methods=['POST'])
-async def owllook_login(request):
+async def quickreading_login(request):
     """
     用户登录
     :param request:
@@ -180,9 +180,9 @@ async def owllook_login(request):
                 response = json({'status': 1})
                 # 将session_id存于cokies
                 date = datetime.datetime.now()
-                response.cookies['owl_sid'] = request['session'].sid
-                response.cookies['owl_sid']['expires'] = date + datetime.timedelta(days=30)
-                response.cookies['owl_sid']['httponly'] = True
+                response.cookies['quickReading_cookie'] = request['session'].sid
+                response.cookies['quickReading_cookie']['expires'] = date + datetime.timedelta(days=30)
+                response.cookies['quickReading_cookie']['httponly'] = True
                 # 此处设置存于服务器session的user值
                 request['session']['user'] = user
                 # response.cookies['user'] = user
@@ -199,7 +199,7 @@ async def owllook_login(request):
 
 
 @operate_bp.route("/logout", methods=['GET'])
-async def owllook_logout(request):
+async def quickreading_logout(request):
     """
     用户登出
     :param request:
@@ -211,7 +211,7 @@ async def owllook_logout(request):
     if user:
         response = json({'status': 1})
         del response.cookies['user']
-        del response.cookies['owl_sid']
+        del response.cookies['quickReading_cookie']
         return response
     else:
         return json({'status': 0})
@@ -248,6 +248,8 @@ async def owllook_register(request):
                     "password": password,
                     "email": Email,
                     "register_time": time,
+                    "become_vip_time": "",
+                    "vip_duration": 0
                 }
                 RECIPIENT = Email
                 # Create message container - the correct MIME type is multipart/alternative.
@@ -305,7 +307,7 @@ async def owllook_register(request):
 
 
 @operate_bp.route("/add_bookmark", methods=['POST'])
-async def owllook_add_bookmark(request):
+async def quickreading_add_bookmark(request):
     """
     添加书签
     :param request:
@@ -330,6 +332,76 @@ async def owllook_add_bookmark(request):
                     {'$push': {'bookmarks': {'bookmark': url, 'add_time': time}}})
                 LOGGER.info('书签添加成功')
                 return json({'status': 1})
+        except Exception as e:
+            LOGGER.exception(e)
+            return json({'status': 0})
+    else:
+        return json({'status': -1})
+
+
+@operate_bp.route("/add_bookshelf", methods=['POST'])
+async def quickreading_add_bookshelf(request):
+    """
+    添加书架
+    :param request:
+    :return:
+        :   -1  用户session失效  需要重新登录
+        :   0   添加书架失败
+        :   1   添加书架成功
+    """
+    user = request['session'].get('user', None)
+    data = parse_qs(str(request.body, encoding='utf-8'))
+    novels_name = data.get('novels_name', '')
+    chapter_url = data.get('chapter_url', '')
+    last_read_url = data.get('last_read_url', '')
+    if user and novels_name and chapter_url:
+        url = "/chapter?url={chapter_url}&novels_name={novels_name}".format(chapter_url=chapter_url[0],
+                                                                            novels_name=novels_name[0])
+        time = get_time()
+        try:
+            motor_db = motor_base.get_db()
+            res = await motor_db.user_message.update_one({'user': user}, {'$set': {'last_update_time': time}},
+                                                         upsert=True)
+            if res:
+                await motor_db.user_message.update_one(
+                    {'user': user, 'books_url.book_url': {'$ne': url}},
+                    {'$push': {
+                        'books_url': {'book_url': url, 'add_time': time, 'last_read_url': unquote(last_read_url[0])}}})
+                LOGGER.info('You have added this page sucessfully in you bookshelf!')
+                return json({'status': 1})
+        except Exception as e:
+            LOGGER.exception(e)
+            return json({'status': 0})
+    else:
+        return json({'status': -1})
+
+
+@operate_bp.route("/delete_book", methods=['POST'])
+async def owllook_delete_book(request):
+    """
+    删除书架
+    :param request:
+    :return:
+        :   -1  用户session失效  需要重新登录
+        :   0   删除书架失败
+        :   1   删除书架成功
+    """
+    user = request['session'].get('user', None)
+    data = parse_qs(str(request.body, encoding='utf-8'))
+    if user:
+        if data.get('book_url', None):
+            book_url = data.get('book_url', None)[0]
+        else:
+            novels_name = data.get('novels_name', '')
+            chapter_url = data.get('chapter_url', '')
+            book_url = "/chapter?url={chapter_url}&novels_name={novels_name}".format(chapter_url=chapter_url[0],
+                                                                                     novels_name=novels_name[0])
+        try:
+            motor_db = motor_base.get_db()
+            await motor_db.user_message.update_one({'user': user},
+                                                   {'$pull': {'books_url': {"book_url": unquote(book_url)}}})
+            LOGGER.info('删除书架成功')
+            return json({'status': 1})
         except Exception as e:
             LOGGER.exception(e)
             return json({'status': 0})

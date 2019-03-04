@@ -7,7 +7,7 @@ from sanic import Sanic
 from sanic.response import html, redirect
 from sanic_session import RedisSessionInterface
 # Registering blueprints
-from src.views import api_bp, novels_bp, operate_bp, paypal_bp, userAdmin_bp, md_bp
+from src.views import searchEngine_bp, novels_bp, operate_bp, paypal_bp, userAdmin_bp, md_bp
 from src.database.redies import RedisSession
 from src.config import LOGGER, CONFIG
 
@@ -18,7 +18,7 @@ app = Sanic(__name__)
 # The routes of this project
 app.blueprint(novels_bp)
 app.blueprint(operate_bp)
-app.blueprint(api_bp)
+app.blueprint(searchEngine_bp)
 app.blueprint(paypal_bp)
 app.blueprint(userAdmin_bp)
 app.blueprint(md_bp)
@@ -27,7 +27,7 @@ app.blueprint(md_bp)
 # Executed before the server begins to accept connections
 @app.listener('before_server_start')
 def init_cache(app, loop):
-    LOGGER.info("Starting aiocache")
+    LOGGER.info("Starting aiocache : asyncio cache manager for redis")
     app.config.from_object(CONFIG)
     REDIS_DICT = CONFIG.REDIS_DICT
     aiocache.settings.set_defaults(
@@ -44,7 +44,7 @@ def init_cache(app, loop):
     app.get_redis_pool = redis_session.get_redis_pool
     # pass the getter method for the connection pool into the session
     app.session_interface = RedisSessionInterface(
-        app.get_redis_pool, cookie_name="owl_sid", expiry=30 * 24 * 60 * 60)
+        app.get_redis_pool, cookie_name="quickReading_cookie", expiry=30 * 24 * 60 * 60)
 
 
 # two types of middleware: request and response
@@ -78,7 +78,7 @@ async def save_session(request, response):
     if request.path == '/operate/login' and request['session'].get('user', None):
         await app.session_interface.save(request, response)
         import datetime
-        response.cookies['owl_sid']['expires'] = datetime.datetime.now(
+        response.cookies['quickReading_cookie']['expires'] = datetime.datetime.now(
         ) + datetime.timedelta(days=30)
     elif request.path == '/register':
         try:

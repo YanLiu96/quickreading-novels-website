@@ -48,7 +48,7 @@ async def index(request):
 
 
 @novels_bp.route("/register")
-async def owllook_register(request):
+async def user_register(request):
     """
     用户登录
     :param request:
@@ -74,7 +74,7 @@ async def owllook_register(request):
 
 
 @novels_bp.route("/search", methods=['GET'])
-async def owllook_search(request):
+async def quickreading_search(request):
     start = time.time()
     name = str(request.args.get('wd', '')).strip()
     novels_keyword = name.split(' ')[0]
@@ -101,10 +101,6 @@ async def owllook_search(request):
         novels_keyword = name.split('bing')[1].strip()
         novels_name = "{name} 小说 阅读 最新章节".format(name=novels_keyword)
         parse_result = await get_novels_info(class_name='bing', novels_name=novels_name)
-    elif name.startswith('!duck_go'):
-        novels_keyword = name.split('duck_go')[1].strip()
-        novels_name = '{name} 小说 阅读 最新章节'.format(name=novels_keyword)
-        parse_result = await get_novels_info(class_name='duck_go', novels_name=novels_name)
     else:
         for each_engine in ENGINE_PRIORITY:
             # for bing
@@ -125,14 +121,6 @@ async def owllook_search(request):
                 parse_result = await get_novels_info(class_name='baidu', novels_name=novels_name)
                 if parse_result:
                     break
-            """ 
-            # for duckduckgo
-            if each_engine == "duck_go":
-                novels_name = '{name} 小说 阅读 最新章节'.format(name=name)
-                parse_result = await get_novels_info(class_name='duck_go', novels_name=novels_name)
-                if parse_result:
-                    break
-             """
     if parse_result:
         # result_sorted = sorted(
         #     parse_result, reverse=True, key=lambda res: res['timestamp']) if ':baidu' not in name else parse_result
@@ -239,10 +227,10 @@ async def quickreading_content(request):
     motor_db = motor_base.get_db()
     if url == chapter_url:
         # 阅读到最后章节时候 在数据库中保存最新阅读章节
-        if user and is_ajax == "owl_cache":
-            owl_referer = request.headers.get('Referer', '').split('quickreading_content')[1]
-            if owl_referer:
-                latest_read = "/quickreading_content" + owl_referer
+        if user and is_ajax == "quickReading_cache":
+            quickReading_referer = request.headers.get('Referer', '').split('quickreading_content')[1]
+            if quickReading_referer:
+                latest_read = "/quickreading_content" + quickReading_referer
                 await motor_db.user_message.update_one(
                     {'user': user, 'books_url.book_url': book_url},
                     {'$set': {'books_url.$.last_read_url': latest_read}})
@@ -273,16 +261,16 @@ async def quickreading_content(request):
                     # 当书架中存在该书源
                     book = 1
                     # 保存最后一次阅读记录
-                    if is_ajax == "owl_cache":
-                        owl_referer = request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
-                        latest_read = "/quickreading_content" + owl_referer
+                    if is_ajax == "quickReading_cache":
+                        quickReading_referer = request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
+                        latest_read = "/quickreading_content" + quickReading_referer
                         await motor_db.user_message.update_one(
                             {'user': user, 'books_url.book_url': book_url},
                             {'$set': {'books_url.$.last_read_url': latest_read}})
                 else:
                     book = 0
-                if is_ajax == "owl_cache":
-                    owl_cache_dict = dict(
+                if is_ajax == "quickReading_cache":
+                    quickReading_cache_dict = dict(
                         is_login=1,
                         user=user,
                         name=name,
@@ -295,7 +283,7 @@ async def quickreading_content(request):
                         next_chapter=next_chapter,
                         soup=content
                     )
-                    return json(owl_cache_dict)
+                    return json(quickReading_cache_dict)
                 return template(
                     'content.html',
                     is_login=1,
@@ -310,8 +298,8 @@ async def quickreading_content(request):
                     next_chapter=next_chapter,
                     soup=content)
             else:
-                if is_ajax == "owl_cache":
-                    owl_cache_dict = dict(
+                if is_ajax == "quickReading_cache":
+                    quickReading_cache_dict = dict(
                         is_login=0,
                         name=name,
                         url=url,
@@ -323,7 +311,7 @@ async def quickreading_content(request):
                         next_chapter=next_chapter,
                         soup=content
                     )
-                    return json(owl_cache_dict)
+                    return json(quickReading_cache_dict)
                 return template(
                     'content.html',
                     is_login=0,

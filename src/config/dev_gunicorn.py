@@ -3,7 +3,7 @@ import os
 # Number of worker processes to spawn.By default,
 # Sanic listens in the main process using only one CPU core.
 # To crank up the juice, just specify the number of workers in the run arguments.
-WORKERS = os.getenv('WORKERS', 2)
+WORKERS = os.getenv('WORKERS', 1)
 TIMEOUT = os.getenv('TIMEOUT', 60)
 
 bind = '0.0.0.0:8001'

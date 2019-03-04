@@ -4,10 +4,11 @@
 import aiohttp
 import asyncio
 import async_timeout
-
+from aiocache.serializers import PickleSerializer
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 
+from src.fetcher.decorators import cached
 from src.fetcher.function import get_random_user_agent
 from src.fetcher.novels_searchEngine.base_novels import BaseNovels
 
@@ -89,6 +90,8 @@ class BaiduNovels(BaseNovels):
             return []
 
 
+# store the search novels' name in redies
+@cached(ttl=259200, key_from_attr='novels_name', serializer=PickleSerializer(), namespace="novels_name")
 async def start(novels_name):
     """
     Start spider
@@ -100,7 +103,6 @@ async def start(novels_name):
 if __name__ == '__main__':
     # Start
     import aiocache
-
     REDIS_DICT = {}
     aiocache.settings.set_defaults(
         class_="aiocache.RedisCache",

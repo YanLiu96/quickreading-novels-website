@@ -16,7 +16,7 @@ $(document).ready(function () {
             //提交的网址
             url: n_url,
             //提交的数据
-            data: {is_ajax: "owl_cache"},
+            data: {is_ajax: "quickReading_cache"},
             //返回数据的格式
             datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
             //在请求之前调用的函数

@@ -22,7 +22,6 @@ from src.config import CONFIG, LOGGER
 
 def authenticator(key):
     """
-
     :param keys: 验证方式 Quickreading-Api-Key : Magic Key,  Authorization : Token
     :return: 返回值
     """
@@ -36,7 +35,6 @@ def authenticator(key):
                 return response
             else:
                 return response_handle(request, UniResponse.NOT_AUTHORIZED, status=401)
-
         return authenticate
 
     return wrapper
@@ -44,7 +42,6 @@ def authenticator(key):
 
 def auth_params(*keys):
     """
-
     :param keys: 判断必须要有的参数
     :return: 返回值
     """
@@ -86,6 +83,7 @@ def auth_params(*keys):
 
 
 # Token from https://github.com/argaen/aiocache/blob/master/aiocache/decorators.py
+# Reference https://github.com/argaen/aiocache
 def cached(
         ttl=0, key=None, key_from_attr=None, cache=None, serializer=None, plugins=None, **kwargs):
     """
