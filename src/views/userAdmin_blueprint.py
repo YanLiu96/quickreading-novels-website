@@ -174,3 +174,5 @@ async def similar_user(request):
             return redirect('/')
     else:
         return redirect('/')
+
+

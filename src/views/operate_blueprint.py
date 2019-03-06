@@ -34,7 +34,7 @@ SENDERNAME = 'Yan Liu'
 
 # Replace recipient@example.com with a "To" address. If your account
 # is still in the sandbox, this address must be verified.
-#RECIPIENT  = '352886335@qq.com'
+# RECIPIENT  = '352886335@qq.com'
 
 # Replace smtp_username with your Amazon SES SMTP user name.
 USERNAME_SMTP = "AKIAJIH6FB7JSFHH3RFQ"
@@ -48,23 +48,206 @@ HOST = "email-smtp.eu-west-1.amazonaws.com"
 PORT = 587
 
 # The subject line of the email.
-SUBJECT = 'Test for email'
+SUBJECT = 'Register successfully'
 
 # The email body for recipients with non-HTML email clients.
-BODY_TEXT = ("Yan Liu says\r\n"
-             "SBSBSBSBSBSBSB "
-             "Interface using the Python smtplib package."
-            )
 
 # The HTML body of the email.
-BODY_HTML = """<html>
-<head></head>
+BODY_HTML = """
+<html>
+<head>
+<style>
+@page {
+    size: A4 portrait;
+    margin: 70pt 60pt 70pt;
+
+    @top-center {
+        /* Yes, you can use an image here - exactly like a background-image rule*/
+        content: url(../images/headerlogos.png);
+
+        /* and you can move it around 
+        margin-top: 20pt;
+        */
+    }
+
+    @bottom-left {
+        content: string(footerContent);
+        font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
+    }
+
+    @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
+    }
+}
+
+@media screen {
+  body {
+    font: 9.85pt/135% 'Cambria', serif;
+  }
+
+  h1.footer-content {
+    line-height: 150%;
+  }
+
+  header:after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+
+  header address, 
+  header .date, 
+  header .letter-reference {
+      text-align: right;
+  }
+
+  /* Style any address like elements to be block */
+  header address *, 
+  header .date, 
+  header .letter-reference,
+  header > [class*="address-"] > span {
+      display: block;
+  }
+
+  header address .email, 
+  header .date, 
+  header .letter-reference {
+      margin-top: 9.85pt;
+  }
+
+  header address {
+      /* Two options here - if it's only got one side to it, don't bother floating it.
+      width: 4.5cm;*/
+      float: right;
+      width: 100%;
+      font-style: normal;
+  }
+
+  /* This is what to change if the address is not visible in the window */
+  header .address-recipient {
+      float: left;
+      margin-top: -2cm;
+  }
+
+  section main p:nth-child(2) {
+      font-weight: bold;
+  }
+
+
+  .signature {
+      height: 50pt;
+  }
+
+  .headerLogo, .footerLogo {
+      max-width: 6cm;
+      height: auto;
+      max-height: 2cm;
+  }
+
+/* This gives the user an idea of what the page will look like prior to the print preview */
+    *, *:before, *:after {box-sizing: border-box;}
+    body {
+        background-color: #cecece;
+    }
+
+    .wrapper {
+        width: 80%;
+        max-width: 780px;
+        margin: 0 auto;
+
+    }
+
+    /* Each section is a letter */
+    section {
+        display: flex;
+        flex-direction: column;        
+        background-color: white;
+        background: linear-gradient(to bottom, white, white 29.66cm, #7e7e7e 29.66cm, #7e7e7e, 29.7cm, white 29.7cm, white);
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 20px 30px 20px;
+        margin: 10px 1%;
+        box-shadow: 0 0 5px 5px #bababa;
+    }
+
+    section footer {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Stick it to the bottom of the page no matter what - margin-top auto pushes it down. */
+    section footer .pageFooter {
+        margin-top: auto;
+    }
+}
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+
+  /* Force a page break after every section or w/e element you want. */
+  section:not(:last-of-type) footer {
+      page-break-after: always;
+      /* counter-reset: page pages; */
+  }
+
+  .footer-content {
+      string-set: footerContent content();
+      display: none;
+  }
+}
+
+.penNote {
+  font-family: monospace;
+  background-color: #fff699;
+  width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  box-shadow: 0 0 4px 4px #bbb;
+}
+</style>
+</head>
 <body>
-  <h1>Liu Yan test email</h1>
-  <p>This email was sent with Amazon SES using the
-    <a href='https://www.python.org/'>Python</a>
-    <a href='https://docs.python.org/3/library/smtplib.html'>
-    smtplib</a> library.</p>
+<div class="penNote noPrint">
+<div class="wrapper">
+    <div class="bglogo"></div>
+    <h1 class="footer-content">Welcome to be a member of quick reading website</h1>
+    <!-- Each letter will be it's own section (this chapters in a book) -->
+    <section>
+        <header>
+            <img class="headerLogo" alt="Company logo" src="https://vignette.wikia.nocookie.net/jurassicpark/images/b/b0/Ingenicon3.png/revision/latest?cb=20141208195042" />
+            <!--   The address element feels OK to use here as the HTML spec states:
+            The address element represents the contact information for its nearest article or body element ancestor. As this is the sender's address it is relevant to the article. -->
+            <p class="address-recipient">
+                <span class="address-to"> Hello! Thank you for choosing us! </span>
+            </p>
+        </header>
+        <main>
+            <p>Dear User</p>
+            <p>You have already register your account in our quick reading website. You can login and enjoy the reading</p>
+            <p>Proin dapibus sapien a lacus cursus varius. Curabitur non ornare ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi ut egestas diam, sit amet dignissim mi. Vestibulum vel augue nisi. Suspendisse potenti. Quisque volutpat, nisl non bibendum cursus, neque sapien euismod quam, in hendrerit enim sem non diam.</p>
+            <p>Integer lacinia est ac tortor facilisis vulputate. Donec euismod ornare lectus, at pharetra est facilisis eu. Pellentesque nisl sapien, sollicitudin eget ipsum sit amet, porttitor pulvinar quam. Phasellus sit amet nulla sed magna mollis viverra. Etiam aliquet malesuada eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin non purus et urna congue convallis eu ut arcu. Suspendisse lorem urna, auctor eget massa quis, tempor dictum lorem. Integer sed volutpat lorem. Nulla blandit auctor metus tincidunt bibendum. Nam vitae lorem at nunc dapibus sagittis. Donec nec nunc auctor, fermentum sem in, accumsan diam. Fusce leo dolor, euismod sit amet enim nec, pretium bibendum lacus.</p>
+            <p>Ut et tellus dolor. Fusce efficitur bibendum erat a commodo. Cras vestibulum, odio vitae mollis luctus, nisl sapien pulvinar elit, vel scelerisque neque neque quis felis. Vivamus vehicula eleifend lobortis. Sed pellentesque sem a metus imperdiet, sed efficitur elit lacinia. Donec vulputate elit ex, in tristique mi dapibus quis. Mauris vulputate quis nisl nec eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+        </main>
+        <footer>
+            <p>Yours sincerely</p>
+            <p class="signature">Signature</p>
+            <p>Yan Liu</p>
+            <p>Final Year Projects</p>
+            <p>Novels Reading and Searching Website</p>
+            <p>WIT Waterford Ireland</p>
+            <p>X91 HXT3</p>
+            <p>E-mail: 278899085@qq.com</p>
+            <div class="pageFooter">
+                <img class="footerLogo" src="https://vignette.wikia.nocookie.net/jurassicpark/images/b/b0/Ingenicon3.png/revision/latest?cb=20141208195042" alt="Footer Logo" />
+            </div>
+        </footer>
+    </section>
+    <h1 class="pageBreak"></h1>
+</div>
 </body>
 </html>
             """
@@ -261,13 +444,11 @@ async def owllook_register(request):
                 # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
 
                 # Record the MIME types of both parts - text/plain and text/html.
-                part1 = MIMEText(BODY_TEXT, 'plain')
                 part2 = MIMEText(BODY_HTML, 'html')
 
                 # Attach parts into message container.
                 # According to RFC 2046, the last part of a multipart message, in this case
                 # the HTML message, is best and preferred.
-                msg.attach(part1)
                 msg.attach(part2)
                 try:
                     server = smtplib.SMTP(HOST, PORT)

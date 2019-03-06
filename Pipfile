@@ -23,6 +23,7 @@ motor = "==1.1"
 sanic-session = "*"
 asyncio-redis = "*"
 paypalrestsdk = "*"
+graphviz = "*"
 
 [requires]
 python_version = "3.6"

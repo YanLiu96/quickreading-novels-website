@@ -5,34 +5,32 @@
     <title>Pay for your membership!</title>
 </head>
 <body>
-<h2 align="center">Select payment service</h2>
+<h2 align="center">Select Type of Service</h2>
+<br><br>
 <section>
 <div>
   <input type="radio" id="control_01" name="select" value="1" checked>
   <label for="control_01">
-    <h2>One Month</h2>
-    <p>10€</p>
+    <h2>One Month Membership</h2>
+    <p>Only 10€</p>
   </label>
 </div>
 <div>
   <input type="radio" id="control_02" name="select" value="2">
   <label for="control_02">
-    <h2>Six Months</h2>
-    <p>50€</p>
+    <h2>Six Months Membership</h2>
+    <p>Enjoy discount only 50€</p>
   </label>
 </div>
 <div>
   <input type="radio" id="control_03" name="select" value="3">
   <label for="control_03">
-    <h2>One Year</h2>
-    <p>90€</p>
+    <h2>One Year Membership</h2>
+    <p>Premium discount only 90€</p>
   </label>
 </div>
 </section>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br>
 <div id="paypal-button" align="center"></div>
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script>
@@ -81,75 +79,81 @@
 </body>
 
 <style>
-
 body {
   padding: 1rem;
-  color: hsla(215, 5%, 50%, 1);
+  color: #797e86;
 }
+
 h1 {
-  color: hsla(215, 5%, 10%, 1);
+  color: #18191b;
   margin-bottom: 2rem;
 }
+
 section {
   display: flex;
   flex-flow: row wrap;
 }
+
 section > div {
   flex: 1;
   padding: 0.5rem;
 }
+
 input[type="radio"] {
   display: none;
-  &:not(:disabled) ~ label {
-    cursor: pointer;
-  }
-  &:disabled ~ label {
-    color: hsla(150, 5%, 75%, 1);
-    border-color: hsla(150, 5%, 75%, 1);
-    box-shadow: none;
-    cursor: not-allowed;
-  }
 }
+input[type="radio"]:not(:disabled) ~ label {
+  cursor: pointer;
+}
+input[type="radio"]:disabled ~ label {
+  color: #bcc2bf;
+  border-color: #bcc2bf;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
 label {
-  height: 100%;
+  height: 90%;
   display: block;
   background: white;
-  border: 2px solid hsla(150, 75%, 50%, 1);
+  border: 2px solid #20df80;
   border-radius: 20px;
   padding: 1rem;
   margin-bottom: 1rem;
-  //margin: 1rem;
   text-align: center;
-  box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
+  box-shadow: 0px 3px 10px -2px rgba(161, 170, 166, 0.5);
   position: relative;
 }
+
 input[type="radio"]:checked + label {
-  background: hsl(101, 81%, 48%);
-  color: hsla(215, 0%, 100%, 1);
-  box-shadow: 0px 0px 20px hsla(150, 100%, 50%, 0.75);
-  &::after {
-    color: hsla(215, 5%, 25%, 1);
-    font-family: FontAwesome;
-    border: 2px solid hsla(150, 75%, 45%, 1);
-    content: "\f00c";
-    font-size: 24px;
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0px 2px 5px -2px hsla(0, 0%, 0%, 0.25);
-  }
+  background: #20df80;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(0, 255, 128, 0.75);
 }
-input[type="radio"]#control_05:checked + label {
+input[type="radio"]:checked + label::after {
+  color: #3d3f43;
+  font-family: FontAwesome;
+  border: 2px solid #1dc973;
+  content: "\f00c";
+  font-size: 24px;
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
+}
+
+input[type="radio"]#control_03:checked + label {
   background: red;
   border-color: red;
 }
+
 p {
   font-weight: 900;
 }
@@ -159,6 +163,7 @@ p {
     flex-direction: column;
   }
 }
+
 
 
 </style>

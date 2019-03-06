@@ -2,40 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="587b909e-c3e2-4598-9069-91325317a33c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/user_agents.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/basic_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/body_base_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/body_theme1_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/body_theme2_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/body_theme3_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/body_theme5_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/theme_1_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/theme_2_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/theme_3_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/img/theme_5_bg.0.4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/static/novels/js/bookshelf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/md/admin_booshelf.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/dev_gunicorn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/dev_gunicorn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/redies/redisbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/redies/redisbase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetcher/decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/baidu_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/baidu_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/bing_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/bing_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/so_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/so_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/novels/js/content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/novels/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/novels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/novels/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/payment/payerInformation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/payment/payerInformation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/payment/paypal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/payment/paypal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/verification/verification.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/verification/verification.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/api_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/searchEngine_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/md_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/md_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/novels_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/novels_blueprint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/operate_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/operate_blueprint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/paypal_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/paypal_blueprint.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" afterDir="false" />
@@ -47,35 +21,38 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1551707729042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1551867142234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="545661314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="74" />
-          <entry key="project.open.time.0" value="9" />
-          <entry key="project.open.time.1" value="10" />
+          <entry key="project.closed" value="91" />
+          <entry key="project.open.time.0" value="10" />
+          <entry key="project.open.time.1" value="11" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.3" value="5" />
-          <entry key="project.open.time.4" value="19" />
-          <entry key="project.open.time.5" value="29" />
+          <entry key="project.open.time.3" value="8" />
+          <entry key="project.open.time.4" value="26" />
+          <entry key="project.open.time.5" value="33" />
           <entry key="project.open.time.6" value="3" />
-          <entry key="project.opened" value="76" />
+          <entry key="project.opened" value="92" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="JavaScript-modules-diagram//Users/finalYearProject/quickreading" value="2" />
           <entry key="Pipfile" value="13" />
-          <entry key="conf" value="9" />
+          <entry key="Python/#/Users/finalYearProject/quickreading/src" value="1" />
+          <entry key="Python/#/Users/finalYearProject/quickreading/src/views" value="1" />
+          <entry key="conf" value="11" />
           <entry key="css" value="18" />
           <entry key="gitignore" value="6" />
-          <entry key="html" value="184" />
-          <entry key="js" value="79" />
+          <entry key="html" value="200" />
+          <entry key="js" value="81" />
           <entry key="json" value="1" />
           <entry key="lock" value="13" />
           <entry key="png" value="9" />
-          <entry key="py" value="553" />
+          <entry key="py" value="582" />
           <entry key="ts" value="1" />
           <entry key="txt" value="2" />
         </counts>
@@ -83,31 +60,32 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="18" />
-          <entry key="HTML" value="184" />
+          <entry key="HTML" value="200" />
           <entry key="Image" value="9" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="79" />
-          <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="553" />
+          <entry key="JavaScript" value="81" />
+          <entry key="PLAIN_TEXT" value="33" />
+          <entry key="Python" value="581" />
           <entry key="TOML" value="12" />
           <entry key="TypeScript" value="1" />
+          <entry key="UML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Pipfile" value="1" />
           <entry key="dummy" value="110" />
-          <entry key="html" value="1512" />
+          <entry key="html" value="2428" />
           <entry key="js" value="262" />
-          <entry key="py" value="4455" />
+          <entry key="py" value="4877" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1512" />
+          <entry key="HTML" value="2428" />
           <entry key="JavaScript" value="262" />
           <entry key="PLAIN_TEXT" value="110" />
-          <entry key="Python" value="4455" />
+          <entry key="Python" value="4877" />
           <entry key="TOML" value="1" />
         </counts>
       </usages-collector>
@@ -116,19 +94,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/static/novels/js/main.js">
+        <entry file="file://$PROJECT_DIR$/src/templates/novels/content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
+            <state relative-caret-position="675">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/templates/novels/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="21" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/tools.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/userAdmin_blueprint.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1290">
+              <caret line="94" column="67" selection-start-line="94" selection-start-column="67" selection-end-line="94" selection-end-column="67" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templates/payment/paypal.html">
+        <entry file="file://$PROJECT_DIR$/src/views/operate_blueprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="126" column="33" lean-forward="true" selection-start-line="126" selection-start-column="33" selection-end-line="126" selection-end-column="33" />
+            <state relative-caret-position="35">
+              <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,8 +166,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -163,14 +189,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/run.py" />
         <option value="$PROJECT_DIR$/src/static/novels/js/register.js" />
         <option value="$PROJECT_DIR$/src/templates/novels/logout.html" />
         <option value="$PROJECT_DIR$/src/templates/novels/main.html" />
         <option value="$PROJECT_DIR$/src/templates/novels/search_bar.html" />
         <option value="$PROJECT_DIR$/src/static/novels/css/result.css" />
         <option value="$PROJECT_DIR$/src/templates/md/index.html" />
-        <option value="$PROJECT_DIR$/src/templates/novels/register.html" />
         <option value="$PROJECT_DIR$/src/static/novels/css/register.css" />
         <option value="$PROJECT_DIR$/src/views/paypal.py" />
         <option value="$PROJECT_DIR$/src/fetcher/cache.py" />
@@ -199,21 +223,23 @@
         <option value="$PROJECT_DIR$/src/templates/md/admin_bookmarks.html" />
         <option value="$PROJECT_DIR$/src/static/novels/js/bookshelf.js" />
         <option value="$PROJECT_DIR$/src/static/novels/js/content.js" />
-        <option value="$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html" />
         <option value="$PROJECT_DIR$/src/views/userinterface_blueprint.py" />
         <option value="$PROJECT_DIR$/src/views/__init__.py" />
         <option value="$PROJECT_DIR$/src/views/md_blueprint.py" />
         <option value="$PROJECT_DIR$/src/templates/md/admin_booshelf.html" />
         <option value="$PROJECT_DIR$/src/config/config.py" />
         <option value="$PROJECT_DIR$/src/views/novels_blueprint.py" />
-        <option value="$PROJECT_DIR$/src/templates/novels/index.html" />
-        <option value="$PROJECT_DIR$/src/views/operate_blueprint.py" />
-        <option value="$PROJECT_DIR$/src/views/paypal_blueprint.py" />
         <option value="$PROJECT_DIR$/src/templates/novels/content.html" />
-        <option value="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" />
         <option value="$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html" />
         <option value="$PROJECT_DIR$/src/static/novels/js/main.js" />
+        <option value="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" />
+        <option value="$PROJECT_DIR$/src/templates/payment/payerInformation.html" />
         <option value="$PROJECT_DIR$/src/templates/payment/paypal.html" />
+        <option value="$PROJECT_DIR$/src/views/operate_blueprint.py" />
+        <option value="$PROJECT_DIR$/src/views/paypal_blueprint.py" />
+        <option value="$PROJECT_DIR$/src/templates/novels/register.html" />
+        <option value="$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html" />
+        <option value="$PROJECT_DIR$/src/templates/novels/index.html" />
       </list>
     </option>
   </component>
@@ -229,17 +255,16 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="49" />
-    <option name="y" value="33" />
-    <option name="width" value="1377" />
-    <option name="height" value="823" />
+    <option name="x" value="51" />
+    <option name="y" value="37" />
+    <option name="width" value="1440" />
+    <option name="height" value="821" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -249,33 +274,13 @@
             </path>
             <path>
               <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="novels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="payment" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -309,6 +314,9 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.run">
+    <configuration name="payerInformation.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/quickreading/src/templates/payment/payerInformation.html">
+      <method v="2" />
+    </configuration>
     <configuration name="paypal.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/quickreading/src/templates/payment/paypal.html">
       <method v="2" />
     </configuration>
@@ -337,10 +345,12 @@
     <list>
       <item itemvalue="Python.run" />
       <item itemvalue="JavaScript Debug.paypal.html" />
+      <item itemvalue="JavaScript Debug.payerInformation.html" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
+        <item itemvalue="JavaScript Debug.payerInformation.html" />
         <item itemvalue="JavaScript Debug.paypal.html" />
       </list>
     </recent_temporary>
@@ -368,24 +378,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="33" width="1377" height="823" extended-state="0" />
-    <editor active="true" />
+    <frame x="51" y="37" width="1440" height="821" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27116105" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37124464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49517685" weight="0.3269494" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.82322097" visible="true" weight="0.22982216" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994528" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8164794" weight="0.45179856" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49962547" weight="0.39873418" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4985694" weight="0.32561308" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.17677903" side_tool="true" visible="true" weight="0.22982216" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.87116104" weight="0.16366158" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.13233191" side_tool="true" visible="true" weight="0.63374484" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.8676681" visible="true" weight="0.63374484" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49642345" weight="0.3251366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -401,145 +410,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/database/redies/redisbase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/user_agents.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/dev_gunicorn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/md/admin_bookmarks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-771">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/novels/css/content.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/chapter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/md/admin_booshelf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-726">
-          <caret line="13" column="70" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/md/is_login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetcher/novels_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetcher/response_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetcher/cache.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="109" column="34" selection-start-line="109" selection-start-column="26" selection-end-line="109" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetcher/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetcher/extract_novels.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-656">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="46" column="60" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/searchEngine_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="74" column="7" lean-forward="true" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/md_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="121" column="11" selection-start-line="121" selection-start-column="11" selection-end-line="121" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/static/novels/js/theme.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-303">
@@ -561,66 +431,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/userAdmin_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetcher/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/paypal_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/novels/logout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="42" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="97" selection-start-line="36" selection-start-column="97" selection-end-line="36" selection-end-column="97" />
         </state>
       </provider>
     </entry>
@@ -645,31 +459,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/novels/js/content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/novels/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="8" selection-start-line="23" selection-start-column="12" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/operate_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5295">
-          <caret line="371" column="30" selection-start-line="371" selection-start-column="30" selection-end-line="371" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/novels_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3945">
-          <caret line="275" column="34" selection-start-line="275" selection-start-column="34" selection-end-line="275" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -700,17 +493,337 @@
     <entry file="file://$PROJECT_DIR$/src/static/novels/img/theme_5_bg.0.4.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/database/redies/redisbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fetcher/cache.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2955">
+          <caret line="210" column="36" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fetcher/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/rules.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/dev_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/dev_gunicorn.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="57" column="50" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/searchEngine_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/novels_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3686">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/md_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="121" column="11" selection-start-line="121" selection-start-column="11" selection-end-line="121" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/static/novels/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
+        <state relative-caret-position="325">
+          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static/novels/js/content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2786">
+          <caret line="196" column="26" lean-forward="true" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/payment/payerInformation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="15" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/payment/paypal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="126" column="33" lean-forward="true" selection-start-line="126" selection-start-column="33" selection-end-line="126" selection-end-column="33" />
+        <state relative-caret-position="480">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/paypal_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17790">
+          <caret line="1197" selection-start-line="1197" selection-end-line="1197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="89" selection-start-line="23" selection-start-column="89" selection-end-line="23" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/chapter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/Users/finalYearProject/quickreading/src">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/Users/finalYearProject/quickreading/src</OriginalElement>
+          <nodes>
+            <node x="" y="">src.fetcher.novels_searchEngine.baidu_novels.BaiduNovels</node>
+            <node x="" y="">src.fetcher.response_base.ResponseCode</node>
+            <node x="" y="">object</node>
+            <node x="" y="">src.config.dev_config.DevConfig</node>
+            <node x="" y="">src.config.config.Config</node>
+            <node x="" y="">src.fetcher.novels_searchEngine.bing_novels.BingNovels</node>
+            <node x="" y="">src.database.mongodb.motorBase.MotorBaseOld</node>
+            <node x="" y="">src.fetcher.response_base.ResponseField</node>
+            <node x="" y="">src.fetcher.novels_searchEngine.so_novels.SoNovels</node>
+            <node x="" y="">src.database.redies.redisbase.RedisSession</node>
+            <node x="" y="">src.fetcher.response_base.ResponseReply</node>
+            <node x="" y="">src.fetcher.response_base.UniResponse</node>
+            <node x="" y="">src.database.mongodb.motorBase.PyMongoDb</node>
+            <node x="" y="">src.database.mongodb.motorBase.MotorBase</node>
+            <node x="" y="">src.fetcher.novels_searchEngine.base_novels.BaseNovels</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.618704600484262" x="1361.0" y="121.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//Users/finalYearProject/quickreading">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/src/templates/md/admin_bookmarks.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/md/admin_booshelf.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/chapter.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/content.html</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/mdui/gulpfile.js#autoprefixer#586;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#cleanCSS#867;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#concat#637;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#copy#1067;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#csscomb#676;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#csslint#717;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#del#950;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#fs#1011;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#gulp#478;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#header#547;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#jscs#758;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#jshint#793;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#less#832;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#mdui#2861;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#path#1037;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#rename#508;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#sourcemaps#1135;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#tap#978;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#uglify#911;/Users/finalYearProject/quickreading/node_modules/mdui/gulpfile.js#zip#1102;</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/index.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/main.html</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/mdui/modules.json</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/mdui/package.json</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/payment/paypal.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/register.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/novels/result.html</node>
+            <node x="" y="">$PROJECT_DIR$/src/templates/md/user_status.html</node>
+            <node x="" y="">/md/static/md/css/md.css</node>
+            <node x="" y="">/static/novels/img/login.png</node>
+            <node x="" y="">/static/novels/img/logout.png</node>
+            <node x="" y="">/static/novels/js/bookmarks.js</node>
+            <node x="" y="">/static/novels/js/bookshelf.js</node>
+            <node x="" y="">del</node>
+            <node x="" y="">fs</node>
+            <node x="" y="">gulp</node>
+            <node x="" y="">gulp-autoprefixer</node>
+            <node x="" y="">gulp-clean-css</node>
+            <node x="" y="">gulp-concat</node>
+            <node x="" y="">gulp-copy</node>
+            <node x="" y="">gulp-csscomb</node>
+            <node x="" y="">gulp-csslint</node>
+            <node x="" y="">gulp-header</node>
+            <node x="" y="">gulp-jscs</node>
+            <node x="" y="">gulp-jshint</node>
+            <node x="" y="">gulp-less</node>
+            <node x="" y="">gulp-rename</node>
+            <node x="" y="">gulp-sourcemaps</node>
+            <node x="" y="">gulp-tap</node>
+            <node x="" y="">gulp-uglify</node>
+            <node x="" y="">gulp-zip</node>
+            <node x="" y="">https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js</node>
+            <node x="" y="">https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css</node>
+            <node x="" y="">https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js</node>
+            <node x="" y="">https://s19.cnzz.com/z_stat.php?id=1262602051&amp;web_id=1262602051</node>
+            <node x="" y="">https://www.paypalobjects.com/api/checkout.js</node>
+            <node x="" y="">path</node>
+            <node x="" y="">static/novels/css/chapter.css</node>
+            <node x="" y="">static/novels/css/content.css</node>
+            <node x="" y="">static/novels/css/index.css</node>
+            <node x="" y="">static/novels/css/main.css</node>
+            <node x="" y="">static/novels/css/register.css</node>
+            <node x="" y="">static/novels/css/result.css</node>
+            <node x="" y="">static/novels/img/favicon.ico</node>
+            <node x="" y="">static/novels/js/bookmarks.js</node>
+            <node x="" y="">static/novels/js/bookshelf.js</node>
+            <node x="" y="">static/novels/js/chapter.js</node>
+            <node x="" y="">static/novels/js/content.js</node>
+            <node x="" y="">static/novels/js/main.js</node>
+            <node x="" y="">static/novels/js/register.js</node>
+            <node x="" y="">static/novels/js/theme.js</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.46686303387334316" x="760.0" y="669.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/Users/finalYearProject/quickreading/src/views/operate_blueprint.py">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/Users/finalYearProject/quickreading/src/views/operate_blueprint.py</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="573.0" y="317.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#/Users/finalYearProject/quickreading/src/views">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement>#/Users/finalYearProject/quickreading/src/views</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="573.0" y="317.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/tools.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/userAdmin_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="94" column="67" selection-start-line="94" selection-start-column="67" selection-end-line="94" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/operate_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="191" column="37" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
