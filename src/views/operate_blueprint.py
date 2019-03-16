@@ -57,109 +57,109 @@ BODY_HTML = """
 <html>
 <head>
 <style>
-@page {
+@page {{
     size: A4 portrait;
     margin: 70pt 60pt 70pt;
 
-    @top-center {
+    @top-center {{
         /* Yes, you can use an image here - exactly like a background-image rule*/
         content: url(../images/headerlogos.png);
 
         /* and you can move it around 
         margin-top: 20pt;
         */
-    }
+    }}
 
-    @bottom-left {
+    @bottom-left {{
         content: string(footerContent);
         font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
-    }
+    }}
 
-    @bottom-right {
+    @bottom-right {{
         content: "Page " counter(page) " of " counter(pages);
         font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
-    }
-}
+    }}
+}}
 
-@media screen {
-  body {
+@media screen {{
+  body {{
     font: 9.85pt/135% 'Cambria', serif;
-  }
+  }}
 
-  h1.footer-content {
+  h1.footer-content {{
     line-height: 150%;
-  }
+  }}
 
-  header:after {
+  header:after {{
       content: "";
       clear: both;
       display: table;
-  }
+  }}
 
   header address, 
   header .date, 
-  header .letter-reference {
+  header .letter-reference {{
       text-align: right;
-  }
+  }}
 
   /* Style any address like elements to be block */
   header address *, 
   header .date, 
   header .letter-reference,
-  header > [class*="address-"] > span {
+  header > [class*="address-"] > span {{
       display: block;
-  }
+  }}
 
   header address .email, 
   header .date, 
-  header .letter-reference {
+  header .letter-reference {{
       margin-top: 9.85pt;
-  }
+  }}
 
-  header address {
+  header address {{
       /* Two options here - if it's only got one side to it, don't bother floating it.
       width: 4.5cm;*/
       float: right;
       width: 100%;
       font-style: normal;
-  }
+  }}
 
   /* This is what to change if the address is not visible in the window */
-  header .address-recipient {
+  header .address-recipient {{
       float: left;
       margin-top: -2cm;
-  }
+  }}
 
-  section main p:nth-child(2) {
+  section main p:nth-child(2) {{
       font-weight: bold;
-  }
+  }}
 
 
-  .signature {
+  .signature {{
       height: 50pt;
-  }
+  }}
 
-  .headerLogo, .footerLogo {
+  .headerLogo, .footerLogo {{
       max-width: 6cm;
       height: auto;
       max-height: 2cm;
-  }
+  }}
 
 /* This gives the user an idea of what the page will look like prior to the print preview */
-    *, *:before, *:after {box-sizing: border-box;}
-    body {
+    *, *:before, *:after {{box-sizing: border-box;}}
+    body {{
         background-color: #cecece;
-    }
+    }}
 
-    .wrapper {
+    .wrapper {{
         width: 80%;
         max-width: 780px;
         margin: 0 auto;
 
-    }
+    }}
 
     /* Each section is a letter */
-    section {
+    section {{
         display: flex;
         flex-direction: column;        
         background-color: white;
@@ -169,45 +169,45 @@ BODY_HTML = """
         padding: 20px 30px 20px;
         margin: 10px 1%;
         box-shadow: 0 0 5px 5px #bababa;
-    }
+    }}
 
-    section footer {
+    section footer {{
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-    }
+    }}
 
     /* Stick it to the bottom of the page no matter what - margin-top auto pushes it down. */
-    section footer .pageFooter {
+    section footer .pageFooter {{
         margin-top: auto;
-    }
-}
+    }}
+}}
 
-@media print {
-  .noPrint {
+@media print {{
+  .noPrint {{
     display: none;
-  }
+  }}
 
   /* Force a page break after every section or w/e element you want. */
-  section:not(:last-of-type) footer {
+  section:not(:last-of-type) footer {{
       page-break-after: always;
       /* counter-reset: page pages; */
-  }
+  }}
 
-  .footer-content {
+  .footer-content {{
       string-set: footerContent content();
       display: none;
-  }
-}
+  }}
+}}
 
-.penNote {
+.penNote {{
   font-family: monospace;
   background-color: #fff699;
   width: 400px;
   padding: 10px;
   margin: 0 auto;
   box-shadow: 0 0 4px 4px #bbb;
-}
+}}
 </style>
 </head>
 <body>
@@ -226,7 +226,7 @@ BODY_HTML = """
             </p>
         </header>
         <main>
-            <p>Dear User</p>
+            <p>Dear {User}</p>
             <p>You have already register your account in our quick reading website. You can login and enjoy the reading</p>
             <p>Proin dapibus sapien a lacus cursus varius. Curabitur non ornare ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi ut egestas diam, sit amet dignissim mi. Vestibulum vel augue nisi. Suspendisse potenti. Quisque volutpat, nisl non bibendum cursus, neque sapien euismod quam, in hendrerit enim sem non diam.</p>
             <p>Integer lacinia est ac tortor facilisis vulputate. Donec euismod ornare lectus, at pharetra est facilisis eu. Pellentesque nisl sapien, sollicitudin eget ipsum sit amet, porttitor pulvinar quam. Phasellus sit amet nulla sed magna mollis viverra. Etiam aliquet malesuada eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin non purus et urna congue convallis eu ut arcu. Suspendisse lorem urna, auctor eget massa quis, tempor dictum lorem. Integer sed volutpat lorem. Nulla blandit auctor metus tincidunt bibendum. Nam vitae lorem at nunc dapibus sagittis. Donec nec nunc auctor, fermentum sem in, accumsan diam. Fusce leo dolor, euismod sit amet enim nec, pretium bibendum lacus.</p>
@@ -251,6 +251,7 @@ BODY_HTML = """
 </body>
 </html>
             """
+
 
 
 @operate_bp.listener('before_server_start')
@@ -444,7 +445,7 @@ async def owllook_register(request):
                 # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
 
                 # Record the MIME types of both parts - text/plain and text/html.
-                part2 = MIMEText(BODY_HTML, 'html')
+                part2 = MIMEText(BODY_HTML.format(User=user), 'html')
 
                 # Attach parts into message container.
                 # According to RFC 2046, the last part of a multipart message, in this case
@@ -581,7 +582,7 @@ async def owllook_delete_book(request):
             motor_db = motor_base.get_db()
             await motor_db.user_message.update_one({'user': user},
                                                    {'$pull': {'books_url': {"book_url": unquote(book_url)}}})
-            LOGGER.info('删除书架成功')
+            LOGGER.info('You have deleted bookshelf')
             return json({'status': 1})
         except Exception as e:
             LOGGER.exception(e)

@@ -88,6 +88,7 @@ async def bookshelf(request):
                     dateNow = datetime.now()
                     date_vip = datetime.strptime(str(become_vip_time), "%Y-%m-%d %H:%M:%S")
                     days = (dateNow - date_vip).days
+                    print("You have enjoy vip days:")
                     print(days)
                     if become_vip_time != "" and days < vip_duration:
                         try:

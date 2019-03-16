@@ -30,7 +30,7 @@ var userStatus = {
         var owllook_user = $("#owllook_user").val();
         var owllook_pass = $("#owllook_pass").val();
         if (owllook_user == "" || owllook_pass == "") {
-            alert('不能有内容为空');
+            alert('Content can be empty');
         } else {
             var login_pd = {'user': owllook_user, 'pwd': owllook_pass};
             $.ajax({
@@ -44,10 +44,10 @@ var userStatus = {
                         window.location.reload()
                     }
                     if (data.status == -1) {
-                        alert('用户名错误');
+                        alert('User name wrong');
                     }
                     if (data.status == -2) {
-                        alert('密码错误');
+                        alert('Password wrong');
                     }
                 }
             });

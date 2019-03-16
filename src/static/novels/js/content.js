@@ -236,30 +236,6 @@ $(document).ready(function () {
         return true;
     });
 
-    // (function(){
-    // 	var startX,startY,endX,endY;
-    // 	var el = document.querySelector("body");
-    // 	//获取点击开始的坐标
-    // 	el.addEventListener("touchstart", function (e){
-    // 		startX = e.touches[0].pageX;
-    // 		startY = e.touches[0].pageY;
-    // 	});
-    // 	//获取点击结束后的坐标
-    // 	el.addEventListener("touchend", function(e){
-    // 		endX = e.changedTouches[0].pageX;
-    // 		endY = e.changedTouches[0].pageY;
-    // 		var x = (endX - startX);
-    // 		var y = (endY - startY);
-    // 		if(Math.abs(x/y)>5&&Math.abs(x)>30){
-    // 			if(x<0){
-    // 				page_btn_next.click();
-    // 			}else{
-    // 				page_btn_pre.click();
-    // 			}
-    // 		}
-    //
-    // 	});
-    // })();
 });
 
 

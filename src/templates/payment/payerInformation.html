@@ -215,11 +215,18 @@ input:checked + .slider:before {
   <div class="divider"></div>
 </div>
 <div class="switch-theme">
-    {%for item in result%}
+{%for item in result%}
+    {%if item.expireDate%}
     <div>User name :         {{item.userName}}</div>
     <div>User email :        {{item.userEmial}}</div>
-    <div>VIP Starting date : {{item.user_become_vip_time}}</div>
+    <div>VIP Starting Date : {{item.user_become_vip_time}}</div>
     <div>VIP duration :      {{item.userVIPDuartion}}</div>
+    <div>VIP Expire   Date : {{item.expireDate}}</div>
+    {%else%}
+    <div>User name :         {{item.userName}}</div>
+    <div>User email :        {{item.userEmial}}</div>
+    <div>WOW:{{item.warning_message}}</div>
+    {%endif%}
 {%endfor%}
     <div>
     <p>Change theme</p>

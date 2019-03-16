@@ -30,7 +30,7 @@ $(document).ready(function () {
                         $('#owllook_book').removeClass('add-color');
                     }
                     if (data.status == -1) {
-                        alert('您还没有登录');
+                        alert('You should login');
                     }
                 }
             });
@@ -106,12 +106,13 @@ $(document).ready(function () {
             });
         }
     });
+
     // login
     $("#owllook_login").click(function () {
         var owllook_user = $("#owllook_user").val();
         var owllook_pass = $("#owllook_pass").val();
         if (owllook_user == "" || owllook_pass == "") {
-            alert('不能有内容为空');
+            alert('Content should not be NULL!!!');
         } else {
             var login_pd = {'user': owllook_user, 'pwd': owllook_pass};
             $.ajax({
@@ -125,10 +126,10 @@ $(document).ready(function () {
                         location.reload();
                     }
                     if (data.status == -1) {
-                        alert('用户名错误');
+                        alert('User name wrong');
                     }
                     if (data.status == -2) {
-                        alert('密码错误');
+                        alert('Password wrong');
                     }
                 }
             });
