@@ -3,18 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="587b909e-c3e2-4598-9069-91325317a33c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/md/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/md/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/novels/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/result.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/novels/css/result.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/bookshelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/novels/js/bookshelf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/novels/js/content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/novels/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/novels/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/novels/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/novels/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/templates/payment/payerInformation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/payment/payerInformation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/payment/paypal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/payment/paypal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/operate_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/operate_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/paypal_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/paypal_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,21 +16,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1552565551004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1553026425726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="545661314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="102" />
+          <entry key="project.closed" value="103" />
           <entry key="project.open.time.0" value="11" />
           <entry key="project.open.time.1" value="11" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="9" />
-          <entry key="project.open.time.4" value="29" />
+          <entry key="project.open.time.4" value="30" />
           <entry key="project.open.time.5" value="37" />
           <entry key="project.open.time.6" value="5" />
-          <entry key="project.opened" value="103" />
+          <entry key="project.opened" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -46,15 +39,15 @@
           <entry key="Pipfile" value="13" />
           <entry key="Python/#/Users/finalYearProject/quickreading/src" value="1" />
           <entry key="Python/#/Users/finalYearProject/quickreading/src/views" value="1" />
-          <entry key="conf" value="14" />
+          <entry key="conf" value="16" />
           <entry key="css" value="24" />
           <entry key="gitignore" value="6" />
-          <entry key="html" value="243" />
-          <entry key="js" value="99" />
+          <entry key="html" value="263" />
+          <entry key="js" value="101" />
           <entry key="json" value="1" />
           <entry key="lock" value="13" />
           <entry key="png" value="9" />
-          <entry key="py" value="608" />
+          <entry key="py" value="628" />
           <entry key="ts" value="1" />
           <entry key="txt" value="2" />
         </counts>
@@ -62,12 +55,12 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="24" />
-          <entry key="HTML" value="243" />
+          <entry key="HTML" value="263" />
           <entry key="Image" value="9" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="99" />
-          <entry key="PLAIN_TEXT" value="36" />
-          <entry key="Python" value="607" />
+          <entry key="JavaScript" value="101" />
+          <entry key="PLAIN_TEXT" value="38" />
+          <entry key="Python" value="627" />
           <entry key="TOML" value="12" />
           <entry key="TypeScript" value="1" />
           <entry key="UML" value="5" />
@@ -77,17 +70,17 @@
         <counts>
           <entry key="Pipfile" value="1" />
           <entry key="dummy" value="110" />
-          <entry key="html" value="2664" />
+          <entry key="html" value="2794" />
           <entry key="js" value="458" />
-          <entry key="py" value="5157" />
+          <entry key="py" value="5561" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2664" />
+          <entry key="HTML" value="2794" />
           <entry key="JavaScript" value="458" />
           <entry key="PLAIN_TEXT" value="110" />
-          <entry key="Python" value="5157" />
+          <entry key="Python" value="5561" />
           <entry key="TOML" value="1" />
         </counts>
       </usages-collector>
@@ -95,74 +88,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/templates/novels/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="83">
+              <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/payment/payerInformation.html">
+        <entry file="file://$PROJECT_DIR$/src/views/operate_blueprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/templates/payment/paypal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="237">
+              <caret line="478" column="87" selection-start-line="478" selection-start-column="87" selection-end-line="478" selection-end-column="87" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html">
+        <entry file="file://$PROJECT_DIR$/src/views/paypal_blueprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="66" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="66" />
+            <state relative-caret-position="1861">
+              <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="239" />
+              <folding>
+                <element signature="e#0#27#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/novels/result.html">
+        <entry file="file://$PROJECT_DIR$/src/views/userAdmin_blueprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/templates/novels/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/static/novels/css/register.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="80" selection-end-column="1" />
+            <state relative-caret-position="196">
+              <caret line="89" column="35" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,7 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/templates/novels/logout.html" />
         <option value="$PROJECT_DIR$/src/templates/novels/main.html" />
         <option value="$PROJECT_DIR$/src/templates/novels/search_bar.html" />
         <option value="$PROJECT_DIR$/src/templates/md/index.html" />
@@ -237,17 +202,18 @@
         <option value="$PROJECT_DIR$/src/static/novels/js/content.js" />
         <option value="$PROJECT_DIR$/src/static/novels/js/main.js" />
         <option value="$PROJECT_DIR$/src/static/md/js/index.js" />
-        <option value="$PROJECT_DIR$/src/views/operate_blueprint.py" />
-        <option value="$PROJECT_DIR$/src/views/paypal_blueprint.py" />
         <option value="$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html" />
-        <option value="$PROJECT_DIR$/src/templates/payment/payerInformation.html" />
         <option value="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" />
         <option value="$PROJECT_DIR$/src/static/novels/js/bookshelf.js" />
         <option value="$PROJECT_DIR$/src/templates/novels/login.html" />
         <option value="$PROJECT_DIR$/src/static/novels/css/register.css" />
         <option value="$PROJECT_DIR$/src/static/novels/css/result.css" />
-        <option value="$PROJECT_DIR$/src/templates/novels/register.html" />
         <option value="$PROJECT_DIR$/src/templates/payment/paypal.html" />
+        <option value="$PROJECT_DIR$/src/templates/novels/result.html" />
+        <option value="$PROJECT_DIR$/src/templates/payment/payerInformation.html" />
+        <option value="$PROJECT_DIR$/src/views/paypal_blueprint.py" />
+        <option value="$PROJECT_DIR$/src/views/operate_blueprint.py" />
+        <option value="$PROJECT_DIR$/src/templates/novels/register.html" />
       </list>
     </option>
   </component>
@@ -263,8 +229,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="45" />
-    <option name="y" value="38" />
+    <option name="x" value="26" />
+    <option name="y" value="27" />
     <option name="width" value="1370" />
     <option name="height" value="803" />
   </component>
@@ -273,7 +239,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -290,19 +255,26 @@
               <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-              <item name="verification" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="novels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
+              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,14 +372,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="45" y="38" width="1370" height="803" extended-state="0" />
+    <frame x="26" y="27" width="1370" height="803" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21009035" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21310242" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49517685" weight="0.3269494" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.810241" weight="0.4177215" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.80948794" weight="0.302391" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49924698" weight="0.39803094" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -415,7 +388,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.18975903" side_tool="true" visible="true" weight="0.4177215" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.19051205" side_tool="true" visible="true" weight="0.302391" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.8669528" weight="0.63374484" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49642345" weight="0.3251366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -432,36 +405,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/tools.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/searchEngine_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/novels/js/content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3555">
-          <caret line="237" selection-start-line="237" selection-end-line="237" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/novels/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="131" column="45" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/static/novels/js/theme.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -506,45 +449,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/chapter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/novels/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/operate_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="429" column="20" selection-start-line="429" selection-start-column="16" selection-end-line="429" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="57" column="50" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/userAdmin_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2233">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -555,20 +463,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/database/redies/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/paypal_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="260" column="73" lean-forward="true" selection-start-line="260" selection-start-column="73" selection-end-line="260" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/novels_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="187" column="34" lean-forward="true" selection-start-line="187" selection-start-column="34" selection-end-line="187" selection-end-column="34" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/config/dev_gunicorn.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -601,13 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fetcher/function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fetcher/novels_tools.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -625,24 +512,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/novels/js/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/md/is_login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="810">
           <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -676,17 +549,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/register.html">
+    <entry file="file://$PROJECT_DIR$/src/static/novels/css/register.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="31" />
+        <state>
+          <caret selection-end-line="80" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/payment/payerInformation.html">
+    <entry file="file://$PROJECT_DIR$/src/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret selection-end-line="1" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="72" column="15" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -697,45 +582,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/result.html">
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/chapter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="7" />
+        <state relative-caret-position="83">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html">
+    <entry file="file://$PROJECT_DIR$/src/views/searchEngine_blueprint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="915">
+          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/templates/novels/main.html">
+    <entry file="file://$PROJECT_DIR$/src/views/md_blueprint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        <state relative-caret-position="408">
+          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/static/novels/css/register.css">
+    <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/static/novels/js/register.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="80" selection-end-column="1" />
+        <state relative-caret-position="96">
+          <caret line="31" column="52" lean-forward="true" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/verification/verification.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state relative-caret-position="266">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/payment/payerInformation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="114" column="10" lean-forward="true" selection-start-line="114" selection-start-column="10" selection-end-line="114" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/payment/paypal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="1590">
+          <caret line="106" column="1" lean-forward="true" selection-start-line="106" selection-start-column="1" selection-end-line="106" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/search_bar.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fetcher/function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/novels_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="66" column="28" lean-forward="true" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/userAdmin_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="89" column="35" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/paypal_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1861">
+          <caret line="239" lean-forward="true" selection-start-line="239" selection-end-line="239" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/operate_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="478" column="87" selection-start-line="478" selection-start-column="87" selection-end-line="478" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/templates/novels/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="15" column="81" selection-start-line="15" selection-start-column="81" selection-end-line="15" selection-end-column="81" />
         </state>
       </provider>
     </entry>

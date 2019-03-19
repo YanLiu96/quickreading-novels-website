@@ -94,7 +94,7 @@ body.light-theme .divider {
   bottom: 300px;
   left: 550px;
   color: whitesmoke;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .switch {
@@ -214,7 +214,8 @@ input:checked + .slider:before {
   <div class="block" data-num="59"></div>
   <div class="divider"></div>
 </div>
-<div class="switch-theme">
+
+<div class="switch-theme" style="align-content: center">
 {%for item in result%}
     {%if item.expireDate%}
     <div>User name :         {{item.userName}}</div>
@@ -234,7 +235,9 @@ input:checked + .slider:before {
   <label class="switch">
     <input type="checkbox" onchange="changeTheme(event)"/><span class="slider"></span>
   </label>
+   <p><a href="/" style="color: whitesmoke" class="back_button">Back homepage</a></p>
 </div>
+
 </body>
 <script>
 const numbers = [
