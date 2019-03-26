@@ -371,7 +371,9 @@ async def quickreading_login(request):
                 # response.cookies['user']['httponly'] = True
                 # response = json({'status': 1})
                 # response.cookies['user'] = user
+                return response
 
+                '''
                 # 验证是否需要续费
                 userName = data.get("user")
                 userEmial = data.get("email")
@@ -415,6 +417,9 @@ async def quickreading_login(request):
                     else:
                         print("Email sent!")
                     return response
+                else:
+                    return response
+                '''
             else:
                 return json({'status': -2})
         return json({'status': -1})
