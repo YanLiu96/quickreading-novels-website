@@ -6,7 +6,7 @@ from sanic import Blueprint
 from sanic.response import html, text, redirect
 
 from src.database.mongodb import MotorBase
-from src.fetcher.cache import get_the_latest_chapter, cache_others_search_ranking
+from src.fetcher.cache import get_the_latest_chapter, cache_search_ranking
 from src.config import RULES, LOGGER, REPLACE_RULES, ENGINE_PRIORITY, CONFIG
 
 md_bp = Blueprint('rank_blueprint', url_prefix='md')
@@ -125,3 +125,19 @@ async def books(request):
             return redirect('/')
     else:
         return redirect('/')
+
+
+@md_bp.route("/")
+async def index(request):
+    user = request['session'].get('user', None)
+    novels_head = ['#', 'Novel Name', 'Search Record']
+    first_type_title = "Searching Rank"
+    first_type = []
+    search_ranking = await cache_search_ranking()
+    if user:
+        return template('index.html', title='QuickReading', is_login=1, user=user, search_ranking=search_ranking,
+                        first_type=first_type, first_type_title=first_type_title, novels_head=novels_head, is_owl=1)
+    else:
+        return template('index.html', title='QuickReading', is_login=0, search_ranking=search_ranking, first_type=first_type,
+                        first_type_title=first_type_title, novels_head=novels_head, is_owl=1)
+

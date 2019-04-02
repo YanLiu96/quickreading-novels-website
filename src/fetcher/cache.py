@@ -81,26 +81,19 @@ async def cache_novels_chapter(url, netloc):
     return None
 
 
-@cached(ttl=10800, key_from_attr='search_ranking', serializer=JsonSerializer(), namespace="ranking")
+@cached(ttl=300, key_from_attr='search_ranking', serializer=JsonSerializer(), namespace="ranking")
 async def cache_search_ranking():
     motor_db = MotorBase().get_db()
     keyword_cursor = motor_db.search_records.find(
-        {'count': {'$gte': 50}},
+        {'count': {'$gte': 5}},
         {'keyword': 1, 'count': 1, '_id': 0}
-    ).sort('count', -1).limit(35)
+    ).sort('count', -1).limit(40)
     result = []
     index = 1
     async for document in keyword_cursor:
         result.append({'keyword': document['keyword'], 'count': document['count'], 'index': index})
         index += 1
     return result
-
-
-@cached(ttl=3600, key_from_attr='search_ranking', serializer=JsonSerializer(), namespace="ranking")
-async def cache_others_search_ranking(spider='qidian', novel_type='全部类别'):
-    motor_db = MotorBase().get_db()
-    item_data = await motor_db.novels_ranking.find_one({'spider': spider, 'type': novel_type}, {'data': 1, '_id': 0})
-    return item_data
 
 
 async def get_the_latest_chapter(chapter_url, timeout=15):

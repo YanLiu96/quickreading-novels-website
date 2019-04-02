@@ -1,0 +1,54 @@
+{% extends "main.html" %}
+{% block header %}
+<title>{{ title }} - Searching rank in this website</title>
+<link rel="stylesheet" href="/md/static/md/css/md.css">
+{% endblock %}
+
+{% block content %}
+<body class="mdui-appbar-with-toolbar">
+<div class="mdui-container">
+    <div class="mdui-typo" style="margin-top: 3%">
+        <div class="mdui-chip">
+            <a href="/"><span class="rank-list mdui-chip-title">QuickReading</span></a>
+        </div>
+    </div>
+    <div class="mdui-divider" style="margin-top: 1%;"></div>
+    <div class="mdui-typo" style="margin-top: 1%">
+        <div class="mdui-chip">
+            {% if is_owl %}
+            <span class="mdui-chip-title mdui-text-color-red">{{first_type_title}}</span>
+            {% else %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 2%"></div>
+
+    <div class="mdui-table-fluid">
+        {% if is_owl %}
+        <table class="mdui-table" style="margin-bottom: 50px;">
+            <thead>
+            <tr align="center">
+                {%for each_head in novels_head%}
+                <th>{{each_head}}</th>
+                {%endfor%}
+            </tr>
+            </thead>
+            <tbody>
+            {%for each_ranking in search_ranking%}
+            <tr>
+                <td>{{each_ranking.index}}</td>
+                <td><a href="/search?wd={{each_ranking.keyword}}" target="_blank">{{each_ranking.keyword}}</a></td>
+                <td>{{each_ranking.count}}</td>
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+        {% else %}
+        {% endif %}
+    </div>
+</div>
+</body>
+{% endblock %}
+{% block script %}
+{% endblock %}

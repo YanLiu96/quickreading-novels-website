@@ -10,7 +10,7 @@ from src.config import ENGINE_PRIORITY, CONFIG, LOGGER, RULES, REPLACE_RULES
 from src.fetcher.function import get_time, get_netloc
 from src.fetcher.novels_tools import get_novels_info
 from src.utils import ver_question
-from src.fetcher.cache import cache_novels_content, cache_novels_chapter
+from src.fetcher.cache import cache_novels_content, cache_novels_chapter, cache_search_ranking
 
 novels_bp = Blueprint('novels_blueprint')
 novels_bp.static('/static/novels', CONFIG.BASE_DIR + '/static/novels')
@@ -41,10 +41,13 @@ def template(tpl, **kwargs):
 @novels_bp.route("/")
 async def index(request):
     user = request['session'].get('user', None)
+    search_ranking = await cache_search_ranking()
     if user:
-        return template('index.html', title='quick reading - search and enjoy', is_login=1, user=user)
+        return template('index.html', title='quick reading - search and enjoy', is_login=1, user=user,
+                        search_ranking=search_ranking[:25])
     else:
-        return template('index.html', title='quick reading - search and enjoy', is_login=0)
+        return template('index.html', title='quick reading - search and enjoy', is_login=0,
+                        search_ranking=search_ranking[:25])
 
 
 @novels_bp.route("/register")
@@ -136,7 +139,6 @@ async def quickreading_search(request):
                 res = await motor_db.user_message.update_one({'user': user},
                                                              {'$set': {'last_update_time': time_current}},
                                                              upsert=True)
-                # 此处语法操作过多  下次看一遍mongo再改
                 if res:
                     is_ok = await motor_db.user_message.update_one(
                         {'user': user, 'search_records.keyword': {'$ne': novels_keyword}},

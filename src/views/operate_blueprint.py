@@ -359,7 +359,7 @@ async def quickreading_login(request):
             password = hashlib.md5(pass_first.encode("utf-8")).hexdigest()
             if password == data.get('password'):
                 response = json({'status': 1})
-                # 将session_id存于cokies
+                # 将session_id存于cookies
                 date = datetime.datetime.now()
                 response.cookies['quickReading_cookie'] = request['session'].sid
                 response.cookies['quickReading_cookie']['expires'] = date + datetime.timedelta(days=30)
