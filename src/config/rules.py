@@ -33,7 +33,7 @@ RESOURCE_DOMAIN = ['www.17k.com', 'mm.17k.com', 'www.xs8.cn', 'www.zongheng.com'
                    "www.yaojingweiba.com", "www.qb5200.com", "www.520tingshu.com", "www.567zw.com", "www.zjrxz.com",
                    "v.qq.com", "blog.sina.com.cn", "www.hackhome.com", "news.fznews.com.cn", "www.jingyu.com",
                    "news.so.com", "www.sodu3.com", "vipreader.qidian.com", "www.mozhua9.com", "www.iqiyi.com",
-                   "xs.sogou.com", "www.novel.tingroom.com"]
+                   "xs.sogou.com", "www.novel.tingroom.com", "www.allnovel.net"]
 
 REPLACE_RULES = {
     "www.miaobige.com": {
@@ -63,7 +63,7 @@ REPLACE_RULES = {
 }
 
 
-ENGINE_PRIORITY = ['360', 'baidu', 'bing']
+ENGINE_PRIORITY = ['bing', '360', 'baidu']
 
 Rules = namedtuple('Rules', 'content_url chapter_selector content_selector')
 LatestRules = namedtuple('LatestRules', 'plan meta_value selector')
@@ -76,6 +76,7 @@ PLAN_01 = LatestRules(
 )
 
 LATEST_RULES = {
+   # "www.allnovel.net": PLAN_01,
     "www.biqugex.com": PLAN_01,
     "www.x23us.com": PLAN_01,
     "www.23us.la": PLAN_01,
@@ -201,7 +202,8 @@ RULES = {
     # 'www.biqule.com': Rules('www.biqule.com', {'class': 'box_con'},{}),
     # 'www.lingdiankanshu.com': Rules('www.lingdiankanshu.com', {'class': 'box_con'}, {}),
     # 'www.hhlwx.com': Rules('www.hhlwx.co', {'class': 'chapterlist'},{}),
-
+    # 已解析
+    'www.allnovel.net': Rules('0', {'class': 'list-page-novel'}, {'class': 'content_novel'}),
     'www.novel.tingroom.com': Rules('0', {'class': 'box1'}, {''}),
     'www.biquwu.cc': Rules('https://www.biquwu.cc/', {'class': 'box_con'}, {'id': 'content'}),
     # 已解析

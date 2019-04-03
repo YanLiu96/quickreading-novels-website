@@ -13,7 +13,7 @@
 <div class="mdui-table-fluid">
     <table class="mdui-table" style="margin-bottom: 2px;">
     {%for item in result%}
-        {%if item.expireDate%}
+        {%if item.role=="Admin"%}
         <tbody>
         <tr>
             <td>User name</td>
@@ -24,7 +24,30 @@
             <td>User email</td>
             <td>{{item.userEmial}}</td>
         </tr>
+        <tr>
+            <td>Role</td>
+            <td>{{item.role}}</td>
+        </tr>
+       <tr>
+            <td>Message</td>
+            <td>{{item.admin_message}}</td>
+        </tr>
+        </tbody>
+        {%elif item.role=="VIP User"%}
+        <tbody>
+        <tr>
+            <td>User name</td>
+            <td>{{item.userName}}</td>
+        </tr>
 
+        <tr>
+            <td>User email</td>
+            <td>{{item.userEmial}}</td>
+        </tr>
+        <tr>
+            <td>Role</td>
+            <td>{{item.role}}</td>
+        </tr>
         <tr>
             <td>Vip start date</td>
             <td>{{item.user_become_vip_time}}</td>
@@ -39,7 +62,6 @@
             <td>Vip expire date</td>
             <td>{{item.expireDate}}</td>
         </tr>
-
         </tbody>
         {%else%}
         <tbody>
@@ -52,7 +74,10 @@
             <td>User email</td>
             <td>{{item.userEmial}}</td>
         </tr>
-
+        <tr>
+            <td>Role</td>
+            <td>{{item.role}}</td>
+        </tr>
         <tr>
             <td>Sorry</td>
             <td>{{item.warning_message}}</td>

@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% block header %}
+<meta charset="UTF-8">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css" rel="stylesheet">
+
+<title>{{ title }}</title>
+<link rel="stylesheet" href="/md/static/md/css/md.css">
+{% endblock %}
+
+{% block content %}
+<body class="mdui-appbar-with-toolbar">
+<div class="mdui-container">
+    <div class="mdui-typo" style="margin-top: 3%">
+        <div class="mdui-chip">
+            <a href="/"><span class="rank-list mdui-chip-title">QuickReading</span></a>
+        </div>
+    </div>
+    <div class="mdui-divider" style="margin-top: 1%;"></div>
+    <div class="mdui-typo" style="margin-top: 1%">
+    </div>
+
+    <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 2%"></div>
+
+    <div class="mdui-table-fluid">
+        {% if is_admin %}
+        <table class="mdui-table" style="margin-bottom: 50px;">
+            <thead>
+            <tr align="center">
+                {%for each_head in head%}
+                <th>{{each_head}}</th>
+                {%endfor%}
+            </tr>
+            </thead>
+            <tbody>
+            {%for each_user in alluser%}
+            <tr>
+                <td>{{each_user.user}}</td>
+                <td>{{each_user.email}}</td>
+                <td>{{each_user.role}}</td>
+                <td>Delete</td>
+            </tr>
+            {%endfor%}
+            </tbody>
+        </table>
+        {% else %}
+        {% endif %}
+    </div>
+</div>
+</body>
+{% endblock %}
+{% block script %}
+{% endblock %}

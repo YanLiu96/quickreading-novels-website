@@ -32,8 +32,6 @@ SUBJECT = 'Becoming VIP successfully'
 
 # The email body for recipients with non-HTML email clients.
 
-
-
 paypalrestsdk.configure({
   "mode": "sandbox", # sandbox or live
   "client_id": "AaF3e62lDn44mSmuWdc9g4jLwyWVkow22M24mHMak57LzGM76BJ1AUCdkJu3XDR342U8eo5ldkaHY998",
@@ -200,6 +198,7 @@ async def execute(request):
                                                      upsert=True)
                 if res:
                     await motor_db.user.update_one({'user': user}, {'$set': {'vip_duration': 30}}, upsert=True)
+                    await motor_db.user.update_one({'user': user}, {'$set': {'role': "VIP User"}}, upsert=True)
                     LOGGER.info('VIP information have store in database ')
                     userinformation = await motor_db.user.find_one({'user': user})
                     userEmial = userinformation.get("email")
@@ -252,43 +251,57 @@ async def execute(request):
 @paypal_bp.route("/getVIPInformation")
 async def get_vip_information(request):
     user = request['session'].get('user', None)
+    role = request['session'].get('role',None)
     if user:
         try:
             motor_db = motor_base.get_db()
             userinformation = await motor_db.user.find_one({'user': user})
+            userRole = userinformation.get('role')
             userName = userinformation.get("user")
             userEmial = userinformation.get("email")
-            user_become_vip_time = userinformation.get("become_vip_time")
-            userVIPDuartion = userinformation.get("vip_duration")
+
             item_result = {}
             result = []
             item_result['userName'] = userName
             item_result['userEmial'] = userEmial
-            if user_become_vip_time != "":
-                item_result['user_become_vip_time'] = user_become_vip_time
-                item_result['userVIPDuartion'] = userVIPDuartion
-                date_vip = datetime.strptime(str(user_become_vip_time), "%Y-%m-%d %H:%M:%S")
-                expireDate = (date_vip + timedelta(days=int(userVIPDuartion))).strftime("%Y-%m-%d %H:%M:%S")
-                item_result['expireDate'] = expireDate
+            item_result['role'] = userRole
+
+            if userRole == 'Admin':
                 result.append(item_result)
+                message = "Hello, honorable administrator"
+                item_result['admin_message'] = message
                 return template('payerInformation.html',
-                                title='User information',
+                                title='Admin information',
                                 is_login=1,
                                 user=user,
-                                result=result)
+                                result=result, role=userRole)
             else:
-                warning_message = "Sorry,you are not VIP. You can become now!"
-                item_result['warning_message'] = warning_message
-                result.append(item_result)
-                return template('payerInformation.html',
-                                title='User information',
-                                is_login=1,
-                                user=user,
-                                result=result)
+                user_become_vip_time = userinformation.get("become_vip_time")
+                userVIPDuartion = userinformation.get("vip_duration")
+                if user_become_vip_time != "":
+                    item_result['user_become_vip_time'] = user_become_vip_time
+                    item_result['userVIPDuartion'] = userVIPDuartion
+                    date_vip = datetime.strptime(str(user_become_vip_time), "%Y-%m-%d %H:%M:%S")
+                    expireDate = (date_vip + timedelta(days=int(userVIPDuartion))).strftime("%Y-%m-%d %H:%M:%S")
+                    item_result['expireDate'] = expireDate
+                    result.append(item_result)
+                    return template('payerInformation.html',
+                                    title='VIP user information',
+                                    is_login=1,
+                                    user=user,
+                                    result=result, role=userRole)
+                else:
+                    warning_message = "Sorry,you are not VIP. You can become now!"
+                    item_result['warning_message'] = warning_message
+                    result.append(item_result)
+                    return template('payerInformation.html',
+                                    title='General user information',
+                                    is_login=1,
+                                    user=user,
+                                    result=result, role=userRole)
         except Exception as e:
             LOGGER.error(e)
             return redirect('/')
-
 
 
 # The HTML body of the email. referce: https://realpython.com/python-send-email/#including-html-content

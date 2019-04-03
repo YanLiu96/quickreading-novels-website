@@ -27,22 +27,16 @@ except:
 
 operate_bp = Blueprint('operate_blueprint', url_prefix='operate')
 
-# Replace sender@example.com with your "From" address.
 # This address must be verified.
 SENDER = '278899085@qq.com'
 SENDERNAME = 'Yan Liu'
 
-# Replace recipient@example.com with a "To" address. If your account
-# is still in the sandbox, this address must be verified.
-# RECIPIENT  = '352886335@qq.com'
-
-# Replace smtp_username with your Amazon SES SMTP user name.
+# Amazon SES SMTP user name.
 USERNAME_SMTP = "AKIAJIH6FB7JSFHH3RFQ"
 
-# Replace smtp_password with your Amazon SES SMTP password.
+# Amazon SES SMTP password.
 PASSWORD_SMTP = "BJHpzXYnj9k74KyT3I9SJW7719f8h+zOSOxpAZNCJU0H"
-# If you're using Amazon SES in an AWS Region other than 美国西部（俄勒冈）,
-# replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
+
 # endpoint in the appropriate region.
 HOST = "email-smtp.eu-west-1.amazonaws.com"
 PORT = 587
@@ -51,204 +45,6 @@ PORT = 587
 SUBJECT1 = 'Register successfully'
 SUBJECT2 = 'Sorry you need to renew vip'
 # The email body for recipients with non-HTML email clients.
-
-# The HTML body of the email.
-BODY_HTML = """
-<html>
-<head>
-<style>
-@page {{
-    size: A4 portrait;
-    margin: 70pt 60pt 70pt;
-
-    @top-center {{
-        /* Yes, you can use an image here - exactly like a background-image rule*/
-        content: url(../images/headerlogos.png);
-
-        /* and you can move it around 
-        margin-top: 20pt;
-        */
-    }}
-
-    @bottom-left {{
-        content: string(footerContent);
-        font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
-    }}
-
-    @bottom-right {{
-        content: "Page " counter(page) " of " counter(pages);
-        font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
-    }}
-}}
-
-@media screen {{
-  body {{
-    font: 9.85pt/135% 'Cambria', serif;
-  }}
-
-  h1.footer-content {{
-    line-height: 150%;
-  }}
-
-  header:after {{
-      content: "";
-      clear: both;
-      display: table;
-  }}
-
-  header address, 
-  header .date, 
-  header .letter-reference {{
-      text-align: right;
-  }}
-
-  /* Style any address like elements to be block */
-  header address *, 
-  header .date, 
-  header .letter-reference,
-  header > [class*="address-"] > span {{
-      display: block;
-  }}
-
-  header address .email, 
-  header .date, 
-  header .letter-reference {{
-      margin-top: 9.85pt;
-  }}
-
-  header address {{
-      /* Two options here - if it's only got one side to it, don't bother floating it.
-      width: 4.5cm;*/
-      float: right;
-      width: 100%;
-      font-style: normal;
-  }}
-
-  /* This is what to change if the address is not visible in the window */
-  header .address-recipient {{
-      float: left;
-      margin-top: -2cm;
-  }}
-
-  section main p:nth-child(2) {{
-      font-weight: bold;
-  }}
-
-
-  .signature {{
-      height: 50pt;
-  }}
-
-  .headerLogo, .footerLogo {{
-      max-width: 6cm;
-      height: auto;
-      max-height: 2cm;
-  }}
-
-/* This gives the user an idea of what the page will look like prior to the print preview */
-    *, *:before, *:after {{box-sizing: border-box;}}
-    body {{
-        background-color: #cecece;
-    }}
-
-    .wrapper {{
-        width: 80%;
-        max-width: 780px;
-        margin: 0 auto;
-
-    }}
-
-    /* Each section is a letter */
-    section {{
-        display: flex;
-        flex-direction: column;        
-        background-color: white;
-        background: linear-gradient(to bottom, white, white 29.66cm, #7e7e7e 29.66cm, #7e7e7e, 29.7cm, white 29.7cm, white);
-        width: 21cm;
-        min-height: 29.7cm;
-        padding: 20px 30px 20px;
-        margin: 10px 1%;
-        box-shadow: 0 0 5px 5px #bababa;
-    }}
-
-    section footer {{
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }}
-
-    /* Stick it to the bottom of the page no matter what - margin-top auto pushes it down. */
-    section footer .pageFooter {{
-        margin-top: auto;
-    }}
-}}
-
-@media print {{
-  .noPrint {{
-    display: none;
-  }}
-
-  /* Force a page break after every section or w/e element you want. */
-  section:not(:last-of-type) footer {{
-      page-break-after: always;
-      /* counter-reset: page pages; */
-  }}
-
-  .footer-content {{
-      string-set: footerContent content();
-      display: none;
-  }}
-}}
-
-.penNote {{
-  font-family: monospace;
-  background-color: #fff699;
-  width: 400px;
-  padding: 10px;
-  margin: 0 auto;
-  box-shadow: 0 0 4px 4px #bbb;
-}}
-</style>
-</head>
-<body>
-<div class="penNote noPrint">
-<div class="wrapper">
-    <div class="bglogo"></div>
-    <h1 class="footer-content">Welcome to be a member of quick reading website</h1>
-    <!-- Each letter will be it's own section (this chapters in a book) -->
-    <section>
-        <header>
-            <img class="headerLogo" alt="Company logo" src="https://vignette.wikia.nocookie.net/jurassicpark/images/b/b0/Ingenicon3.png/revision/latest?cb=20141208195042" />
-            <!--   The address element feels OK to use here as the HTML spec states:
-            The address element represents the contact information for its nearest article or body element ancestor. As this is the sender's address it is relevant to the article. -->
-            <p class="address-recipient">
-                <span class="address-to"> Hello! Thank you for choosing us! </span>
-            </p>
-        </header>
-        <main>
-            <p>Dear {User}</p>
-            <p>You have already register your account in our quick reading website. You can login and enjoy the reading</p>
-        </main>
-        <footer>
-            <p>Yours sincerely</p>
-            <p class="signature">Signature</p>
-            <p>Yan Liu</p>
-            <p>Final Year Projects</p>
-            <p>Novels Reading and Searching Website</p>
-            <p>WIT Waterford Ireland</p>
-            <p>X91 HXT3</p>
-            <p>E-mail: 278899085@qq.com</p>
-            <div class="pageFooter">
-                <img class="footerLogo" src="https://vignette.wikia.nocookie.net/jurassicpark/images/b/b0/Ingenicon3.png/revision/latest?cb=20141208195042" alt="Footer Logo" />
-            </div>
-        </footer>
-    </section>
-    <h1 class="pageBreak"></h1>
-</div>
-</body>
-</html>
-            """
-
 
 
 @operate_bp.listener('before_server_start')
@@ -357,8 +153,11 @@ async def quickreading_login(request):
         if data:
             pass_first = hashlib.md5((CONFIG.WEBSITE["TOKEN"] + pwd).encode("utf-8")).hexdigest()
             password = hashlib.md5(pass_first.encode("utf-8")).hexdigest()
+            # check whether a registered user
             if password == data.get('password'):
                 response = json({'status': 1})
+                userRole = data.get("role")
+
                 # 将session_id存于cookies
                 date = datetime.datetime.now()
                 response.cookies['quickReading_cookie'] = request['session'].sid
@@ -366,60 +165,68 @@ async def quickreading_login(request):
                 response.cookies['quickReading_cookie']['httponly'] = True
                 # 此处设置存于服务器session的user值
                 request['session']['user'] = user
+                request['session']['role'] = userRole
                 # response.cookies['user'] = user
                 # response.cookies['user']['expires'] = date + datetime.timedelta(days=30)
                 # response.cookies['user']['httponly'] = True
                 # response = json({'status': 1})
                 # response.cookies['user'] = user
-                return response
 
-                '''
-                # 验证是否需要续费
-                userName = data.get("user")
-                userEmial = data.get("email")
-                user_become_vip_time = data.get("become_vip_time")
-                userVIPDuartion = data.get("vip_duration")
-                date_vip = dt.strptime(str(user_become_vip_time), "%Y-%m-%d %H:%M:%S")
-                # expireDate = (date_vip + timedelta(days=int(userVIPDuartion))).strftime("%Y-%m-%d %H:%M:%S")
-                dateNow = dt.now()
-                time_cost = (dateNow - date_vip).days
-                rest_time = int(userVIPDuartion) - time_cost
-                print(rest_time)
-                if rest_time < 23:
-                    RECIPIENT = userEmial
-                    # Create message container - the correct MIME type is multipart/alternative.
-                    msg = MIMEMultipart('alternative')
-                    msg['Subject'] = SUBJECT2
-                    msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
-                    msg['To'] = RECIPIENT
-                    # Comment or delete the next line if you are not using a configuration set
-                    # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
-
-                    # Record the MIME types of both parts - text/plain and text/html.
-                    part2 = MIMEText(renewLetter.format(User=userName, day=rest_time), 'html')
-
-                    # Attach parts into message container.
-                    # According to RFC 2046, the last part of a multipart message, in this case
-                    # the HTML message, is best and preferred.
-                    msg.attach(part2)
-                    try:
-                        server = smtplib.SMTP(HOST, PORT)
-                        server.ehlo()
-                        server.starttls()
-                        # stmplib docs recommend calling ehlo() before & after starttls()
-                        server.ehlo()
-                        server.login(USERNAME_SMTP, PASSWORD_SMTP)
-                        server.sendmail(SENDER, RECIPIENT, msg.as_string())
-                        server.close()
-                    # Display an error message if something goes wrong.
-                    except Exception as e:
-                        print("Error: ", e)
-                    else:
-                        print("Email sent!")
+                # check whether admin!
+                if userRole == "Admin":
+                    print("Admin Login")
                     return response
                 else:
+                    # 验证是否需要续费
+                    userName = data.get("user")
+                    userEmial = data.get("email")
+                    user_become_vip_time = data.get("become_vip_time")
+                    userVIPDuartion = data.get("vip_duration")
+
+                    # user who has payed the vip fee
+                    if user_become_vip_time != "":
+                        date_vip = dt.strptime(str(user_become_vip_time), "%Y-%m-%d %H:%M:%S")
+                        dateNow = dt.now()
+                        time_cost = (dateNow - date_vip).days
+                        rest_time = int(userVIPDuartion) - time_cost
+                        print(rest_time)
+                        # whether user VIP service is almost over（2 days）send email
+                        if rest_time < 2 & rest_time > 0:
+                            RECIPIENT = userEmial
+                            # Create message container - the correct MIME type is multipart/alternative.
+                            msg = MIMEMultipart('alternative')
+                            msg['Subject'] = SUBJECT2
+                            msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
+                            msg['To'] = RECIPIENT
+                            # Comment or delete the next line if you are not using a configuration set
+                            # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
+
+                            # Record the MIME types of both parts - text/plain and text/html.
+                            part2 = MIMEText(renewLetter.format(User=userName, day=rest_time), 'html')
+
+                            # Attach parts into message container.
+                            # According to RFC 2046, the last part of a multipart message, in this case
+                            # the HTML message, is best and preferred.
+                            msg.attach(part2)
+                            try:
+                                server = smtplib.SMTP(HOST, PORT)
+                                server.ehlo()
+                                server.starttls()
+                                # stmplib docs recommend calling ehlo() before & after starttls()
+                                server.ehlo()
+                                server.login(USERNAME_SMTP, PASSWORD_SMTP)
+                                server.sendmail(SENDER, RECIPIENT, msg.as_string())
+                                server.close()
+                            # Display an error message if something goes wrong.
+                            except Exception as e:
+                                print("Error: ", e)
+                            else:
+                                print("Email sent!")
+                            return response
+                        else:
+                            return response
+                        # end of sending renew email function
                     return response
-                '''
             else:
                 return json({'status': -2})
         return json({'status': -1})
@@ -477,6 +284,7 @@ async def owllook_register(request):
                     "password": password,
                     "email": Email,
                     "register_time": time,
+                    "role": "General User",
                     "become_vip_time": "",
                     "vip_duration": 0
                 }
@@ -634,6 +442,7 @@ async def owllook_delete_book(request):
             return json({'status': 0})
     else:
         return json({'status': -1})
+
 
 renewLetter = """
 <html>
@@ -811,6 +620,202 @@ renewLetter = """
             <p>Dear {User}</p>
             <p>You only have {day} days VIP membership!</p>
             <p>If you still want to enjoy the vip service, please renew it!</p>
+        </main>
+        <footer>
+            <p>Yours sincerely</p>
+            <p class="signature">Signature</p>
+            <p>Yan Liu</p>
+            <p>Final Year Projects</p>
+            <p>Novels Reading and Searching Website</p>
+            <p>WIT Waterford Ireland</p>
+            <p>X91 HXT3</p>
+            <p>E-mail: 278899085@qq.com</p>
+            <div class="pageFooter">
+                <img class="footerLogo" src="https://vignette.wikia.nocookie.net/jurassicpark/images/b/b0/Ingenicon3.png/revision/latest?cb=20141208195042" alt="Footer Logo" />
+            </div>
+        </footer>
+    </section>
+    <h1 class="pageBreak"></h1>
+</div>
+</body>
+</html>
+            """
+
+BODY_HTML = """
+<html>
+<head>
+<style>
+@page {{
+    size: A4 portrait;
+    margin: 70pt 60pt 70pt;
+
+    @top-center {{
+        /* Yes, you can use an image here - exactly like a background-image rule*/
+        content: url(../images/headerlogos.png);
+
+        /* and you can move it around 
+        margin-top: 20pt;
+        */
+    }}
+
+    @bottom-left {{
+        content: string(footerContent);
+        font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
+    }}
+
+    @bottom-right {{
+        content: "Page " counter(page) " of " counter(pages);
+        font: 9.85pt/150% 'Calibri', Arial, Tahoma, sans-serif;
+    }}
+}}
+
+@media screen {{
+  body {{
+    font: 9.85pt/135% 'Cambria', serif;
+  }}
+
+  h1.footer-content {{
+    line-height: 150%;
+  }}
+
+  header:after {{
+      content: "";
+      clear: both;
+      display: table;
+  }}
+
+  header address, 
+  header .date, 
+  header .letter-reference {{
+      text-align: right;
+  }}
+
+  /* Style any address like elements to be block */
+  header address *, 
+  header .date, 
+  header .letter-reference,
+  header > [class*="address-"] > span {{
+      display: block;
+  }}
+
+  header address .email, 
+  header .date, 
+  header .letter-reference {{
+      margin-top: 9.85pt;
+  }}
+
+  header address {{
+      /* Two options here - if it's only got one side to it, don't bother floating it.
+      width: 4.5cm;*/
+      float: right;
+      width: 100%;
+      font-style: normal;
+  }}
+
+  /* This is what to change if the address is not visible in the window */
+  header .address-recipient {{
+      float: left;
+      margin-top: -2cm;
+  }}
+
+  section main p:nth-child(2) {{
+      font-weight: bold;
+  }}
+
+
+  .signature {{
+      height: 50pt;
+  }}
+
+  .headerLogo, .footerLogo {{
+      max-width: 6cm;
+      height: auto;
+      max-height: 2cm;
+  }}
+
+/* This gives the user an idea of what the page will look like prior to the print preview */
+    *, *:before, *:after {{box-sizing: border-box;}}
+    body {{
+        background-color: #cecece;
+    }}
+
+    .wrapper {{
+        width: 80%;
+        max-width: 780px;
+        margin: 0 auto;
+
+    }}
+
+    /* Each section is a letter */
+    section {{
+        display: flex;
+        flex-direction: column;        
+        background-color: white;
+        background: linear-gradient(to bottom, white, white 29.66cm, #7e7e7e 29.66cm, #7e7e7e, 29.7cm, white 29.7cm, white);
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 20px 30px 20px;
+        margin: 10px 1%;
+        box-shadow: 0 0 5px 5px #bababa;
+    }}
+
+    section footer {{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }}
+
+    /* Stick it to the bottom of the page no matter what - margin-top auto pushes it down. */
+    section footer .pageFooter {{
+        margin-top: auto;
+    }}
+}}
+
+@media print {{
+  .noPrint {{
+    display: none;
+  }}
+
+  /* Force a page break after every section or w/e element you want. */
+  section:not(:last-of-type) footer {{
+      page-break-after: always;
+      /* counter-reset: page pages; */
+  }}
+
+  .footer-content {{
+      string-set: footerContent content();
+      display: none;
+  }}
+}}
+
+.penNote {{
+  font-family: monospace;
+  background-color: #fff699;
+  width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  box-shadow: 0 0 4px 4px #bbb;
+}}
+</style>
+</head>
+<body>
+<div class="penNote noPrint">
+<div class="wrapper">
+    <div class="bglogo"></div>
+    <h1 class="footer-content">Welcome to be a member of quick reading website</h1>
+    <!-- Each letter will be it's own section (this chapters in a book) -->
+    <section>
+        <header>
+            <img class="headerLogo" alt="Company logo" src="https://vignette.wikia.nocookie.net/jurassicpark/images/b/b0/Ingenicon3.png/revision/latest?cb=20141208195042" />
+            <!--   The address element feels OK to use here as the HTML spec states:
+            The address element represents the contact information for its nearest article or body element ancestor. As this is the sender's address it is relevant to the article. -->
+            <p class="address-recipient">
+                <span class="address-to"> Hello! Thank you for choosing us! </span>
+            </p>
+        </header>
+        <main>
+            <p>Dear {User}</p>
+            <p>You have already register your account in our quick reading website. You can login and enjoy the reading</p>
         </main>
         <footer>
             <p>Yours sincerely</p>

@@ -337,3 +337,38 @@ async def quickreading_content(request):
         else:
             is_login = 0
             return template('parse_error.html', url=url, is_login=is_login)
+
+
+@novels_bp.route('/admininterface')
+async def admininterface(request):
+    admin = request['session'].get('user', None)
+    role = request['session'].get('role', None)
+    print(admin)
+    head = ['User name', 'email', 'role', 'delete']
+    if admin:
+        try:
+            if role == 'Admin':
+                print('3333')
+                motor_db = motor_base.get_db()
+                print('222')
+                keyword_cursor = motor_db.user.find(
+                    {'role': {'$ne': 'Admin'}},
+                    {'user': 1, 'email': 1, 'role': 1, '_id': 0})
+                result = []
+                print('111')
+                indexs = 1
+                async for document in keyword_cursor:
+                    result.append({'user': document['user'], 'email': document['email'],
+                                   'role': document['role'], 'index': indexs})
+                    indexs += 1
+                print('000')
+                return template('adminInterface.html', title='QuickReading Admin Interface',
+                                is_login=1, user=admin, alluser=result, is_admin=1, head=head)
+            else:
+                return redirect('/')
+        except Exception as e:
+            LOGGER.error(e)
+            return redirect('/')
+    else:
+        print("chucuo")
+        return redirect('/')
