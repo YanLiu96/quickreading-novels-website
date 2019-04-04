@@ -124,6 +124,11 @@ async def quickreading_search(request):
                 parse_result = await get_novels_info(class_name='baidu', novels_name=novels_name)
                 if parse_result:
                     break
+            if each_engine == "google":
+                novels_name = '{name} 小说 阅读'.format(name=name)
+                parse_result = await get_novels_info(class_name='google', novels_name=novels_name)
+                if parse_result:
+                    break
     if parse_result:
         # result_sorted = sorted(
         #     parse_result, reverse=True, key=lambda res: res['timestamp']) if ':baidu' not in name else parse_result
@@ -186,11 +191,14 @@ async def chapter(request):
     """
     url = request.args.get('url', None)
     novels_name = request.args.get('novels_name', None)
+    # 小说网站的地址
     netloc = get_netloc(url)
     if netloc not in RULES.keys():
         return redirect(url)
+
     if netloc in REPLACE_RULES.keys():
         url = url.replace(REPLACE_RULES[netloc]['old'], REPLACE_RULES[netloc]['new'])
+
     content_url = RULES[netloc].content_url
     content = await cache_novels_chapter(url=url, netloc=netloc)
     if content:

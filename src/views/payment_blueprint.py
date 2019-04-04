@@ -12,7 +12,7 @@ from email.mime.text import MIMEText
 import email.utils
 from datetime import datetime, timedelta
 
-paypal_bp = Blueprint('paypal_blueprint')
+payment_bp = Blueprint('payment_blueprint')
 
 SENDER = '278899085@qq.com'
 SENDERNAME = 'Yan Liu'
@@ -38,17 +38,17 @@ paypalrestsdk.configure({
   "client_secret": "EFb9ipDk_i7UbtnODGGlXbBinYtRABcIaZWAKFQ-4Mqvs_Dd0Iv3Qb0eHYHpbd9c1JYmOtw9gnVZr6ux"})
 
 env = Environment(
-    loader=PackageLoader('views.paypal_blueprint', '../templates/payment'),
+    loader=PackageLoader('views.payment_blueprint', '../templates/payment'),
     autoescape=select_autoescape(['html', 'xml', 'tpl']))
 
 
-@paypal_bp.listener('before_server_start')
+@payment_bp.listener('before_server_start')
 def setup_db(operate_bp, loop):
     global motor_base
     motor_base = MotorBase()
 
 
-@paypal_bp.listener('after_server_stop')
+@payment_bp.listener('after_server_stop')
 def close_connection(operate_bp, loop):
     motor_base = None
 
@@ -58,43 +58,16 @@ def template(tpl, **kwargs):
     return html(template.render(kwargs))
 
 
-@paypal_bp.route('/pay')
+@payment_bp.route('/pay')
 async def pay(request):
-    return template('paypal.html')
-
-"""
-@paypal_bp.route('/payment', methods=['POST'])
-async def payment(request):
-    payment = paypalrestsdk.Payment({
-        "intent": "sale",
-        "payer": {
-            "payment_method": "paypal"},
-        "redirect_urls": {
-            "return_url": "http://0.0.0.0:8001/payment/execute",
-            "cancel_url": "http://0.0.0.0:8001/"},
-        "transactions": [{
-            "item_list": {
-                "items": [{
-                    "name": "item",
-                    "sku": "item",
-                    "price": "5.00",
-                    "currency": "USD",
-                    "quantity": 1}]},
-            "amount": {
-                "total": "5.00",
-                "currency": "USD"},
-            "description": "This is the payment transaction description."}]})
-    if payment.create():
-        print("Payment created successfully")
+    user = request['session'].get('user', None)
+    if user:
+        return template('payment.html', is_login=1)
     else:
-        print(payment.error)
-    print(payment.id)
-    return json({'paymentID': payment.id})
-
-"""
+        return redirect('/')
 
 
-@paypal_bp.route('/paymentOneMonth', methods=['POST'])
+@payment_bp.route('/paymentOneMonth', methods=['POST'])
 async def payment(request):
     payment = paypalrestsdk.Payment({
         "intent": "sale",
@@ -116,72 +89,72 @@ async def payment(request):
                 "currency": "USD"},
             "description": "This is the payment transaction description."}]})
     if payment.create():
-        print("Payment created successfully")
+        print("One Month Service Payment created successfully")
     else:
         print(payment.error)
     print(payment.id)
     return json({'paymentID': payment.id})
 
 
-@paypal_bp.route('/paymentSixMonth', methods=['POST'])
+@payment_bp.route('/paymentSixMonth', methods=['POST'])
 async def payment(request):
     payment = paypalrestsdk.Payment({
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"},
         "redirect_urls": {
-            "return_url": "http://0.0.0.0:8001/paymentOneMonth/execute",
+            "return_url": "http://0.0.0.0:8001/paymentSixMonth/execute",
             "cancel_url": "http://0.0.0.0:8001/"},
         "transactions": [{
             "item_list": {
                 "items": [{
                     "name": "item",
                     "sku": "item",
-                    "price": "50.00",
+                    "price": "0.2",
                     "currency": "USD",
                     "quantity": 1}]},
             "amount": {
-                "total": "5.00",
+                "total": "0.2",
                 "currency": "USD"},
             "description": "This is the payment transaction description."}]})
     if payment.create():
-        print("Payment created successfully")
+        print("Six Month ServicePayment created successfully")
     else:
         print(payment.error)
     print(payment.id)
     return json({'paymentID': payment.id})
 
 
-@paypal_bp.route('/paymentOneYear', methods=['POST'])
+@payment_bp.route('/paymentOneYear', methods=['POST'])
 async def payment(request):
     payment = paypalrestsdk.Payment({
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"},
         "redirect_urls": {
-            "return_url": "http://0.0.0.0:8001/paymentOneMonth/execute",
+            "return_url": "http://0.0.0.0:8001/paymentOneYear/execute",
             "cancel_url": "http://0.0.0.0:8001/"},
         "transactions": [{
             "item_list": {
                 "items": [{
                     "name": "item",
                     "sku": "item",
-                    "price": "90.00",
+                    "price": "0.3",
                     "currency": "USD",
                     "quantity": 1}]},
             "amount": {
-                "total": "5.00",
+                "total": "0.3",
                 "currency": "USD"},
             "description": "This is the payment transaction description."}]})
     if payment.create():
-        print("Payment created successfully")
+        print("One Year Service Payment created successfully")
     else:
         print(payment.error)
     print(payment.id)
     return json({'paymentID': payment.id})
 
 
-@paypal_bp.route('/execute', methods=['POST'])
+@payment_bp.route('/execute', methods=['POST'])
 async def execute(request):
     success = False
     payment = paypalrestsdk.Payment.find(request.form.get('paymentID'))
@@ -248,7 +221,7 @@ async def execute(request):
     return json({'success': success})
 
 
-@paypal_bp.route("/getVIPInformation")
+@payment_bp.route("/getVIPInformation")
 async def get_vip_information(request):
     user = request['session'].get('user', None)
     role = request['session'].get('role',None)

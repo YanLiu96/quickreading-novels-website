@@ -7,7 +7,7 @@ from sanic import Sanic
 from sanic.response import html, redirect
 from sanic_session import RedisSessionInterface
 # Registering blueprints
-from src.views import searchEngine_bp, novels_bp, operate_bp, paypal_bp, userAdmin_bp, md_bp
+from src.views import searchEngine_bp, novels_bp, operate_bp, payment_bp, userAdmin_bp, md_bp
 from src.database.redies import RedisSession
 from src.config import LOGGER, CONFIG
 
@@ -19,7 +19,7 @@ app = Sanic(__name__)
 app.blueprint(novels_bp)
 app.blueprint(operate_bp)
 app.blueprint(searchEngine_bp)
-app.blueprint(paypal_bp)
+app.blueprint(payment_bp)
 app.blueprint(userAdmin_bp)
 app.blueprint(md_bp)
 

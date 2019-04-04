@@ -63,7 +63,9 @@ REPLACE_RULES = {
 }
 
 
-ENGINE_PRIORITY = ['bing', '360', 'baidu']
+ENGINE_PRIORITY = ['360', 'baidu', 'bing', 'google']
+# ENGINE_PRIORITY = ['bing', 'google', '360', 'baidu']
+# ENGINE_PRIORITY = ['360', 'google', 'bing', 'baidu']
 
 Rules = namedtuple('Rules', 'content_url chapter_selector content_selector')
 LatestRules = namedtuple('LatestRules', 'plan meta_value selector')

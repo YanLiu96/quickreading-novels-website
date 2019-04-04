@@ -12,10 +12,10 @@ from src.fetcher.function import get_random_user_agent
 from src.fetcher.novels_searchEngine.base_novels import BaseNovels
 
 
-class BingNovels(BaseNovels):
+class GoogleNovels(BaseNovels):
 
     def __init__(self):
-        super(BingNovels, self).__init__()
+        super(GoogleNovels, self).__init__()
 
     async def data_extraction(self, html):
         """
@@ -23,8 +23,12 @@ class BingNovels(BaseNovels):
         :return:
         """
         try:
-            title = html.select('h2 a')[0].get_text()
-            url = html.select('h2 a')[0].get('href', None)
+            # find the title
+            title = html.select('h3 a')[0].get_text()
+            print(title)
+            # find the url
+            url = html.select('h3 a')[0].get('href', None)
+            print(url)
             netloc = urlparse(url).netloc
             url = url.replace('index.html', '').replace('Index.html', '')
             if not url or 'baidu' in url or 'baike.so.com' in url or netloc in self.resource_domain or '.html' in url:
@@ -50,17 +54,17 @@ class BingNovels(BaseNovels):
         小说搜索入口函数
         :return:
         """
-        url = self.config.BY_URL
+        url = self.config.GOOGLE_URL
         headers = {
             'user-agent': await get_random_user_agent(),
-            'referer': "https://www.bing.com/"
+            'referer': "https://www.google.com/"
         }
-        params = {'q': novels_name, 'ensearch': 0}
+        params = {'q': novels_name, 'btnG': 'Search', 'safe': 'active', 'gbv': 10}
         html = await self.fetch_url(url=url, params=params, headers=headers)
         if html:
             soup = BeautifulSoup(html, 'html5lib')
-            result = soup.find_all(class_='b_algo')
-            print(result)
+            # find the search results which contains the title and url
+            result = soup.find_all(class_='g')
             extra_tasks = [self.data_extraction(html=i) for i in result]
             tasks = [asyncio.ensure_future(i) for i in extra_tasks]
             done_list, pending_list = await asyncio.wait(tasks)
@@ -76,7 +80,7 @@ async def start(novels_name):
     Start spider
     :return:
     """
-    return await BingNovels.start(novels_name)
+    return await GoogleNovels.start(novels_name)
 
 
 if __name__ == '__main__':

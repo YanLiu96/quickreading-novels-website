@@ -27,6 +27,7 @@ class Config():
     BAIDU_RN = 15
     SO_URL = "https://www.so.com/s"
     BY_URL = "https://www.bing.com/search"
+    GOOGLE_URL = "https://www.google.com/search"
     DUCKGO_URL = "https://duckduckgo.com/html"
 
     REMOTE_SERVER = {

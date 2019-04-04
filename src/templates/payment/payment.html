@@ -53,11 +53,30 @@
     // 1. Add a payment callback
     payment: function() {
       // 2. Make a request to your server
-      return paypal.request.post('http://0.0.0.0:8001/paymentOneMonth')
+      if(document.getElementById("control_01").checked)
+	  {
+	     return paypal.request.post('http://0.0.0.0:8001/paymentOneMonth')
         .then(function(data) {
           // 3. Return res.id from the response
           return data.paymentID;
         });
+	  }
+      if(document.getElementById("control_02").checked)
+	  {
+	     return paypal.request.post('http://0.0.0.0:8001/paymentSixMonth')
+        .then(function(data) {
+          // 3. Return res.id from the response
+          return data.paymentID;
+        });
+	  }
+	  if(document.getElementById("control_03").checked)
+	  {
+	     return paypal.request.post('http://0.0.0.0:8001/paymentOneYear')
+        .then(function(data) {
+          // 3. Return res.id from the response
+          return data.paymentID;
+        });
+	  }
     },
     // Execute the payment:
     // 1. Add an onAuthorize callback
