@@ -137,96 +137,99 @@ async def change_pass(request):
 @operate_bp.route("/login", methods=['POST'])
 async def quickreading_login(request):
     """
-    用户登录
+    User Login
     :param request:
     :return:
-        :   -1  用户名或密码不能为空
-        :   0   用户名或密码错误
-        :   1   登陆成功
+        :   -1  User name or password is null
+        :   0   Wrong user name or password
+        :   1   Login successfully
     """
     login_data = parse_qs(str(request.body, encoding='utf-8'))
     user = login_data.get('user', [None])[0]
     pwd = login_data.get('pwd', [None])[0]
+
     if user and pwd:
         motor_db = motor_base.get_db()
         data = await motor_db.user.find_one({'user': user})
         if data:
-            pass_first = hashlib.md5((CONFIG.WEBSITE["TOKEN"] + pwd).encode("utf-8")).hexdigest()
-            password = hashlib.md5(pass_first.encode("utf-8")).hexdigest()
-            # check whether a registered user
+            # add the token of website to password (application security)
+            password_to_handle = hashlib.md5((CONFIG.WEBSITE["TOKEN"] + pwd).encode("utf-8")).hexdigest()
+            password = hashlib.md5(password_to_handle.encode("utf-8")).hexdigest()
+            # check whether a registered user(password is right)
             if password == data.get('password'):
                 response = json({'status': 1})
-                userRole = data.get("role")
-
-                # 将session_id存于cookies
+                # Get the role of user
+                user_role = data.get("role")
+                user_email = data.get("email")
+                # store session_id in cookies
                 date = datetime.datetime.now()
                 response.cookies['quickReading_cookie'] = request['session'].sid
+                # Set the expires date of cookies: 30 days
                 response.cookies['quickReading_cookie']['expires'] = date + datetime.timedelta(days=30)
                 response.cookies['quickReading_cookie']['httponly'] = True
-                # 此处设置存于服务器session的user值
+                # set server session
+                # Store user name and role in the sessions
                 request['session']['user'] = user
-                request['session']['role'] = userRole
-                # response.cookies['user'] = user
+                request['session']['role'] = user_role
                 # response.cookies['user']['expires'] = date + datetime.timedelta(days=30)
-                # response.cookies['user']['httponly'] = True
-                # response = json({'status': 1})
-                # response.cookies['user'] = user
-
+                #
                 # check whether admin!
-                if userRole == "Admin":
+                if user_role == "Admin":
                     print("Admin Login")
                     return response
                 else:
-                    # 验证是否需要续费
-                    userName = data.get("user")
-                    userEmial = data.get("email")
-                    user_become_vip_time = data.get("become_vip_time")
-                    userVIPDuartion = data.get("vip_duration")
-
-                    # user who has payed the vip fee
-                    if user_become_vip_time != "":
-                        date_vip = dt.strptime(str(user_become_vip_time), "%Y-%m-%d %H:%M:%S")
-                        dateNow = dt.now()
-                        time_cost = (dateNow - date_vip).days
-                        rest_time = int(userVIPDuartion) - time_cost
+                    if user_role == "VIP User":
+                        # 验证是否需要续费(定时发送邮件待实现)
+                        expire_date = data.get("expireDate")
+                        expire_date = dt.strptime(str(expire_date), "%Y-%m-%d %H:%M:%S")
+                        date_now = dt.now()
+                        rest_time = (expire_date - date_now).days
                         print(rest_time)
+                        # **********************************************************
                         # whether user VIP service is almost over（2 days）send email
-                        if rest_time < 2 & rest_time > 0:
-                            RECIPIENT = userEmial
-                            # Create message container - the correct MIME type is multipart/alternative.
-                            msg = MIMEMultipart('alternative')
-                            msg['Subject'] = SUBJECT2
-                            msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
-                            msg['To'] = RECIPIENT
-                            # Comment or delete the next line if you are not using a configuration set
-                            # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
+                        if rest_time > 0 & rest_time < 2:
+                            if rest_time < 2 & rest_time > 0:
+                                RECIPIENT = user_email
+                                # Create message container - the correct MIME type is multipart/alternative.
+                                msg = MIMEMultipart('alternative')
+                                msg['Subject'] = SUBJECT2
+                                msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
+                                msg['To'] = RECIPIENT
+                                # Comment or delete the next line if you are not using a configuration set
+                                # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
 
-                            # Record the MIME types of both parts - text/plain and text/html.
-                            part2 = MIMEText(renewLetter.format(User=userName, day=rest_time), 'html')
+                                # Record the MIME types of both parts - text/plain and text/html.
+                                part2 = MIMEText(renewLetter.format(User=user, day=rest_time), 'html')
 
-                            # Attach parts into message container.
-                            # According to RFC 2046, the last part of a multipart message, in this case
-                            # the HTML message, is best and preferred.
-                            msg.attach(part2)
-                            try:
-                                server = smtplib.SMTP(HOST, PORT)
-                                server.ehlo()
-                                server.starttls()
-                                # stmplib docs recommend calling ehlo() before & after starttls()
-                                server.ehlo()
-                                server.login(USERNAME_SMTP, PASSWORD_SMTP)
-                                server.sendmail(SENDER, RECIPIENT, msg.as_string())
-                                server.close()
-                            # Display an error message if something goes wrong.
-                            except Exception as e:
-                                print("Error: ", e)
-                            else:
-                                print("Email sent!")
+                                # Attach parts into message container.
+                                # According to RFC 2046, the last part of a multipart message, in this case
+                                # the HTML message, is best and preferred.
+                                msg.attach(part2)
+                                try:
+                                    server = smtplib.SMTP(HOST, PORT)
+                                    server.ehlo()
+                                    server.starttls()
+                                    # stmplib docs recommend calling ehlo() before & after starttls()
+                                    server.ehlo()
+                                    server.login(USERNAME_SMTP, PASSWORD_SMTP)
+                                    server.sendmail(SENDER, RECIPIENT, msg.as_string())
+                                    server.close()
+                                # Display an error message if something goes wrong.
+                                except Exception as e:
+                                    print("Error: ", e)
+                                else:
+                                    print("Email sent!")
+                                return response
+                        elif rest_time < 0:
+                            await motor_db.user.update_one({'user': user}, {'$set': {'role': "General User"}},
+                                                           upsert=True)
+                            await motor_db.user.update_one({'user': user}, {'$unset': {'expireDate': 1}})
                             return response
                         else:
                             return response
-                        # end of sending renew email function
-                    return response
+                            # end of sending renew email function
+                        return response
+                return response
             else:
                 return json({'status': -2})
         return json({'status': -1})
@@ -254,9 +257,9 @@ async def quickreading_logout(request):
 
 
 @operate_bp.route("/register", methods=['POST'])
-async def owllook_register(request):
+async def user_register(request):
     """
-    用户注册 不允许重名
+    User Register 不允许重名
     :param request:
     :return:
         :   -1  用户名已存在
@@ -284,9 +287,7 @@ async def owllook_register(request):
                     "password": password,
                     "email": Email,
                     "register_time": time,
-                    "role": "General User",
-                    "become_vip_time": "",
-                    "vip_duration": 0
+                    "role": "General User"
                 }
                 RECIPIENT = Email
                 # Create message container - the correct MIME type is multipart/alternative.
@@ -326,19 +327,6 @@ async def owllook_register(request):
             return json({'status': -1})
     else:
         return json({'status': 0})
-
-    # post_data = json_loads(str(request.body, encoding='utf-8'))
-    # pass_first = hashlib.md5((CONFIG.WEBSITE["TOKEN"] + post_data['pwd']).encode("utf-8")).hexdigest()
-    # password = hashlib.md5(pass_first.encode("utf-8")).hexdigest()
-    # time = get_time()
-    # data = {
-    #     "user": post_data['user'],
-    #     "password": password,
-    #     "email": post_data['email'],
-    #     "register_time": time,
-    # }
-    # motor_db = motor_base.get_db()
-    # await motor_db.user.save(data)
 
 
 @operate_bp.route("/add_bookmark", methods=['POST'])
@@ -412,7 +400,7 @@ async def quickreading_add_bookshelf(request):
 
 
 @operate_bp.route("/delete_book", methods=['POST'])
-async def owllook_delete_book(request):
+async def delete_book(request):
     """
     删除书架
     :param request:
@@ -436,6 +424,28 @@ async def owllook_delete_book(request):
             await motor_db.user_message.update_one({'user': user},
                                                    {'$pull': {'books_url': {"book_url": unquote(book_url)}}})
             LOGGER.info('You have deleted bookshelf')
+            return json({'status': 1})
+        except Exception as e:
+            LOGGER.exception(e)
+            return json({'status': 0})
+    else:
+        return json({'status': -1})
+
+
+@operate_bp.route("/delete_user", methods=['POST'])
+async def delete_user(request):
+    user = request['session'].get('user', None)
+    role = request['session'].get('role', None)
+    data = parse_qs(str(request.body, encoding='utf-8'))
+    motor_db = motor_base.get_db()
+    if user and role == "Admin":
+        if data.get('user_name', None):
+            user_name_delete = data.get('user_name', None)[0]
+        else:
+            user_name_delete = data.get('user_name', '')
+        try:
+            await motor_db.user.delete_one({'user': user_name_delete})
+            LOGGER.info('You have deleted the user')
             return json({'status': 1})
         except Exception as e:
             LOGGER.exception(e)

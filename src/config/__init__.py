@@ -5,32 +5,24 @@ Created by Yan Liu at 2019.1.17
 import os
 import logging
 from .rules import *
-"""
-logging_format = "[%(asctime)s] %(process)d-%(levelname)s "
-logging_format += "%(module)s::%(funcName)s():l%(lineno)d: "
-logging_format += "%(message)s"
-"""
+# the log of running(output)
 logging.basicConfig(
-
-    # format=logging_format,
-
     level=logging.DEBUG
 )
 LOGGER = logging.getLogger()
 
 
+# load the configuration (class)
 def load_config():
-    """
-    Load a config class
-    """
-
+    # adjust the mode of project running
     mode = os.environ.get('MODE', 'DEV')
-    LOGGER.info('The mode of project running is：{}'.format(mode))
+    LOGGER.info('The mode of the project running is：{}'.format(mode))
     try:
         if mode == 'PRO':
             from .pro_config import ProConfig
             return ProConfig
         elif mode == 'DEV':
+            # return develop model configuration
             from .dev_config import DevConfig
             return DevConfig
         else:

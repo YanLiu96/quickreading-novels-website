@@ -53,12 +53,12 @@ async def index(request):
 @novels_bp.route("/register")
 async def user_register(request):
     """
-    用户登录
+    User Login
     :param request:
     :return:
-        :   -1  用户名或密码不能为空
-        :   0   用户名或密码错误
-        :   1   登陆成功
+        :   -1  uer name and password is null
+        :   0   wrong name or password
+        :   1
     """
     user = request['session'].get('user', None)
     if user:
@@ -356,20 +356,16 @@ async def admininterface(request):
     if admin:
         try:
             if role == 'Admin':
-                print('3333')
                 motor_db = motor_base.get_db()
-                print('222')
                 keyword_cursor = motor_db.user.find(
                     {'role': {'$ne': 'Admin'}},
                     {'user': 1, 'email': 1, 'role': 1, '_id': 0})
                 result = []
-                print('111')
                 indexs = 1
                 async for document in keyword_cursor:
                     result.append({'user': document['user'], 'email': document['email'],
                                    'role': document['role'], 'index': indexs})
                     indexs += 1
-                print('000')
                 return template('adminInterface.html', title='QuickReading Admin Interface',
                                 is_login=1, user=admin, alluser=result, is_admin=1, head=head)
             else:

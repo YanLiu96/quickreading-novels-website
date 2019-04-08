@@ -154,6 +154,7 @@ async def payment(request):
     return json({'paymentID': payment.id})
 
 
+# 30 days
 @payment_bp.route('/execute', methods=['POST'])
 async def execute(request):
     success = False
@@ -162,22 +163,77 @@ async def execute(request):
         print('Execute success!')
         success = True
         user = request['session'].get('user', None)
+        user_role = request['session'].get('role', None)
         # data = parse_qs(str(request.body, encoding='utf-8'))
         if user:
-            try:
-                become_vip_time = get_time()
-                motor_db = motor_base.get_db()
-                res = await motor_db.user.update_one({'user': user}, {'$set': {'become_vip_time': become_vip_time}},
-                                                     upsert=True)
-                if res:
-                    await motor_db.user.update_one({'user': user}, {'$set': {'vip_duration': 30}}, upsert=True)
-                    await motor_db.user.update_one({'user': user}, {'$set': {'role': "VIP User"}}, upsert=True)
-                    LOGGER.info('VIP information have store in database ')
-                    userinformation = await motor_db.user.find_one({'user': user})
-                    userEmial = userinformation.get("email")
+            if user_role == "General User":
+                try:
+                    become_vip_time = get_time()
+                    motor_db = motor_base.get_db()
+                    res = await motor_db.user.update_one({'user': user}, {'$set': {'become_vip_time': become_vip_time}},
+                                                         upsert=True)
+                    if res:
+                        date_vip = datetime.strptime(str(become_vip_time), "%Y-%m-%d %H:%M:%S")
+                        new_expire_date = (date_vip + timedelta(days=30)).strftime("%Y-%m-%d %H:%M:%S")
+                        await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}}, upsert=True)
+                        await motor_db.user.update_one({'user': user}, {'$set': {'role': "VIP User"}}, upsert=True)
+                        LOGGER.info('VIP information have store in database ')
+                        # send Successful payment mail
+                        user_information = await motor_db.user.find_one({'user': user})
+                        user_email = user_information.get("email")
+                        try:
+                            # send email
+                            RECIPIENT = user_email
+                            # Create message container - the correct MIME type is multipart/alternative.
+                            msg = MIMEMultipart('alternative')
+                            msg['Subject'] = SUBJECT
+                            msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
+                            msg['To'] = RECIPIENT
+                            # Comment or delete the next line if you are not using a configuration set
+                            # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
+
+                            # Record the MIME types of both parts - text/plain and text/html.
+                            part2 = MIMEText(BODY_HTML.format(Usernamefor=user, message="become 30 days"), 'html')
+
+                            # Attach parts into message container.
+                            # According to RFC 2046, the last part of a multipart message, in this case
+                            # the HTML message, is best and preferred.
+                            msg.attach(part2)
+                            try:
+                                server = smtplib.SMTP(HOST, PORT)
+                                server.ehlo()
+                                server.starttls()
+                                # stmplib docs recommend calling ehlo() before & after starttls()
+                                server.ehlo()
+                                server.login(USERNAME_SMTP, PASSWORD_SMTP)
+                                server.sendmail(SENDER, RECIPIENT, msg.as_string())
+                                server.close()
+                            # Display an error message if something goes wrong.
+                            except Exception as e:
+                                print("Error: ", e)
+                            else:
+                                print("Payment Email sent successfully!")
+                        except Exception as e3:
+                            print("Error: ", e3)
+
+                    else:
+                        return json({"Do not store  in database"})
+                except Exception as e:
+                    LOGGER.exception(e)
+
+            elif user_role == "VIP User":
+                try:
+                    motor_db = motor_base.get_db()
+                    user_information = await motor_db.user.find_one({'user': user})
+                    user_email = user_information.get("email")
+                    old_expire_date = user_information.get("expireDate")
+                    new_expire_date = (old_expire_date + timedelta(days=30)).strftime("%Y-%m-%d %H:%M:%S")
+                    await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}}, upsert=True)
+                    LOGGER.info('VIP Service has been renewed')
+                    # send Successful renew mail
                     try:
                         # send email
-                        RECIPIENT = userEmial
+                        RECIPIENT = user_email
                         # Create message container - the correct MIME type is multipart/alternative.
                         msg = MIMEMultipart('alternative')
                         msg['Subject'] = SUBJECT
@@ -187,7 +243,7 @@ async def execute(request):
                         # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
 
                         # Record the MIME types of both parts - text/plain and text/html.
-                        part2 = MIMEText(BODY_HTML.format(Usernamefor=user), 'html')
+                        part2 = MIMEText(BODY_HTML.format(Usernamefor=user, message="renew 30 days"), 'html')
 
                         # Attach parts into message container.
                         # According to RFC 2046, the last part of a multipart message, in this case
@@ -209,11 +265,9 @@ async def execute(request):
                             print("Payment Email sent successfully!")
                     except Exception as e3:
                         print("Error: ", e3)
+                except Exception as e:
+                    LOGGER.exception(e)
 
-                else:
-                    return json({"Do not store  in database"})
-            except Exception as e:
-                LOGGER.exception(e)
         else:
             return json({"Do not have this user in database"})
     else:
@@ -228,18 +282,18 @@ async def get_vip_information(request):
     if user:
         try:
             motor_db = motor_base.get_db()
-            userinformation = await motor_db.user.find_one({'user': user})
-            userRole = userinformation.get('role')
-            userName = userinformation.get("user")
-            userEmial = userinformation.get("email")
+            user_information = await motor_db.user.find_one({'user': user})
+            user_role = user_information.get('role')
+            user_name = user_information.get("user")
+            user_emial = user_information.get("email")
 
             item_result = {}
             result = []
-            item_result['userName'] = userName
-            item_result['userEmial'] = userEmial
-            item_result['role'] = userRole
+            item_result['userName'] = user_name
+            item_result['userEmial'] = user_emial
+            item_result['role'] = user_role
 
-            if userRole == 'Admin':
+            if user_role == 'Admin':
                 result.append(item_result)
                 message = "Hello, honorable administrator"
                 item_result['admin_message'] = message
@@ -247,31 +301,28 @@ async def get_vip_information(request):
                                 title='Admin information',
                                 is_login=1,
                                 user=user,
-                                result=result, role=userRole)
+                                result=result, role=user_role)
+            elif user_role == "VIP User":
+                user_become_vip_time = user_information.get("become_vip_time")
+                use_expire_date = user_information.get("expireDate")
+                item_result['user_become_vip_time'] = user_become_vip_time
+                item_result['expireDate'] = use_expire_date
+                result.append(item_result)
+                return template('payerInformation.html',
+                                title='VIP user information',
+                                is_login=1,
+                                user=user,
+                                result=result, role=user_role)
+
             else:
-                user_become_vip_time = userinformation.get("become_vip_time")
-                userVIPDuartion = userinformation.get("vip_duration")
-                if user_become_vip_time != "":
-                    item_result['user_become_vip_time'] = user_become_vip_time
-                    item_result['userVIPDuartion'] = userVIPDuartion
-                    date_vip = datetime.strptime(str(user_become_vip_time), "%Y-%m-%d %H:%M:%S")
-                    expireDate = (date_vip + timedelta(days=int(userVIPDuartion))).strftime("%Y-%m-%d %H:%M:%S")
-                    item_result['expireDate'] = expireDate
-                    result.append(item_result)
-                    return template('payerInformation.html',
-                                    title='VIP user information',
-                                    is_login=1,
-                                    user=user,
-                                    result=result, role=userRole)
-                else:
-                    warning_message = "Sorry,you are not VIP. You can become now!"
-                    item_result['warning_message'] = warning_message
-                    result.append(item_result)
-                    return template('payerInformation.html',
-                                    title='General user information',
-                                    is_login=1,
-                                    user=user,
-                                    result=result, role=userRole)
+                warning_message = "Sorry,you are not VIP. You can become now!"
+                item_result['warning_message'] = warning_message
+                result.append(item_result)
+                return template('payerInformation.html',
+                                title='General user information',
+                                is_login=1,
+                                user=user,
+                                result=result, role=user_role)
         except Exception as e:
             LOGGER.error(e)
             return redirect('/')
@@ -1098,7 +1149,7 @@ BODY_HTML = """
                           <td>
                             <h1>Dear User {Usernamefor}</h1>
                             <br>
-                            <p class="lead">You have already became 30 days VIP</p>
+                            <p class="lead">You have already {message} VIP</p>
                             <p>This email aim to notify you that the payment has been completed and you have became the VIP in quick reading website</p>
                             <p>You can use the bookshelf function and download the novels you want to read</p>
                             <p>However, you only have 30 days for the membership. After the deadline, your cache record will be deleted. In order to avoid affecting your reading, please renew your account in time </p>

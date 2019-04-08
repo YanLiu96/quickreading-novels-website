@@ -6,11 +6,12 @@ import sys
 from sanic import Sanic
 from sanic.response import html, redirect
 from sanic_session import RedisSessionInterface
-# Registering blueprints
+# Registering blueprints(to make server know this router and url routes)
 from src.views import searchEngine_bp, novels_bp, operate_bp, payment_bp, userAdmin_bp, md_bp
 from src.database.redies import RedisSession
 from src.config import LOGGER, CONFIG
 
+# reference
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 

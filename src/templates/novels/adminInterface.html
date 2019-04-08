@@ -37,7 +37,9 @@
                 <td>{{each_user.user}}</td>
                 <td>{{each_user.email}}</td>
                 <td>{{each_user.role}}</td>
-                <td>Delete</td>
+                <td class="delete-user">
+                    <a class="delete-user" data-value="{{each_user.user}}" href="javascript:;">Delete</a>
+                </td>
             </tr>
             {%endfor%}
             </tbody>
@@ -49,4 +51,5 @@
 </body>
 {% endblock %}
 {% block script %}
+<script src="static/novels/js/adminoperation.js"></script>
 {% endblock %}

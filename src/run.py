@@ -1,17 +1,17 @@
-import os
 import subprocess
-
+# This file control the running of the project
 if __name__ == '__main__':
-    # os.environ['MODE'] = 'PRO'
+    # Run server
     servers = [
         ["pipenv", "run", "gunicorn", "-c", "config/dev_gunicorn.py", "--worker-class", "sanic.worker.GunicornWorker",
          "server:app"]
     ]
-    procs = []
+    process = []
+    # Allocation process and run process
     for server in servers:
         proc = subprocess.Popen(server)
-        procs.append(proc)
-    for proc in procs:
+        process.append(proc)
+    for proc in process:
         proc.wait()
         if proc.poll():
             exit(0)
