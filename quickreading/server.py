@@ -6,14 +6,14 @@ import sys
 from sanic import Sanic
 from sanic.response import html, redirect
 from sanic_session import RedisSessionInterface
-# Registering blueprints(to make server know this router and url routes)
-from quickreading.views import searchEngine_bp, novels_bp, operate_bp, payment_bp, userAdmin_bp, md_bp
-from quickreading.database.redies import RedisSession
-from quickreading.config import LOGGER, CONFIG
 
 # reference
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Registering blueprints(to make server know this router and url routes)
 
+from quickreading.views import searchEngine_bp, novels_bp, operate_bp, payment_bp, userAdmin_bp, md_bp
+from quickreading.database.redies import RedisSession
+from quickreading.config import LOGGER, CONFIG
 
 app = Sanic(__name__)
 # The routes of this project

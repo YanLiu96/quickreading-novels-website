@@ -2,95 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="587b909e-c3e2-4598-9069-91325317a33c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/mdui/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mdui/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/config/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/dev_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/config/dev_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/dev_gunicorn.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/config/dev_gunicorn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/config/rules.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/user_agents.txt" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/data/user_agents.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/mongodb/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/database/mongodb/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/mongodb/motorBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/database/mongodb/motorBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/redies/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/database/redies/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/redies/redisbase.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/database/redies/redisbase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/cache.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/cache.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/extract_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/extract_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/novels_searchEngine/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/baidu_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/novels_searchEngine/baidu_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/base_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/novels_searchEngine/base_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/bing_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/novels_searchEngine/bing_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/google_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/novels_searchEngine/google_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_searchEngine/so_novels.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/novels_searchEngine/so_novels.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/novels_tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/novels_tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fetcher/response_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/fetcher/response_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/md/css/md.css" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/md/css/md.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/md/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/md/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/chapter.css" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/css/chapter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/css/content.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/css/register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/css/result.css" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/css/result.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/basic_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/basic_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/body_base_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/body_base_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/body_theme1_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/body_theme1_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/body_theme2_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/body_theme2_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/body_theme3_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/body_theme3_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/body_theme5_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/body_theme5_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/logo_home.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/logo_home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/logo_search.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/logo_search.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/theme_1_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/theme_1_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/theme_2_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/theme_2_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/theme_3_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/theme_3_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/img/theme_5_bg.0.4.png" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/img/theme_5_bg.0.4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/adminoperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/adminoperation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/bookmarks.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/bookmarks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/bookshelf.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/bookshelf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/chapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/chapter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/content.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/novels/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/static/novels/js/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/md/admin_bookmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/md/admin_bookmarks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/md/admin_booshelf.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/md/admin_booshelf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/md/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/md/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/md/is_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/md/is_login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/md/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/md/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/md/user_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/md/user_status.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/adminInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/adminInterface.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/admin_bookmarks.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/admin_bookmarks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/admin_bookshelf.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/admin_bookshelf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/chapter.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/chapter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/novels/search_bar.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/search_bar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/payment/payerInformation.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/payment/payerInformation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/payment/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/payment/payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/utils/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/verification/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/utils/verification/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/verification/verification.conf" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/utils/verification/verification.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/verification/verification.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/utils/verification/verification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/md_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/md_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/novels_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/novels_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/operate_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/operate_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/payment_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/payment_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/searchEngine_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/userAdmin_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/userAdmin_blueprint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/server.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1554900174172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
+    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1554902197014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="545661314">
@@ -110,10 +22,10 @@
           <entry key="project.open.time.1" value="12" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="12" />
-          <entry key="project.open.time.4" value="45" />
+          <entry key="project.open.time.4" value="46" />
           <entry key="project.open.time.5" value="53" />
           <entry key="project.open.time.6" value="7" />
-          <entry key="project.opened" value="144" />
+          <entry key="project.opened" value="145" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -159,7 +71,7 @@
           <entry key="dummy" value="126" />
           <entry key="html" value="3821" />
           <entry key="js" value="556" />
-          <entry key="py" value="10309" />
+          <entry key="py" value="10314" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -167,7 +79,7 @@
           <entry key="HTML" value="3821" />
           <entry key="JavaScript" value="556" />
           <entry key="PLAIN_TEXT" value="172" />
-          <entry key="Python" value="10309" />
+          <entry key="Python" value="10314" />
           <entry key="TOML" value="1" />
         </counts>
       </usages-collector>
@@ -201,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quickreading/views/payment_blueprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
+            <state relative-caret-position="6705">
               <caret line="459" column="76" selection-start-line="459" selection-start-column="76" selection-end-line="459" selection-end-column="76" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
@@ -214,25 +126,28 @@
         <entry file="file://$PROJECT_DIR$/quickreading/run.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quickreading/server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="9" column="101" lean-forward="true" selection-start-line="9" selection-start-column="101" selection-end-line="9" selection-end-column="101" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/quickreading/server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#22#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quickreading/views/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#37#88#0" expanded="true" />
               </folding>
@@ -367,8 +282,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="72" />
-    <option name="y" value="26" />
+    <option name="x" value="-16" />
+    <option name="y" value="23" />
     <option name="width" value="1349" />
     <option name="height" value="808" />
   </component>
@@ -377,6 +292,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -389,17 +305,10 @@
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,10 +406,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="72" y="26" width="1349" height="808" extended-state="0" />
+    <frame x="-198" y="81" width="1349" height="808" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30527925" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30986995" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -808,6 +717,23 @@
     <entry file="file://$PROJECT_DIR$/quickreading/static/novels/js/chapter.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/views/payment_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6705">
+          <caret line="459" column="76" selection-start-line="459" selection-start-column="76" selection-end-line="459" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -828,36 +754,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/views/payment_blueprint.py">
+    <entry file="file://$PROJECT_DIR$/quickreading/views/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="459" column="76" selection-start-line="459" selection-start-column="76" selection-end-line="459" selection-end-column="76" />
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#37#88#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="9" column="101" lean-forward="true" selection-start-line="9" selection-start-column="101" selection-end-line="9" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/views/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="230">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#37#88#0" expanded="true" />
+            <element signature="e#22#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
