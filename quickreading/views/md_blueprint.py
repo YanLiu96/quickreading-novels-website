@@ -6,7 +6,7 @@ from sanic import Blueprint
 from sanic.response import html, text, redirect
 
 from quickreading.database.mongodb import MotorBase
-from quickreading.fetcher.cache import get_the_latest_chapter, cache_search_ranking
+from quickreading.crawler.cache import get_the_latest_chapter, cache_search_ranking
 from quickreading.config import RULES, LOGGER, REPLACE_RULES, ENGINE_PRIORITY, CONFIG
 
 md_bp = Blueprint('rank_blueprint', url_prefix='md')

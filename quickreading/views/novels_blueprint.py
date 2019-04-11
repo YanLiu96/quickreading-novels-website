@@ -7,10 +7,10 @@ from sanic.response import redirect, html, text, json
 
 from quickreading.database.mongodb import MotorBase
 from quickreading.config import ENGINE_PRIORITY, CONFIG, LOGGER, RULES, REPLACE_RULES
-from quickreading.fetcher.function import get_time, get_netloc
-from quickreading.fetcher.novels_tools import get_novels_info
+from quickreading.crawler.function import get_time, get_netloc
+from quickreading.crawler.novels_tools import get_novels_info
 from quickreading.utils import ver_question
-from quickreading.fetcher.cache import cache_novels_content, cache_novels_chapter, cache_search_ranking
+from quickreading.crawler.cache import cache_novels_content, cache_novels_chapter, cache_search_ranking
 
 novels_bp = Blueprint('novels_blueprint')
 novels_bp.static('/static/novels', CONFIG.BASE_DIR + '/static/novels')

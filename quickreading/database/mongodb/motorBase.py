@@ -6,6 +6,7 @@ from quickreading.config import CONFIG
 from quickreading.utils.tools import singleton
 
 
+# reference https://motor.readthedocs.io/en/stable/
 @singleton
 class MotorBase:
     """
@@ -52,10 +53,10 @@ class MotorBase:
         collection_key = db_name + collection
         if collection_key not in self._collection:
             self._collection[collection_key] = self.get_db(db_name)[collection]
-
         return self._collection[collection_key]
 
 
+'''
 class MotorBaseOld:
     """
     use motor to connect mongodb
@@ -80,6 +81,7 @@ class MotorBaseOld:
             self._db = self.client(self.MONGODB['DATABASE'])[self.MONGODB['DATABASE']]
 
         return self._db
+'''
 
 
 @singleton

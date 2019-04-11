@@ -3,7 +3,7 @@ from sanic.response import json, html, redirect
 from jinja2 import Environment, PackageLoader, select_autoescape
 from quickreading.database.mongodb import MotorBase
 from urllib.parse import parse_qs, unquote
-from quickreading.fetcher.function import get_time
+from quickreading.crawler.function import get_time
 import paypalrestsdk
 from quickreading.config import CONFIG, LOGGER
 import smtplib

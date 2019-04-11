@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import aiocache
 import os
 import sys
@@ -31,6 +32,8 @@ def init_cache(app, loop):
     LOGGER.info("Starting aiocache : asyncio cache manager for redis")
     app.config.from_object(CONFIG)
     REDIS_DICT = CONFIG.REDIS_DICT
+    # configuration: Asyncio cache manager for redis
+    # reference https://github.com/argaen/aiocache
     aiocache.settings.set_defaults(
         class_="aiocache.RedisCache",
         endpoint=REDIS_DICT.get('REDIS_ENDPOINT', 'localhost'),
@@ -40,8 +43,9 @@ def init_cache(app, loop):
         loop=loop,
     )
     LOGGER.info("Starting redis")
+    # start redis
     redis_session = RedisSession()
-    # redis instance for app
+    # redis instance for this app
     app.get_redis_pool = redis_session.get_redis_pool
     # pass the getter method for the connection pool into the session
     app.session_interface = RedisSessionInterface(
@@ -59,16 +63,16 @@ async def add_session_to_request(request):
         user_ip = request.headers.get('X-Forwarded-For')
         LOGGER.info('user ip is: {}'.format(user_ip))
         if user_ip in CONFIG.FORBIDDEN:
-            return html("<h3>网站正在维护...</h3>")
+            return html("<h3>The website is under maintenance</h3>")
         if CONFIG.VAL_HOST == 'true':
             if not host or host not in CONFIG.HOST:
                 return redirect('http://www.quickreading.net')
         if CONFIG.WEBSITE['IS_RUNNING']:
             await app.session_interface.open(request)
         else:
-            return html("<h3>网站正在维护...</h3>")
+            return html("<h3>The website is under maintenance</h3>")
     else:
-        return html("<h3>网站正在维护...</h3>")
+        return html("<h3>The website is under maintenance</h3>")
 
 
 @app.middleware('response')
@@ -87,6 +91,6 @@ async def save_session(request, response):
         except KeyError as e:
             LOGGER.error(e)
 
-# Set the address of the index page
+# Set the address of the index page（0.0.0.0:8001）
 if __name__ == "__main__":
     app.run(host="0.0.0.0", workers=2, port=8001, debug=CONFIG.DEBUG)

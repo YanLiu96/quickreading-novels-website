@@ -2,12 +2,12 @@
 from urllib.parse import unquote
 from sanic import Blueprint
 
-from quickreading.fetcher.extract_novels import extract_chapters
-from quickreading.fetcher.function import get_time, get_netloc
-from quickreading.fetcher.novels_tools import get_novels_info
-from quickreading.fetcher import UniResponse, ResponseField
-from quickreading.fetcher.decorators import response_handle, authenticator, auth_params
-from quickreading.fetcher.cache import cache_novels_chapter
+from quickreading.crawler.extract_novels import extract_chapters
+from quickreading.crawler.function import get_time, get_netloc
+from quickreading.crawler.novels_tools import get_novels_info
+from quickreading.crawler import UniResponse, ResponseField
+from quickreading.crawler.decorators import response_handle, authenticator, auth_params
+from quickreading.crawler.cache import cache_novels_chapter
 
 from quickreading.config import LOGGER
 # a reference to the Sanic application object that is handling this request.

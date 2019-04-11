@@ -14,7 +14,7 @@ from sanic.response import html, json, redirect
 from urllib.parse import parse_qs, unquote
 from datetime import datetime as dt, timedelta
 from quickreading.database.mongodb import MotorBase
-from quickreading.fetcher.function import get_time
+from quickreading.crawler.function import get_time
 from quickreading.utils import get_real_answer
 from quickreading.config import CONFIG, LOGGER
 

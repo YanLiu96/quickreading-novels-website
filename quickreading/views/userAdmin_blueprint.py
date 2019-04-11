@@ -5,7 +5,7 @@ from sanic import Blueprint
 from sanic.response import html, redirect, json
 from datetime import datetime
 from quickreading.database.mongodb import MotorBase
-from quickreading.fetcher.cache import get_the_latest_chapter
+from quickreading.crawler.cache import get_the_latest_chapter
 from quickreading.config import LOGGER, CONFIG
 userAdmin_bp = Blueprint('userAdmin_blueprint', url_prefix='userAdmin')
 

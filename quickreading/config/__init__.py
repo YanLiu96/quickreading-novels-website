@@ -1,10 +1,10 @@
 """
 Created by Yan Liu at 2019.1.17
+This file config the
 """
-
 import os
 import logging
-from .rules import *
+from .resource_website_rules import *
 # the log of running(output)
 logging.basicConfig(
     level=logging.DEBUG
