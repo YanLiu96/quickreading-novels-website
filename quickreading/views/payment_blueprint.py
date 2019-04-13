@@ -16,20 +16,18 @@ payment_bp = Blueprint('payment_blueprint')
 
 SENDER = 'quickreadingnovelswebsite@gmail.com'
 SENDERNAME = 'Yan Liu'
-# Replace smtp_username with your Amazon SES SMTP user name.
+# Amazon SES SMTP user name.
 USERNAME_SMTP = "AKIAZFQQSWKGREV4YKVF"
 
-# Replace smtp_password with your Amazon SES SMTP password.
+# Amazon SES SMTP password.
 PASSWORD_SMTP = "BJQu3MFe1a6d3cO1+8wiBbJ7nRdFa5nbC3G8+mGB4Bdx"
-# If you're using Amazon SES in an AWS Region other than 美国西部（俄勒冈）,
-# replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
-# endpoint in the appropriate region.
+
 HOST = "email-smtp.eu-west-1.amazonaws.com"
 PORT = 587
 
 # The subject line of the email.
-SUBJECT = 'Becoming VIP successfully'
-
+SUBJECT1 = 'Becoming VIP successfully'
+SUBJECT2 = 'Renew VIP successfully'
 # The email body for recipients with non-HTML email clients.
 
 paypalrestsdk.configure({
@@ -163,13 +161,14 @@ async def execute(request):
         print('Execute success!')
         success = True
         user = request['session'].get('user', None)
-        user_role = request['session'].get('role', None)
-        # data = parse_qs(str(request.body, encoding='utf-8'))
+        motor_db = motor_base.get_db()
+        user_data = await motor_db.user.find_one({'user': user})
+        user_role = user_data.get("role")
         if user:
+            print(user_role)
             if user_role == "General User":
                 try:
                     become_vip_time = get_time()
-                    motor_db = motor_base.get_db()
                     res = await motor_db.user.update_one({'user': user}, {'$set': {'become_vip_time': become_vip_time}},
                                                          upsert=True)
                     if res:
@@ -187,7 +186,7 @@ async def execute(request):
                             RECIPIENT = user_email
                             # Create message container - the correct MIME type is multipart/alternative.
                             msg = MIMEMultipart('alternative')
-                            msg['Subject'] = SUBJECT
+                            msg['Subject'] = SUBJECT1
                             msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                             msg['To'] = RECIPIENT
                             part2 = MIMEText(BODY_HTML.format(Usernamefor=user, message="paid 30 days"), 'html')
@@ -213,7 +212,6 @@ async def execute(request):
                         return json({"Do not store  in database"})
                 except Exception as e:
                     LOGGER.exception(e)
-
             elif user_role == "VIP User":
                 try:
                     motor_db = motor_base.get_db()
@@ -231,7 +229,7 @@ async def execute(request):
                         RECIPIENT = user_email
                         # Create message container - the correct MIME type is multipart/alternative.
                         msg = MIMEMultipart('alternative')
-                        msg['Subject'] = SUBJECT
+                        msg['Subject'] = SUBJECT2
                         msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                         msg['To'] = RECIPIENT
                         # Comment or delete the next line if you are not using a configuration set
@@ -279,8 +277,9 @@ async def execute(request):
         print('Execute success!')
         success = True
         user = request['session'].get('user', None)
-        user_role = request['session'].get('role', None)
-        # data = parse_qs(str(request.body, encoding='utf-8'))
+        motor_db = motor_base.get_db()
+        user_data = await motor_db.user.find_one({'user': user})
+        user_role = user_data.get("role")
         if user:
             if user_role == "General User":
                 try:
@@ -305,7 +304,7 @@ async def execute(request):
                             RECIPIENT = user_email
                             # Create message container - the correct MIME type is multipart/alternative.
                             msg = MIMEMultipart('alternative')
-                            msg['Subject'] = SUBJECT
+                            msg['Subject'] = SUBJECT1
                             msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                             msg['To'] = RECIPIENT
                             part2 = MIMEText(BODY_HTML.format(Usernamefor=user, message="paid six months "), 'html')
@@ -349,7 +348,7 @@ async def execute(request):
                         RECIPIENT = user_email
                         # Create message container - the correct MIME type is multipart/alternative.
                         msg = MIMEMultipart('alternative')
-                        msg['Subject'] = SUBJECT
+                        msg['Subject'] = SUBJECT2
                         msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                         msg['To'] = RECIPIENT
                         # Comment or delete the next line if you are not using a configuration set
@@ -398,8 +397,9 @@ async def execute(request):
         print('Execute success!')
         success = True
         user = request['session'].get('user', None)
-        user_role = request['session'].get('role', None)
-        # data = parse_qs(str(request.body, encoding='utf-8'))
+        motor_db = motor_base.get_db()
+        user_data = await motor_db.user.find_one({'user': user})
+        user_role = user_data.get("role")
         if user:
             if user_role == "General User":
                 try:
@@ -423,7 +423,7 @@ async def execute(request):
                             RECIPIENT = user_email
                             # Create message container - the correct MIME type is multipart/alternative.
                             msg = MIMEMultipart('alternative')
-                            msg['Subject'] = SUBJECT
+                            msg['Subject'] = SUBJECT1
                             msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                             msg['To'] = RECIPIENT
                             part2 = MIMEText(BODY_HTML.format(Usernamefor=user, message="paid one year"), 'html')
@@ -466,7 +466,7 @@ async def execute(request):
                         RECIPIENT = user_email
                         # Create message container - the correct MIME type is multipart/alternative.
                         msg = MIMEMultipart('alternative')
-                        msg['Subject'] = SUBJECT
+                        msg['Subject'] = SUBJECT2
                         msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                         msg['To'] = RECIPIENT
                         part2 = MIMEText(BODY_HTML.format(Usernamefor=user, message="renew one year"), 'html')
@@ -1327,34 +1327,6 @@ BODY_HTML = """
   <table class="body">
     <tr>
       <td class="center" align="center" valign="top">
-        <center>
-
-          <table class="row header">
-            <tr>
-              <td class="center" align="center">
-                <center>
-
-                  <table class="container">
-                    <tr>
-                      <td class="wrapper last">
-
-                        <table class="twelve columns">
-                          <tr>
-                            <td class="six sub-columns">
-                              <img quickreading="http://placehold.it/200x50">
-                            </td>
-                            <td class="six sub-columns last" style="text-align:right; vertical-align:middle;">
-                              <span class="template-label">VIP User</span>
-                            </td>
-                            <td class="expander"></td>
-                          </tr>
-                        </table>
-
-                      </td>
-                    </tr>
-                  </table>
-
-                </center>
               </td>
             </tr>
           </table>
@@ -1370,7 +1342,7 @@ BODY_HTML = """
                       <table class="twelve columns">
                         <tr>
                           <td>
-                            <h1>Dear User {Usernamefor}</h1>
+                            <h1>Dear {Usernamefor}</h1>
                             <br>
                             <p class="lead">You have already {message} VIP Service</p>
                             <p>This email aim to notify you that the payment has been completed and you have became the VIP in quick reading website</p>
@@ -1400,7 +1372,7 @@ BODY_HTML = """
                       <table class="twelve columns">
                         <tr>
                           <td class="panel">
-                            <p>Now turn to the website and enjoy reading! <a href="#">Click it!</a></p>
+                            <p>Now turn to the website and enjoy reading! <a href="wwww.quickreading.net">Click it!</a></p>
                           </td>
                           <td class="expander"></td>
                         </tr>
@@ -1460,8 +1432,8 @@ BODY_HTML = """
                         <tr>
                           <td class="last right-text-pad">
                             <h5>Contact Info:</h5>
-                            <p>Phone: 408.341.0600</p>
-                            <p>Email: <a href="mailto:hseldon@trantor.com">hseldon@trantor.com</a></p>
+                            <p>Phone: 0833863840/p>
+                            <p>Email: <a href="quickreadingnovelswebsite@gmail.com">quickreadingnovelswebsite@gmail.com</a></p>
                           </td>
                           <td class="expander"></td>
                         </tr>
@@ -1470,12 +1442,9 @@ BODY_HTML = """
                     </td>
                   </tr>
                 </table>
-
-
                 <table class="row">
                   <tr>
                     <td class="wrapper last">
-
                       <table class="twelve columns">
                         <tr>
                           <td align="center">

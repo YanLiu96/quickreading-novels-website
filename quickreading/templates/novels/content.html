@@ -14,12 +14,10 @@
 {% block content %}
 <nav class="navbar navbar-default nav-search">
     <div class="container-fluid">
-
         <div class="navbar-header">
             <a class="navbar-brand" href="/">
             </a>
         </div>
-
         <form action="/search" method="get">
             <div class="col-xs-3 search">
                 <input type="text" name="wd" placeholder="search" value="">
@@ -31,7 +29,7 @@
         </div>
         {% else %}
         <div class="login">
-            <a class="btn btn-primary pull-right" href="#" role="button" data-toggle="modal" data-target="#login">登录</a>
+            <a class="btn btn-primary pull-right" href="#" role="button" data-toggle="modal" data-target="#login">Login</a>
         </div>
         {% endif %}
     </div>

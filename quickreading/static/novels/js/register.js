@@ -35,7 +35,10 @@ $(function () {
                     dataType: 'json',
                     success: function (data) {
                         if (data.status == 1) {
+                            let msg = "You have registered, please login in!";
+                            if (confirm(msg)) {
                             window.location.href = '/';
+                            }
                         }
                         if (data.status == -1) {
                             alert('The username has already existed');

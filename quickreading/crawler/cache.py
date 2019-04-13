@@ -1,12 +1,9 @@
 import re
-import aiohttp
 import async_timeout
 
 from bs4 import BeautifulSoup
 from aiocache.serializers import PickleSerializer, JsonSerializer
-
 from urllib.parse import urlparse, parse_qs, urljoin
-
 from quickreading.database.mongodb import MotorBase
 from quickreading.crawler.decorators import cached
 from quickreading.crawler.function import target_fetch, get_time, get_html_by_requests, get_random_user_agent
@@ -14,6 +11,7 @@ from quickreading.crawler.extract_novels import extract_pre_next_chapter
 from quickreading.config import RULES, LATEST_RULES, LOGGER
 
 
+# cache the content of novels
 @cached(ttl=300, key_from_attr='url', serializer=PickleSerializer(), namespace="main")
 async def cache_novels_content(url, netloc):
     headers = {

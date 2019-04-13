@@ -5,6 +5,7 @@
     <title>Pay for your membership!</title>
 </head>
 <body>
+{% include "payerInformation.html" %}
 <h2 align="center">Select Type of Service</h2>
 <br><br>
 <section>
@@ -87,10 +88,13 @@
                 .then(function (res) {
                     //already paied
                     console.log(res.success)
-                    window.location.href = '/getVIPInformation';
+                    var msg = "You have paid one month vip service!";
+                    if (confirm(msg)) {
+                        window.location.href = '/getVIPInformation';
+                    }
                 });
         }
-                if (document.getElementById("control_02").checked) {
+        if (document.getElementById("control_02").checked) {
             // 2. Make a request to your server
             return paypal.request.post('http://0.0.0.0:8001/executeSixMonth', {
                 paymentID: data.paymentID,
@@ -99,10 +103,13 @@
                 .then(function (res) {
                     //already paied
                     console.log(res.success)
-                    window.location.href = '/getVIPInformation';
+                    var msg = "You have paid six months vip service!";
+                    if (confirm(msg)) {
+                        window.location.href = '/getVIPInformation';
+                    }
                 });
         }
-                if (document.getElementById("control_03").checked) {
+        if (document.getElementById("control_03").checked) {
             // 2. Make a request to your server
             return paypal.request.post('http://0.0.0.0:8001/executeOneYear', {
                 paymentID: data.paymentID,
@@ -111,7 +118,10 @@
                 .then(function (res) {
                     //already paied
                     console.log(res.success)
-                    window.location.href = '/getVIPInformation';
+                    var msg = "You have paid one year vip service!";
+                    if (confirm(msg)) {
+                        window.location.href = '/getVIPInformation';
+                    }
                 });
         }
     }

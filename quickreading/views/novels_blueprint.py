@@ -41,9 +41,11 @@ def template(tpl, **kwargs):
 @novels_bp.route("/")
 async def index(request):
     user = request['session'].get('user', None)
+    user_role = request['session'].get('role', None)
     search_ranking = await cache_search_ranking()
     if user:
         return template('index.html', title='quick reading - search and enjoy', is_login=1, user=user,
+                        user_role=user_role,
                         search_ranking=search_ranking[:25])
     else:
         return template('index.html', title='quick reading - search and enjoy', is_login=0,
@@ -249,7 +251,7 @@ async def quickreading_content(request):
     content_data = await cache_novels_content(url=url, netloc=netloc)
     if content_data:
         try:
-            content = content_data.get('content', '获取失败')
+            content = content_data.get('content', 'Failure to get')
             next_chapter = content_data.get('next_chapter', [])
             title = content_data.get('title', '').replace(novels_name, '')
             name = title if title else name

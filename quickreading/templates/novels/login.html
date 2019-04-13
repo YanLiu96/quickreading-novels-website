@@ -1,8 +1,17 @@
 <li class="dropdown pull-right">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-       aria-expanded="false">{{user}}
+       aria-expanded="true">{{user}}
         <span class="caret"></span></a>
+
     <ul class="dropdown-menu">
+        {%if user_role=="Admin"%}
+        <li style="margin-top: 5px;">
+            <a href="/admininterface">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                <span class="personal-basic">Admin users</span>
+            </a>
+        </li>
+        {%endif%}
         <li style="margin-top: 5px;">
             <a href="/userAdmin/bookmarks">
                 <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
@@ -15,10 +24,24 @@
                 <span class="personal-basic">Bookshelf</span>
             </a>
         </li>
+        {%if user_role=="VIP User"%}
         <li>
             <a href="/getVIPInformation">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <span class="personal-basic">Person Info</span>
+                <span class="personal-basic">VIP Info</span>
+            </a>
+        </li>
+        <li>
+            <a href="/pay">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                <span class="personal-basic">Renew VIP</span>
+            </a>
+        </li>
+        {%else%}
+                <li>
+            <a href="/getVIPInformation">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                <span class="personal-basic">VIP Info</span>
             </a>
         </li>
         <li>
@@ -27,9 +50,10 @@
                 <span class="personal-basic">Payment</span>
             </a>
         </li>
+        {%endif%}
         <li role="separator" class="divider"></li>
         <li>
-            <a id="logout">
+            <a id="user_logout">
                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
                 <span class="personal-basic">Logout</span>
             </a>

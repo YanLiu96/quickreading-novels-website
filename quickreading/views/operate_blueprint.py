@@ -173,7 +173,6 @@ async def quickreading_login(request):
                 request['session']['user'] = user
                 request['session']['role'] = user_role
                 # response.cookies['user']['expires'] = date + datetime.timedelta(days=30)
-                #
                 # check whether admin!
                 if user_role == "Admin":
                     print("Admin Login")

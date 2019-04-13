@@ -12,7 +12,7 @@ $(document).ready(function () {
         $('html, body, .content').animate({scrollTop: $(document).height()}, 300);
         return false;
     });
-    // book
+    // bookshelf
     $('#owllook_book').click(function () {
         var chapter_url = $("#chapter_url").val();
         var novels_name = $("#novels_name").val();
@@ -35,7 +35,7 @@ $(document).ready(function () {
                 }
             });
         } else {
-            // add book
+            // add book in bookshelf
             last_read_url = window.location.pathname + window.location.search;
             var add_pd = {"novels_name": novels_name, "chapter_url": chapter_url, 'last_read_url': last_read_url};
             $.ajax({
@@ -81,7 +81,7 @@ $(document).ready(function () {
                         $('#bookMark').addClass('bookMarkAct');
                     }
                     if (data.status == -1) {
-                        alert('您还没有登录');
+                        alert('You should login');
                     }
                 }
             });
@@ -100,21 +100,21 @@ $(document).ready(function () {
                         $('#bookMark').addClass('bookMark');
                     }
                     if (data.status == -1) {
-                        alert('您还没有登录');
+                        alert('You should login');
                     }
                 }
             });
         }
     });
 
-    // login
-    $("#owllook_login").click(function () {
-        var owllook_user = $("#owllook_user").val();
-        var owllook_pass = $("#owllook_pass").val();
-        if (owllook_user == "" || owllook_pass == "") {
+    // user login
+    $("#user_login").click(function () {
+        var user_name = $("#user_name").val();
+        var user_password = $("#user_password").val();
+        if (user_name == "" || user_password == "") {
             alert('Content should not be NULL!!!');
         } else {
-            var login_pd = {'user': owllook_user, 'pwd': owllook_pass};
+            var login_pd = {'user': user_name, 'pwd': user_password};
             $.ajax({
                 type: "post",
                 contentType: "application/json",
@@ -135,8 +135,8 @@ $(document).ready(function () {
             });
         }
     });
-    // logout
-    $("#logout").click(function () {
+    // user logout
+    $("#user_logout").click(function () {
         $.ajax({
             type: "get",
             contentType: "application/json",
