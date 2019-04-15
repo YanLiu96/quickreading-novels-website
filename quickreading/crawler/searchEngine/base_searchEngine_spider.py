@@ -7,11 +7,8 @@ import async_timeout
 from quickreading.config import CONFIG, LOGGER, RESOURCE_DOMAIN, RULES, LATEST_RULES
 
 
+# Base class of search engine
 class BaseSearchEngine:
-    """
-    小说抓取父类
-    """
-
     def __init__(self, logger=None):
         self.resource_domain = RESOURCE_DOMAIN
         self.config = CONFIG
@@ -19,21 +16,18 @@ class BaseSearchEngine:
         self.logger = logger if logger else LOGGER
         self.rules = RULES
 
+    # get the search url of the search engine
     async def fetch_url(self, url, params, headers):
-        """
-        公共抓取函数
-        :param client:
-        :param url:
-        :param params:
-        :return:
-        """
         with async_timeout.timeout(15):
             try:
+                # Asynchronous HTTP client-To get something from the web:.
+                #  reference: https://github.com/aio-libs/aiohttp
                 async with aiohttp.ClientSession() as client:
                     async with client.get(url, params=params, headers=headers) as response:
                         assert response.status == 200
                         LOGGER.info('Task url: {}'.format(response.url))
                         try:
+                            # get the source code of search result in search engine
                             text = await response.text()
                         except:
                             text = await response.read()
@@ -42,20 +36,15 @@ class BaseSearchEngine:
                 LOGGER.exception(e)
                 return None
 
+    # class method must have a reference to a class object as the first parameter
     @classmethod
     async def start(cls, novels_name):
         return await cls().novels_search(novels_name)
 
+    # get the information of novels
     async def data_extraction(self, html):
-        """
-        小说信息抓取函数
-        :return:
-        """
         raise NotImplementedError
 
+    # search novels
     async def novels_search(self, novels_name):
-        """
-        小说搜索入口函数
-        :return:
-        """
         raise NotImplementedError

@@ -12,22 +12,22 @@ from quickreading.crawler.function import get_random_user_agent
 from quickreading.crawler.searchEngine.base_searchEngine_spider import BaseSearchEngine
 
 
+# implement methods in base class
 class BaiduSearchEngine(BaseSearchEngine):
-
     def __init__(self):
         super(BaiduSearchEngine, self).__init__()
 
     async def data_extraction(self, html):
-        """
-        小说信息抓取函数
-        :return:
-        """
         try:
+            # find the selector in baidu search result page
             url = html.select('h3.t a')[0].get('href', None)
             real_url = await self.get_real_url(url=url) if url else None
             if real_url:
                 real_str_url = str(real_url)
+                # get the netloc in the url(urlparse function in urllib can do it)
                 netloc = urlparse(real_str_url).netloc
+                print("111111111")
+                print(netloc)
                 if "http://" + netloc + "/" == real_str_url:
                     return None
                 if 'baidu' in real_str_url or netloc in self.resource_domain:
@@ -50,29 +50,24 @@ class BaiduSearchEngine(BaseSearchEngine):
             self.logger.exception(e)
             return None
 
+    # get the real url of search result
     async def get_real_url(self, url):
-        """
-        获取百度搜索结果真实url
-        :param url:
-        :return:
-        """
         with async_timeout.timeout(5):
             try:
                 async with aiohttp.ClientSession() as client:
+                    # In case of IP is blocked, use random user agent
                     headers = {'user-agent': await get_random_user_agent()}
                     async with client.head(url, headers=headers, allow_redirects=True) as response:
                         self.logger.info('Parse url: {}'.format(response.url))
                         url = response.url if response.url else None
+                        # return the search result's url
                         return url
             except Exception as e:
                 self.logger.exception(e)
                 return None
 
+    # search novels based on novels name
     async def novels_search(self, novels_name):
-        """
-        小说搜索入口函数
-        :return:
-        """
         url = self.config.URL_PC
         params = {'wd': novels_name, 'ie': 'utf-8', 'rn': self.config.BAIDU_RN, 'vf_bl': 1}
         headers = {'user-agent': await get_random_user_agent()}

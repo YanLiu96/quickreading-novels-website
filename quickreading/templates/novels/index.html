@@ -2,6 +2,7 @@
 {% block header %}
 <title>{{ title }} - Yan Liu's Project</title>
 <link rel="stylesheet" href="static/novels/css/index.css">
+<link rel="stylesheet" href="/md/static/md/css/md.css">
 {% endblock %}
 
 {% block content %}
@@ -11,7 +12,7 @@
     <a href="https://paypal.me/YanLiu96?locale.x=en_US" class="donate_button">Donate</a>
     {% else %}
     <div class="login">
-        <a class="btn btn-primary pull-right" href="#" role="button" data-toggle="modal" data-target="#login">Login</a>
+        <a class="btn btn-warning pull-right" href="#" role="button" data-toggle="modal" data-target="#login">Login</a>
     </div>
     {% endif %}
 </div>
@@ -22,20 +23,27 @@
     <form action="/search" method="get" class="home_search center-block">
         <div class="search center-block">
             <input type="text" name="wd" class="form-control center-block" placeholder="Please enter the novel's name">
-            <input class="btn btn-default" type="submit" value="Search">
+            <div>
+                <br>
+                <h4> <span  class="label label-default">360 So</span>
+                <span class="label label-primary">Baidu</span>
+                <span class="label label-success">Bing</span>
+                <span class="label label-info">Google</span></h4>
+            </div>
+            <input class="btn btn-warning mdui-ripple" type="submit" value="Search">
         </div>
     </form>
+    <br>
     <div class="owl_search_ranking center-block">
-            <span style="font-size: 100%" class="label label-info">Search Rank:</span>
+            <span style="font-size: 100%" class="label label-success">Search Rank:</span>
         {%for novels_name in search_ranking%}
         <a target="_blank" href="/search?wd={{novels_name.keyword}}"><span
-                class="label label-primary">{{novels_name.keyword}}</span></a>
+                class="label label-info">{{novels_name.keyword}}</span></a>
         {%endfor%}
-        <a target="_blank" href="/md"><span class="label label-primary" style="background: #d4507d">More</span></a>
+        <a target="_blank" href="/md"><span class="label label-danger" style="background: #d4507d">More</span></a>
     </div>
 </div>
 {% endblock %}
-
 <style>
 .donate_button {
   display: inline-block;

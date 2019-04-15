@@ -104,7 +104,7 @@ async def books(request):
                         else:
                             get_latest_data = await get_the_latest_chapter(book_url) or {}
                             item_result['latest_chapter_name'] = get_latest_data.get(
-                                'latest_chapter_name', '暂未获取，请反馈')
+                                'latest_chapter_name', 'no latest_chapter')
                             item_result['quickreading_content_url'] = get_latest_data.get(
                                 'quickreading_content_url', '')
                         item_result['add_time'] = i.get('add_time', '')
@@ -131,7 +131,7 @@ async def books(request):
 async def index(request):
     user = request['session'].get('user', None)
     novels_head = ['#', 'Novel Name', 'Search Record']
-    first_type_title = "Searching Rank"
+    first_type_title = "QuickReading——Search Ranking"
     first_type = []
     search_ranking = await cache_search_ranking()
     if user:

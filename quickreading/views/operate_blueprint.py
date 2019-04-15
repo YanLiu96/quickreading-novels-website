@@ -353,7 +353,7 @@ async def quickreading_add_bookmark(request):
                 await motor_db.user_message.update_one(
                     {'user': user, 'bookmarks.bookmark': {'$ne': url}},
                     {'$push': {'bookmarks': {'bookmark': url, 'add_time': time}}})
-                LOGGER.info('书签添加成功')
+                LOGGER.info('bookmark has been added')
                 return json({'status': 1})
         except Exception as e:
             LOGGER.exception(e)

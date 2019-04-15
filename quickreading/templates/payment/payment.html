@@ -5,7 +5,17 @@
     <title>Pay for your membership!</title>
 </head>
 <body>
-{% include "payerInformation.html" %}
+<div class="chip">
+  <img src="static/novels/img/favicon.ico" alt="Person" width="30" height="30">
+    <a href="/"><span style="color: green">Index Page</span></a>
+</div>
+{%if is_admin%}
+<h2 align="center">You are the administrator, you do not need to pay to enjoy the services</h2>
+{%elif is_VIP%}
+<h2 align="center">Your VIP service expire date is : {{expire_date}}</h2>
+{%else%}
+<h2 align="center">Welcome to pay and become VIP!</h2>
+{%endif%}
 <h2 align="center">Select Type of Service</h2>
 <br><br>
 <section>
@@ -215,8 +225,5 @@ p {
     flex-direction: column;
   }
 }
-
-
-
 </style>
 </html>

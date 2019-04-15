@@ -2,7 +2,6 @@
 {% block header %}
 <meta charset="UTF-8">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css" rel="stylesheet">
-
 <title>{{ title }}</title>
 <link rel="stylesheet" href="/md/static/md/css/md.css">
 {% endblock %}
@@ -18,12 +17,11 @@
     <div class="mdui-divider" style="margin-top: 1%;"></div>
     <div class="mdui-typo" style="margin-top: 1%">
     </div>
-
     <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 2%"></div>
 
     <div class="mdui-table-fluid">
         {% if is_admin %}
-        <table class="mdui-table" style="margin-bottom: 50px;">
+        <table class="mdui-table mdui-table-hoverable" style="margin-bottom: 50px;">
             <thead>
             <tr align="center">
                 {%for each_head in head%}

@@ -40,33 +40,37 @@ async def bookmarks(request):
     if user:
         try:
             motor_db = motor_base.get_db()
-            data = await motor_db.user_message.find_one({'user': user})
-            if data:
-                # 获取所有书签
-                bookmarks = data.get('bookmarks', None)
-                if bookmarks:
-                    result = []
-                    for i in bookmarks:
-                        item_result = {}
-                        bookmark = i.get('bookmark', None)
-                        query = parse_qs(urlparse(bookmark).query)
-                        item_result['novels_name'] = query.get('novels_name', '')[0] if query.get('novels_name',
-                                                                                                  '') else ''
-                        item_result['chapter_name'] = query.get('name', '')[0] if query.get('name', '') else ''
-                        item_result['chapter_url'] = query.get('chapter_url', '')[0] if query.get('chapter_url',
-                                                                                                  '') else ''
-                        item_result['bookmark'] = bookmark
-                        item_result['add_time'] = i.get('add_time', '')
-                        result.append(item_result)
-                    return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
-                                    is_login=1,
-                                    user=user,
-                                    is_bookmark=1,
-                                    result=result[::-1])
-            return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
-                            is_login=1,
-                            user=user,
-                            is_bookmark=0)
+            data = await motor_db.user.find_one({'user': user})
+            role = data.get('role', None)
+            if role == "VIP User" or role == "Admin":
+                if data:
+                    # 获取所有书签
+                    bookmarks = data.get('bookmarks', None)
+                    if bookmarks:
+                        result = []
+                        for i in bookmarks:
+                            item_result = {}
+                            bookmark = i.get('bookmark', None)
+                            query = parse_qs(urlparse(bookmark).query)
+                            item_result['novels_name'] = query.get('novels_name', '')[0] if query.get('novels_name',
+                                                                                                      '') else ''
+                            item_result['chapter_name'] = query.get('name', '')[0] if query.get('name', '') else ''
+                            item_result['chapter_url'] = query.get('chapter_url', '')[0] if query.get('chapter_url',
+                                                                                                      '') else ''
+                            item_result['bookmark'] = bookmark
+                            item_result['add_time'] = i.get('add_time', '')
+                            result.append(item_result)
+                        return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
+                                        is_login=1,
+                                        user=user,
+                                        is_bookmark=1,
+                                        result=result[::-1])
+                return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
+                                is_login=1,
+                                user=user,
+                                is_bookmark=0)
+            else:
+                return redirect('/pay')
         except Exception as e:
             LOGGER.error(e)
             return redirect('/')
@@ -83,7 +87,7 @@ async def bookshelf(request):
         role = data.get('role', None)
         if role == "VIP User" or role == "Admin":
             try:
-                motor_db = motor_base.get_db()
+               # motor_db = motor_base.get_db()
                 data = await motor_db.user_message.find_one({'user': user})
                 if data:
                     books_url = data.get('books_url', None)

@@ -10,13 +10,12 @@
     }
 </style>
 {% endblock %}
-
 {% block content %}
 {% include "search_bar.html" %}
 <div class="container">
     <div class="result row">
         <div class="show-result col-sm-7 col-xs-12">
-            <p style="color: #868383;font-size: 13px; ">find {{count}} results（time{{time}}s）</p>
+            <p style="color: #868383;font-size: 14px; ">find {{count}} results（time {{time}}s）</p>
             <div class="list-unstyled item">
                 {%for item in result%}
                 <div class="result_item col-sm-9 col-xs-12">
@@ -29,17 +28,16 @@
                         <div class="tags">
                             <span>{{item.time}}</span>
                             {% if item.is_recommend %}
-                            <span class="label label-primary">recommended resource</span>
+                            <span class="label label-success">recommended</span>
                             {% else %}
                             {% endif %}
                             {% if item.is_parse %}
-                            <span class="label label-primary parse-label">already analyzed </span>
+                            <span class="label label-info parse-label">already parsed </span>
                             {% else %}
-                            <span class="label label-danger parse-label">not analyze</span>
+                            <span class="label label-danger parse-label">not parse</span>
                             {% endif %}
                         </div>
                     </li>
-
                 </div>
                 {%endfor%}
             </div>

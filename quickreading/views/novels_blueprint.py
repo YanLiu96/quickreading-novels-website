@@ -55,12 +55,7 @@ async def index(request):
 @novels_bp.route("/register")
 async def user_register(request):
     """
-    User Login
-    :param request:
-    :return:
-        :   -1  uer name and password is null
-        :   0   wrong name or password
-        :   1
+    User Register
     """
     user = request['session'].get('user', None)
     if user:
@@ -81,19 +76,21 @@ async def user_register(request):
 @novels_bp.route("/search", methods=['GET'])
 async def quickreading_search(request):
     start = time.time()
+    # delete space in the fore and aft
     name = str(request.args.get('wd', '')).strip()
     novels_keyword = name.split(' ')[0]
     motor_db = motor_base.get_db()
     if not name:
         return redirect('/')
     else:
-        # 记录搜索小说名
+        # store the search record
         try:
             await motor_db.search_records.update_one({'keyword': name}, {'$inc': {'count': 1}}, upsert=True)
         except Exception as e:
             LOGGER.exception(e)
-    # 通过搜索引擎获取检索结果
+    # Retrieve the search results through a search engine
     parse_result = None
+    # choose different search engine to search novels
     if name.startswith('!baidu'):
         novels_keyword = name.split('baidu')[1].strip()
         novels_name = 'intitle:{name} 小说 阅读'.format(name=novels_keyword)
@@ -106,6 +103,10 @@ async def quickreading_search(request):
         novels_keyword = name.split('bing')[1].strip()
         novels_name = "{name} 小说 阅读 最新章节".format(name=novels_keyword)
         parse_result = await get_novels_info(class_name='bing', novels_name=novels_name)
+    elif name.startswith('!google'):
+        novels_keyword = name.split('google')[1].strip()
+        novels_name = "{name} 小说 阅读 最新章节".format(name=novels_keyword)
+        parse_result = await get_novels_info(class_name='google', novels_name=novels_name)
     else:
         for each_engine in ENGINE_PRIORITY:
             # for bing
@@ -132,9 +133,7 @@ async def quickreading_search(request):
                 if parse_result:
                     break
     if parse_result:
-        # result_sorted = sorted(
-        #     parse_result, reverse=True, key=lambda res: res['timestamp']) if ':baidu' not in name else parse_result
-        # 优先依靠是否解析进行排序  其次以更新时间进行排序
+        # rank domain which is parsed first
         result_sorted = sorted(
             parse_result,
             reverse=True,
@@ -142,22 +141,23 @@ async def quickreading_search(request):
         user = request['session'].get('user', None)
         if user:
             try:
-                time_current = get_time()
+                time_now = get_time()
+                # store search date
                 res = await motor_db.user_message.update_one({'user': user},
-                                                             {'$set': {'last_update_time': time_current}},
+                                                             {'$set': {'last_update_time': time_now}},
                                                              upsert=True)
                 if res:
-                    is_ok = await motor_db.user_message.update_one(
+                    # store novels name and count(if searched before add one )
+                    store_search_information = await motor_db.user_message.update_one(
                         {'user': user, 'search_records.keyword': {'$ne': novels_keyword}},
                         {'$push': {'search_records': {'keyword': novels_keyword, 'counts': 1}}},
                     )
 
-                    if is_ok:
+                    if store_search_information:
                         await motor_db.user_message.update_one(
                             {'user': user, 'search_records.keyword': novels_keyword},
                             {'$inc': {'search_records.$.counts': 1}}
                         )
-
             except Exception as e:
                 LOGGER.exception(e)
             return template(
@@ -168,7 +168,6 @@ async def quickreading_search(request):
                 time='%.2f' % (time.time() - start),
                 result=result_sorted,
                 count=len(parse_result))
-
         else:
             return template(
                 'result.html',
@@ -179,7 +178,7 @@ async def quickreading_search(request):
                 count=len(parse_result))
 
     else:
-        return html("No Result！请将小说名反馈给本站，谢谢！")
+        return html("No Result! The website not been crawler")
 
 
 @novels_bp.route("/chapter")
@@ -197,7 +196,6 @@ async def chapter(request):
     netloc = get_netloc(url)
     if netloc not in RULES.keys():
         return redirect(url)
-
     if netloc in REPLACE_RULES.keys():
         url = url.replace(REPLACE_RULES[netloc]['old'], REPLACE_RULES[netloc]['new'])
 

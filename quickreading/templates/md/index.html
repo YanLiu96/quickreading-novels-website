@@ -3,27 +3,16 @@
 <title>{{ title }} - Searching rank in this website</title>
 <link rel="stylesheet" href="/md/static/md/css/md.css">
 {% endblock %}
-
 {% block content %}
-<body class="mdui-appbar-with-toolbar">
+<body>
 <div class="mdui-container">
-    <div class="mdui-typo" style="margin-top: 3%">
-        <div class="mdui-chip">
-            <a href="/"><span class="rank-list mdui-chip-title">QuickReading</span></a>
-        </div>
-    </div>
-    <div class="mdui-divider" style="margin-top: 1%;"></div>
     <div class="mdui-typo" style="margin-top: 1%">
         <div class="mdui-chip">
-            {% if is_owl %}
-            <span class="mdui-chip-title mdui-text-color-red">{{first_type_title}}</span>
-            {% else %}
-            {% endif %}
+            <img class="mdui-chip-icon" src="static/novels/img/favicon.ico"/>
+            <a href="/"><span class="rank-list mdui-chip-title">QuickReading-Index-Page</span></a>
         </div>
-    </div>
-
-    <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 2%"></div>
-
+        <strong><h2 style="color: #c4d36c" align="center">{{first_type_title}}</h2></strong>
+    <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 1%"></div>
     <div class="mdui-table-fluid">
         {% if is_owl %}
         <table class="mdui-table" style="margin-bottom: 50px;">
@@ -47,6 +36,7 @@
         {% else %}
         {% endif %}
     </div>
+</div>
 </div>
 </body>
 {% endblock %}

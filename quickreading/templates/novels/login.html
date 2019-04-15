@@ -2,7 +2,6 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
        aria-expanded="true">{{user}}
         <span class="caret"></span></a>
-
     <ul class="dropdown-menu">
         {%if user_role=="Admin"%}
         <li style="margin-top: 5px;">
@@ -11,6 +10,7 @@
                 <span class="personal-basic">Admin users</span>
             </a>
         </li>
+        <li role="separator" class="divider"></li>
         {%endif%}
         <li style="margin-top: 5px;">
             <a href="/userAdmin/bookmarks">
@@ -41,7 +41,7 @@
                 <li>
             <a href="/getVIPInformation">
                 <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <span class="personal-basic">VIP Info</span>
+                <span class="personal-basic">Personal Info</span>
             </a>
         </li>
         <li>

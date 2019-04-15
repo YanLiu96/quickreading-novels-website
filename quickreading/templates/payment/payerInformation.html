@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.2.1/css/mdui.min.css" rel="stylesheet">
-    <title>User information</title>
+    <title>QuickReading-User information</title>
 </head>
 <body>
-
 <div class="mdui-container">
 <div class="mdui-divider" style="margin-top: 2%; margin-bottom: 2%"></div>
-
 <div class="mdui-table-fluid">
     <table class="mdui-table" style="margin-bottom: 2px;">
     {%for item in result%}
@@ -19,7 +17,6 @@
             <td>User name</td>
             <td>{{item.userName}}</td>
         </tr>
-
         <tr>
             <td>User email</td>
             <td>{{item.userEmial}}</td>
@@ -29,7 +26,7 @@
             <td>{{item.role}}</td>
         </tr>
        <tr>
-            <td>Message</td>
+            <td>Hello</td>
             <td>{{item.admin_message}}</td>
         </tr>
         </tbody>
@@ -74,8 +71,11 @@
             <td>{{item.role}}</td>
         </tr>
         <tr>
-            <td>Sorry</td>
-            <td>{{item.warning_message}}</td>
+            <td>Warning</td>
+            <td>{{item.warning_message}}
+                <br>
+                <a href="/pay">Pay to be VIP!</a>
+            </td>
         </tr>
         </tbody>
         {%endif%}

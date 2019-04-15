@@ -60,7 +60,16 @@ def template(tpl, **kwargs):
 async def pay(request):
     user = request['session'].get('user', None)
     if user:
-        return template('payment.html', is_login=1)
+        motor_db = motor_base.get_db()
+        user_data = await motor_db.user.find_one({'user': user})
+        user_role = user_data.get('role', None)
+        if user_role == 'Admin':
+            return template('payment.html', is_login=1, is_admin=1)
+        elif user_role == 'VIP User':
+            expire_date = user_data.get('expireDate', None)
+            return template('payment.html', is_login=1, is_VIP=1, expire_date=expire_date)
+        else:
+            return template('payment.html', is_login=1)
     else:
         return redirect('/')
 
