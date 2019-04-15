@@ -339,20 +339,24 @@ async def quickreading_add_bookmark(request):
         :   0   添加书签失败
         :   1   添加书签成功
     """
+    print("1")
     user = request['session'].get('user', None)
     data = parse_qs(str(request.body, encoding='utf-8'))
     bookmark_url = data.get('bookmark_url', '')
     if user and bookmark_url:
         url = unquote(bookmark_url[0])
         time = get_time()
+        print("2")
         try:
             motor_db = motor_base.get_db()
             res = await motor_db.user_message.update_one({'user': user}, {'$set': {'last_update_time': time}},
                                                          upsert=True)
+            print("3")
             if res:
                 await motor_db.user_message.update_one(
                     {'user': user, 'bookmarks.bookmark': {'$ne': url}},
                     {'$push': {'bookmarks': {'bookmark': url, 'add_time': time}}})
+                print("4")
                 LOGGER.info('bookmark has been added')
                 return json({'status': 1})
         except Exception as e:
@@ -392,6 +396,34 @@ async def quickreading_add_bookshelf(request):
                         'books_url': {'book_url': url, 'add_time': time, 'last_read_url': unquote(last_read_url[0])}}})
                 LOGGER.info('You have added this page sucessfully in you bookshelf!')
                 return json({'status': 1})
+        except Exception as e:
+            LOGGER.exception(e)
+            return json({'status': 0})
+    else:
+        return json({'status': -1})
+
+
+@operate_bp.route("/delete_bookmark", methods=['POST'])
+async def owllook_delete_bookmark(request):
+    """
+    删除书签
+    :param request:
+    :return:
+        :   -1  用户session失效  需要重新登录
+        :   0   删除书签失败
+        :   1   删除书签成功
+    """
+    user = request['session'].get('user', None)
+    data = parse_qs(str(request.body, encoding='utf-8'))
+    bookmarkurl = data.get('bookmarkurl', '')
+    if user and bookmarkurl:
+        bookmark = unquote(bookmarkurl[0])
+        try:
+            motor_db = motor_base.get_db()
+            await motor_db.user_message.update_one({'user': user},
+                                                   {'$pull': {'bookmarks': {"bookmark": bookmark}}})
+            LOGGER.info('删除书签成功')
+            return json({'status': 1})
         except Exception as e:
             LOGGER.exception(e)
             return json({'status': 0})

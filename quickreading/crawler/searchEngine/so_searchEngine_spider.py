@@ -61,7 +61,6 @@ class SoSearchEngine(BaseSearchEngine):
                 url = parse_qs(urlparse(url).query).get('url', None)
                 url = url[0] if url else None
             netloc = urlparse(url).netloc
-            self.logger.info(netloc)
             if not url or 'baidu' in url or 'baike.so.com' in url or netloc in self.resource_domain:
                 return None
             # if the domain in the rule(which has been parsed)

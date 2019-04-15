@@ -40,9 +40,10 @@ async def bookmarks(request):
     if user:
         try:
             motor_db = motor_base.get_db()
-            data = await motor_db.user.find_one({'user': user})
-            role = data.get('role', None)
+            info = await motor_db.user.find_one({'user': user})
+            role = info.get('role', None)
             if role == "VIP User" or role == "Admin":
+                data = await motor_db.user_message.find_one({'user': user})
                 if data:
                     # 获取所有书签
                     bookmarks = data.get('bookmarks', None)
@@ -87,7 +88,6 @@ async def bookshelf(request):
         role = data.get('role', None)
         if role == "VIP User" or role == "Admin":
             try:
-               # motor_db = motor_base.get_db()
                 data = await motor_db.user_message.find_one({'user': user})
                 if data:
                     books_url = data.get('books_url', None)

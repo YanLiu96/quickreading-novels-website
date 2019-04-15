@@ -6,7 +6,6 @@ $(document).ready(function () {
 		this.img = img;
 	}
 
-
 	/*-------------------初始化-------------------*/
 	var base = [];
 
