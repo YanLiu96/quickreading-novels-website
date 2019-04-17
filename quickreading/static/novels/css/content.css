@@ -1,5 +1,5 @@
 body {
-    background: url(../img/read_bg.png) #ede7da !important;
+    background: url(../img/bg2.png) #ede7da !important;
     color: #333 !important;
     font-family: "Microsoft YaHei" !important;
 }
@@ -134,7 +134,7 @@ pre {
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, .1);
     border-top: none;
-    background: url("../img/left_bar_flag.png")
+    background: url("../img/bg1.png")
 }
 
 .left-bar-list .left-bar-flag .glyphicon {

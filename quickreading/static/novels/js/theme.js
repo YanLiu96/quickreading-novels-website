@@ -9,23 +9,23 @@ $(document).ready(function () {
 	/*-------------------初始化-------------------*/
 	var base = [];
 
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/body_base_bg.0.4.png"] = "../img/body_base_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/basic_bg.0.4.png"] = "../img/basic_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme1_bg.0.4.png"] = "../img/body_theme1_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_1_bg.0.4.png"] = "../img//theme_1_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme2_bg.0.4.png"] = "../img/body_theme2_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_2_bg.0.4.png"] = "../img/theme_2_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme3_bg.0.4.png"] = "../img/body_theme3_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_3_bg.0.4.png"] = "../img/theme_3_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme5_bg.0.4.png"] = "../img/body_theme5_bg.0.4.png";
-	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_5_bg.0.4.png"] = "../img/theme_5_bg.0.4.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/conten_background.png"] = "static/novels/img/conten_background.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/basic_bg.0.4.png"] = "static/novels/img/basic_bg.0.4.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_theme1.png"] = "static/novels/img/content_theme1.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_1_bg.0.4.png"] = "static/novels/img//theme_1_bg.0.4.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_them2.png"] = "static/novels/img/content_them2.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_2_bg.0.4.png"] = "static/novels/img/theme_2_bg.0.4.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_them3.png"] = "static/novels/img/content_them3.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_3_bg.0.4.png"] = "static/novels/img/theme_3_bg.0.4.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_them4.png"] = "static/novels/img/content_them4.png";
+	base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_5_bg.0.4.png"] = "static/novels/img/theme_5_bg.0.4.png";
 
-	var mise = new theme("rgb(237, 231, 218)", base["http://qidian.gtimg.com/qd/images/read.qidian.com/body_base_bg.0.4.png"],"rgba(0, 0, 0, 0)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/basic_bg.0.4.png"] );    //米色
-	var maihuang=new theme("rgb(224, 206, 158)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme1_bg.0.4.png"] ,"rgb(243, 233, 198)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_1_bg.0.4.png"] ); //麦黄
-	var yaqing = new theme("rgb(205, 223, 205)" , base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme2_bg.0.4.png"],"rgb(226, 238, 226)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_2_bg.0.4.png"] );//雅青
-	var hulan = new theme("rgb(207, 221, 225)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme3_bg.0.4.png"] ,"rgb(226, 239, 243)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_3_bg.0.4.png"] );//湖蓝
+	var mise = new theme("rgb(237, 231, 218)", base["http://qidian.gtimg.com/qd/images/read.qidian.com/conten_background.png"],"rgba(0, 0, 0, 0)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/basic_bg.0.4.png"] );    //米色
+	var maihuang=new theme("rgb(224, 206, 158)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_theme1.png"] ,"rgb(243, 233, 198)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_1_bg.0.4.png"] ); //麦黄
+	var yaqing = new theme("rgb(205, 223, 205)" , base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_them2.png"],"rgb(226, 238, 226)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_2_bg.0.4.png"] );//雅青
+	var hulan = new theme("rgb(207, 221, 225)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_them3.png"] ,"rgb(226, 239, 243)" ,base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_3_bg.0.4.png"] );//湖蓝
 	var danfen = new theme("rgb(235, 206, 206)","none" ,"rgb(245, 228, 228)" ,"none" );//淡粉
-	var wuhui = new theme( "rgb(208, 208, 208)",base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/body_theme5_bg.0.4.png"] , "rgb(220, 220, 220)",base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_5_bg.0.4.png"] );//雾灰
+	var wuhui = new theme( "rgb(208, 208, 208)",base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/content_them4.png"] , "rgb(220, 220, 220)",base["http://qidian.gtimg.com/qd/images/read.qidian.com/theme/theme_5_bg.0.4.png"] );//雾灰
 
 
 	var bg_target = $("body");

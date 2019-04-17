@@ -4,6 +4,7 @@
 <title>{{ title }} - enjoy high quality reading experience</title>
 <link rel="stylesheet" href="static/novels/css/result.css">
 <link rel="stylesheet" href="static/novels/css/register.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 {% endblock %}
 
 {% block content %}
@@ -12,27 +13,47 @@
     <div class="register center-block">
         <h4 class="title">Register</h4>
         <form action="" method="post" role="form" id="register">
+            <div class="form-group">
+            <label  class="cols-sm-2 control-label">User Name</label>
             <div class="input-group">
-                <input type="text" class="sign" name="nickname" placeholder="User Name">
-                <i class="glyphicon glyphicon-user icon"></i>
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input type="text" class="sign" name="nickname" placeholder="Enter user name">
             </div>
-            <div class="input-group">
-                <input type="text" class="sign" name="email" placeholder="Your E-mail">
-                <i class="glyphicon glyphicon-envelope icon"></i>
             </div>
+
+            <div class="form-group">
+            <label  class="cols-sm-2 control-label">Your Email</label>
             <div class="input-group">
-                <input type="text" class="sign" name="answer" placeholder="Input: {{question}}">
-                <i class="glyphicon glyphicon-question-sign icon"></i>
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="text" class="sign" name="email" placeholder="Enter your Email">
             </div>
-            <div class="input-group">
-                <input type="password" class="sign" name="password" placeholder="Your Password">
-                <i class="glyphicon glyphicon-lock icon"></i>
             </div>
+
+            <div class="form-group">
+            <label  class="cols-sm-2 control-label">Non-Robot Verification</label>
             <div class="input-group">
-                <input type="password" class="sign sign-last" name="password2" placeholder="Repeate Password" data-container="body"
+                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                <input type="text" class="sign" name="answer" placeholder="Enter: {{question}}">
+            </div>
+            </div>
+
+            <div class="form-group">
+            <label  class="cols-sm-2 control-label">Password</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="password" class="sign" name="password" placeholder="Enter your Password">
+            </div>
+            </div>
+
+            <div class="form-group">
+                <label  class="cols-sm-2 control-label">Confirm Password</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input type="password" class="sign" name="password2" placeholder="Confirm your Password" data-container="body"
                        data-toggle="popover" data-content="">
-                <i class="glyphicon glyphicon-lock icon"></i>
+                 </div>
             </div>
+
             <p id="errorInfo0" class="errorInfo errorHidden0">Password(>5) && UserName(>2)</p>
             <p id="errorInfo1" class="errorInfo errorHidden1">Different password</p>
             <p id="errorInfo2" class="errorInfo errorHidden2">Not Null</p>
