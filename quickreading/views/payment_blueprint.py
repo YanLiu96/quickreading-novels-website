@@ -518,16 +518,18 @@ async def get_vip_information(request):
             user_role = user_information.get('role')
             user_name = user_information.get("user")
             user_emial = user_information.get("email")
+            register_time = user_information.get("register_time")
 
             item_result = {}
             result = []
             item_result['userName'] = user_name
             item_result['userEmial'] = user_emial
             item_result['role'] = user_role
+            item_result['register_time'] = register_time
 
             if user_role == 'Admin':
                 result.append(item_result)
-                message = "Hello, honorable administrator"
+                message = "Honorable administrator"
                 item_result['admin_message'] = message
                 return template('payerInformation.html',
                                 title='Admin information',
@@ -547,7 +549,7 @@ async def get_vip_information(request):
                                 result=result, role=user_role)
 
             else:
-                warning_message = "Sorry,you are not VIP. You can become now!"
+                warning_message = "Sorry,you are not VIP!"
                 item_result['warning_message'] = warning_message
                 result.append(item_result)
                 return template('payerInformation.html',
