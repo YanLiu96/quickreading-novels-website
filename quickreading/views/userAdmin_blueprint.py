@@ -7,6 +7,7 @@ from datetime import datetime
 from quickreading.database.mongodb import MotorBase
 from quickreading.crawler.cache import get_the_latest_chapter
 from quickreading.config import LOGGER, CONFIG
+
 userAdmin_bp = Blueprint('userAdmin_blueprint', url_prefix='userAdmin')
 
 userAdmin_bp.static('/static/novels', CONFIG.BASE_DIR + '/static/novels')
@@ -64,11 +65,13 @@ async def bookmarks(request):
                         return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
                                         is_login=1,
                                         user=user,
+                                        user_role=role,
                                         is_bookmark=1,
                                         result=result[::-1])
                 return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
                                 is_login=1,
                                 user=user,
+                                user_role=role,
                                 is_bookmark=0)
             else:
                 return redirect('/pay')
@@ -125,10 +128,11 @@ async def bookshelf(request):
                                         title='bookshelf of {user}'.format(user=user),
                                         is_login=1,
                                         user=user,
+                                        user_role=role,
                                         is_bookmark=1,
                                         result=result[::-1])
                 return template('admin_bookshelf.html', title='bookshelf of {user}'.format(user=user),
-                                is_login=1, user=user, is_bookmark=0)
+                                is_login=1, user=user, user_role=role, is_bookmark=0)
             except Exception as e:
                 LOGGER.error(e)
                 return redirect('/')
@@ -168,5 +172,3 @@ async def similar_user(request):
             return redirect('/')
     else:
         return redirect('/')
-
-

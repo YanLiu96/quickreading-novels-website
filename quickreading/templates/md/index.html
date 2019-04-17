@@ -12,31 +12,31 @@
             <a href="/"><span class="rank-list mdui-chip-title">QuickReading-Index-Page</span></a>
         </div>
         <strong><h2 style="color: #c4d36c" align="center">{{first_type_title}}</h2></strong>
-    <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 1%"></div>
-    <div class="mdui-table-fluid">
-        {% if is_owl %}
-        <table class="mdui-table" style="margin-bottom: 50px;">
-            <thead>
-            <tr align="center">
-                {%for each_head in novels_head%}
-                <th>{{each_head}}</th>
+        <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 1%"></div>
+        <div class="mdui-table-fluid">
+            {% if is_owl %}
+            <table class="mdui-table mdui-table-hoverable" style="margin-bottom: 50px;">
+                <thead>
+                <tr align="center">
+                    {%for each_head in novels_head%}
+                    <th>{{each_head}}</th>
+                    {%endfor%}
+                </tr>
+                </thead>
+                <tbody>
+                {%for each_ranking in search_ranking%}
+                <tr>
+                    <td>{{each_ranking.index}}</td>
+                    <td><a href="/search?wd={{each_ranking.keyword}}" target="_blank">{{each_ranking.keyword}}</a></td>
+                    <td>{{each_ranking.count}}</td>
+                </tr>
                 {%endfor%}
-            </tr>
-            </thead>
-            <tbody>
-            {%for each_ranking in search_ranking%}
-            <tr>
-                <td>{{each_ranking.index}}</td>
-                <td><a href="/search?wd={{each_ranking.keyword}}" target="_blank">{{each_ranking.keyword}}</a></td>
-                <td>{{each_ranking.count}}</td>
-            </tr>
-            {%endfor%}
-            </tbody>
-        </table>
-        {% else %}
-        {% endif %}
+                </tbody>
+            </table>
+            {% else %}
+            {% endif %}
+        </div>
     </div>
-</div>
 </div>
 </body>
 {% endblock %}

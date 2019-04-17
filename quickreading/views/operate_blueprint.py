@@ -44,6 +44,8 @@ PORT = 587
 # The subject line of the email.
 SUBJECT1 = 'Register successfully'
 SUBJECT2 = 'Sorry you need to renew vip'
+
+
 # The email body for recipients with non-HTML email clients.
 
 
@@ -67,6 +69,7 @@ env = Environment(
 def template(tpl, **kwargs):
     template = env.get_template(tpl)
     return html(template.render(kwargs))
+
 
 '''
 @operate_bp.route("/change_email", methods=['POST'])

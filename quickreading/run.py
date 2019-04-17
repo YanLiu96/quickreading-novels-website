@@ -1,4 +1,5 @@
 import subprocess
+
 # This file control the running of the project
 if __name__ == '__main__':
     # Run server

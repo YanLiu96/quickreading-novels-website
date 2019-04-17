@@ -10,6 +10,7 @@ from quickreading.crawler.decorators import response_handle, authenticator, auth
 from quickreading.crawler.cache import cache_novels_chapter
 
 from quickreading.config import LOGGER
+
 # a reference to the Sanic application object that is handling this request.
 searchEngine_bp = Blueprint('searchEngine_blueprint', url_prefix='searchEngine')
 

@@ -14,44 +14,45 @@
         <h4 class="title">Register</h4>
         <form action="" method="post" role="form" id="register">
             <div class="form-group">
-            <label  class="cols-sm-2 control-label">User Name</label>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="sign" name="nickname" placeholder="Enter user name">
-            </div>
-            </div>
-
-            <div class="form-group">
-            <label  class="cols-sm-2 control-label">Your Email</label>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="text" class="sign" name="email" placeholder="Enter your Email">
-            </div>
+                <label class="cols-sm-2 control-label">User Name</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <input type="text" class="sign" name="nickname" placeholder="Enter user name">
+                </div>
             </div>
 
             <div class="form-group">
-            <label  class="cols-sm-2 control-label">Non-Robot Verification</label>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                <input type="text" class="sign" name="answer" placeholder="Enter: {{question}}">
-            </div>
-            </div>
-
-            <div class="form-group">
-            <label  class="cols-sm-2 control-label">Password</label>
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="sign" name="password" placeholder="Enter your Password">
-            </div>
+                <label class="cols-sm-2 control-label">Your Email</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                    <input type="text" class="sign" name="email" placeholder="Enter your Email">
+                </div>
             </div>
 
             <div class="form-group">
-                <label  class="cols-sm-2 control-label">Confirm Password</label>
+                <label class="cols-sm-2 control-label">Non-Robot Verification</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                    <input type="text" class="sign" name="answer" placeholder="Enter: {{question}}">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="cols-sm-2 control-label">Password</label>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                    <input type="password" class="sign" name="password2" placeholder="Confirm your Password" data-container="body"
-                       data-toggle="popover" data-content="">
-                 </div>
+                    <input type="password" class="sign" name="password" placeholder="Enter your Password">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="cols-sm-2 control-label">Confirm Password</label>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input type="password" class="sign" name="password2" placeholder="Confirm your Password"
+                           data-container="body"
+                           data-toggle="popover" data-content="">
+                </div>
             </div>
 
             <p id="errorInfo0" class="errorInfo errorHidden0">Password(>5) && UserName(>2)</p>

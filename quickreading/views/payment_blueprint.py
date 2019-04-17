@@ -31,9 +31,9 @@ SUBJECT2 = 'Renew VIP successfully'
 # The email body for recipients with non-HTML email clients.
 
 paypalrestsdk.configure({
-  "mode": "sandbox", # sandbox or live
-  "client_id": "AaF3e62lDn44mSmuWdc9g4jLwyWVkow22M24mHMak57LzGM76BJ1AUCdkJu3XDR342U8eo5ldkaHY998",
-  "client_secret": "EFb9ipDk_i7UbtnODGGlXbBinYtRABcIaZWAKFQ-4Mqvs_Dd0Iv3Qb0eHYHpbd9c1JYmOtw9gnVZr6ux"})
+    "mode": "sandbox",  # sandbox or live
+    "client_id": "AaF3e62lDn44mSmuWdc9g4jLwyWVkow22M24mHMak57LzGM76BJ1AUCdkJu3XDR342U8eo5ldkaHY998",
+    "client_secret": "EFb9ipDk_i7UbtnODGGlXbBinYtRABcIaZWAKFQ-4Mqvs_Dd0Iv3Qb0eHYHpbd9c1JYmOtw9gnVZr6ux"})
 
 env = Environment(
     loader=PackageLoader('views.payment_blueprint', '../templates/payment'),
@@ -183,7 +183,8 @@ async def execute(request):
                     if res:
                         date_vip = datetime.strptime(str(become_vip_time), "%Y-%m-%d %H:%M:%S")
                         new_expire_date = (date_vip + timedelta(days=30)).strftime("%Y-%m-%d %H:%M:%S")
-                        await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}}, upsert=True)
+                        await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}},
+                                                       upsert=True)
                         await motor_db.user.update_one({'user': user}, {'$set': {'role': "VIP User"}}, upsert=True)
                         request['session']['role'] = "VIP User"
                         LOGGER.info('VIP information have store in database ')
@@ -230,7 +231,8 @@ async def execute(request):
                     old_expire_date1 = user_information.get("expireDate")
                     old_expire_date2 = datetime.strptime(str(old_expire_date1), "%Y-%m-%d %H:%M:%S")
                     new_expire_date = (old_expire_date2 + timedelta(days=30)).strftime("%Y-%m-%d %H:%M:%S")
-                    await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}}, upsert=True)
+                    await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}},
+                                                   upsert=True)
                     LOGGER.info('VIP Service has been renewed')
                     # send Successful renew mail
                     try:
@@ -299,7 +301,8 @@ async def execute(request):
                     if res:
                         date_vip = datetime.strptime(str(become_vip_time), "%Y-%m-%d %H:%M:%S")
                         new_expire_date = (date_vip + timedelta(days=180)).strftime("%Y-%m-%d %H:%M:%S")
-                        await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}}, upsert=True)
+                        await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}},
+                                                       upsert=True)
                         await motor_db.user.update_one({'user': user}, {'$set': {'role': "VIP User"}}, upsert=True)
                         request['session']['role'] = "VIP User"
                         print("the role is :")
@@ -419,7 +422,8 @@ async def execute(request):
                     if res:
                         date_vip = datetime.strptime(str(become_vip_time), "%Y-%m-%d %H:%M:%S")
                         new_expire_date = (date_vip + timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")
-                        await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}}, upsert=True)
+                        await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}},
+                                                       upsert=True)
                         await motor_db.user.update_one({'user': user}, {'$set': {'role': "VIP User"}}, upsert=True)
                         # very important
                         request['session']['role'] = "VIP User"
@@ -467,7 +471,8 @@ async def execute(request):
                     old_expire_date1 = user_information.get("expireDate")
                     old_expire_date2 = datetime.strptime(str(old_expire_date1), "%Y-%m-%d %H:%M:%S")
                     new_expire_date = (old_expire_date2 + timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")
-                    await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}}, upsert=True)
+                    await motor_db.user.update_one({'user': user}, {'$set': {'expireDate': new_expire_date}},
+                                                   upsert=True)
                     LOGGER.info('One Year VIP Service has been renewed')
                     # send Successful renew mail
                     try:

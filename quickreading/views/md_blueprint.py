@@ -138,6 +138,6 @@ async def index(request):
         return template('index.html', title='QuickReading', is_login=1, user=user, search_ranking=search_ranking,
                         first_type=first_type, first_type_title=first_type_title, novels_head=novels_head, is_owl=1)
     else:
-        return template('index.html', title='QuickReading', is_login=0, search_ranking=search_ranking, first_type=first_type,
+        return template('index.html', title='QuickReading', is_login=0, search_ranking=search_ranking,
+                        first_type=first_type,
                         first_type_title=first_type_title, novels_head=novels_head, is_owl=1)
-

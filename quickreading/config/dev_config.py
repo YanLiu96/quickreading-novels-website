@@ -7,7 +7,6 @@ from .config import Config
 
 
 class DevConfig(Config):
-
     VAL_HOST = os.getenv('VAL_HOST', 'false')
 
     # Config mongodb and redis

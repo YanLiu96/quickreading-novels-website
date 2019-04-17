@@ -35,6 +35,7 @@ def authenticator(key):
                 return response
             else:
                 return response_handle(request, UniResponse.NOT_AUTHORIZED, status=401)
+
         return authenticate
 
     return wrapper

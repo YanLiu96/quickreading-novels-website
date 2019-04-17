@@ -5,6 +5,7 @@ This file config the
 import os
 import logging
 from .resource_website_rules import *
+
 # the log of running(output)
 logging.basicConfig(
     level=logging.DEBUG

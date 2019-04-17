@@ -133,13 +133,15 @@ async def quickreading_search(request):
                 if parse_result:
                     break
     if parse_result:
-        # rank domain which is parsed first
+        # md domain which is parsed first
         result_sorted = sorted(
             parse_result,
             reverse=True,
             key=itemgetter('is_recommend', 'is_parse', 'timestamp'))
         user = request['session'].get('user', None)
         if user:
+            data = await motor_db.user.find_one({'user': user})
+            user_role = data.get('role', None)
             try:
                 time_now = get_time()
                 # store search date
@@ -164,6 +166,7 @@ async def quickreading_search(request):
                 'result.html',
                 is_login=1,
                 user=user,
+                user_role=user_role,
                 name=novels_keyword,
                 time='%.2f' % (time.time() - start),
                 result=result_sorted,
@@ -230,6 +233,9 @@ async def quickreading_content(request):
     if netloc not in RULES.keys():
         return redirect(url)
     user = request['session'].get('user', None)
+    motor_db = motor_base.get_db()
+    data = await motor_db.user.find_one({'user': user})
+    user_role = data.get('role', None)
     # 拼接小说目录url
     book_url = "/chapter?url={chapter_url}&novels_name={novels_name}".format(
         chapter_url=chapter_url,
@@ -298,6 +304,7 @@ async def quickreading_content(request):
                     'content.html',
                     is_login=1,
                     user=user,
+                    user_role=user_role,
                     name=name,
                     url=url,
                     bookmark=bookmark,

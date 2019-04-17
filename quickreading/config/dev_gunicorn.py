@@ -1,5 +1,6 @@
 # gunicorn config (inorder to deploy)
 import os
+
 # Number of worker processes to spawn.By default,
 # Sanic listens in the main process using only one CPU core.
 WORKERS = os.getenv('WORKERS', 1)

@@ -97,6 +97,7 @@ async def start(novels_name):
 if __name__ == '__main__':
     # Start
     import aiocache
+
     REDIS_DICT = {}
     aiocache.settings.set_defaults(
         class_="aiocache.RedisCache",
