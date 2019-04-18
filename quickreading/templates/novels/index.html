@@ -4,12 +4,11 @@
 <link rel="stylesheet" href="static/novels/css/index.css">
 <link rel="stylesheet" href="/md/static/md/css/md.css">
 {% endblock %}
-
 {% block content %}
 <div class="header">
     {% if is_login %}
+        <a href="https://paypal.me/YanLiu96?locale.x=en_US" class="donate_button">Donate</a>
     {% include "login.html" %}
-    <a href="https://paypal.me/YanLiu96?locale.x=en_US" class="donate_button">Donate</a>
     {% else %}
     <div class="login">
         <a class="btn btn-warning pull-right" href="#" role="button" data-toggle="modal" data-target="#login">Login</a>
@@ -18,7 +17,7 @@
 </div>
 <div class="container">
     <div class="logo">
-        <img class="img-responsive center-block" src="static/novels/img/logo_home.png" alt="owllook">
+        <img class="img-responsive center-block" src="static/novels/img/logo_home.png" alt="quickreading">
     </div>
     <form action="/search" method="get" class="home_search center-block">
         <div class="search center-block">

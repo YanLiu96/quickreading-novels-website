@@ -41,12 +41,15 @@ def template(tpl, **kwargs):
 @novels_bp.route("/")
 async def index(request):
     user = request['session'].get('user', None)
-    user_role = request['session'].get('role', None)
     search_ranking = await cache_search_ranking()
     if user:
-        return template('index.html', title='quick reading - search and enjoy', is_login=1, user=user,
-                        user_role=user_role,
-                        search_ranking=search_ranking[:25])
+        motor_db = motor_base.get_db()
+        data = await motor_db.user.find_one({'user': user})
+        user_role = data.get("role", None)
+        if user_role:
+            return template('index.html', title='quick reading - search and enjoy', is_login=1, user=user,
+                            user_role=user_role,
+                            search_ranking=search_ranking[:25])
     else:
         return template('index.html', title='quick reading - search and enjoy', is_login=0,
                         search_ranking=search_ranking[:25])
@@ -234,8 +237,6 @@ async def quickreading_content(request):
         return redirect(url)
     user = request['session'].get('user', None)
     motor_db = motor_base.get_db()
-    data = await motor_db.user.find_one({'user': user})
-    user_role = data.get('role', None)
     # 拼接小说目录url
     book_url = "/chapter?url={chapter_url}&novels_name={novels_name}".format(
         chapter_url=chapter_url,
@@ -267,9 +268,11 @@ async def quickreading_content(request):
                 chapter_url=chapter_url,
                 novels_name=novels_name
             )
-            # 破坏广告链接
+            # delete advertisement
             content = str(content).strip('[]Jjs,').replace('http', 'hs')
             if user:
+                data = await motor_db.user.find_one({'user': user})
+                user_role = data.get('role', None)
                 bookmark = await motor_db.user_message.find_one({'user': user, 'bookmarks.bookmark': bookmark_url})
                 book = await motor_db.user_message.find_one({'user': user, 'books_url.book_url': book_url})
                 bookmark = 1 if bookmark else 0
@@ -278,7 +281,8 @@ async def quickreading_content(request):
                     book = 1
                     # 保存最后一次阅读记录
                     if is_ajax == "quickReading_cache":
-                        quickReading_referer = request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
+                        quickReading_referer = \
+                        request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
                         latest_read = "/quickreading_content" + quickReading_referer
                         await motor_db.user_message.update_one(
                             {'user': user, 'books_url.book_url': book_url},
@@ -358,7 +362,6 @@ async def quickreading_content(request):
 async def admininterface(request):
     admin = request['session'].get('user', None)
     role = request['session'].get('role', None)
-    print(admin)
     head = ['User name', 'email', 'role', 'delete']
     if admin:
         try:

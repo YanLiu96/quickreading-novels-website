@@ -1,44 +1,43 @@
 {% extends "main.html" %}
 {% block header %}
 <title>{{ title }} - Searching rank in this website</title>
-<link rel="stylesheet" href="/md/static/md/css/md.css">
+<link rel="stylesheet" href="/md/static/md/css/rank.css">
 {% endblock %}
 {% block content %}
 <body>
-<div class="mdui-container">
-    <div class="mdui-typo" style="margin-top: 1%">
-        <div class="mdui-chip">
-            <img class="mdui-chip-icon" src="static/novels/img/favicon.ico"/>
-            <a href="/"><span class="rank-list mdui-chip-title">QuickReading-Index-Page</span></a>
-        </div>
-        <strong><h2 style="color: #c4d36c" align="center">{{first_type_title}}</h2></strong>
-        <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 1%"></div>
-        <div class="mdui-table-fluid">
-            {% if is_owl %}
-            <table class="mdui-table mdui-table-hoverable" style="margin-bottom: 50px;">
-                <thead>
-                <tr align="center">
-                    {%for each_head in novels_head%}
-                    <th>{{each_head}}</th>
-                    {%endfor%}
-                </tr>
-                </thead>
-                <tbody>
-                {%for each_ranking in search_ranking%}
-                <tr>
-                    <td>{{each_ranking.index}}</td>
-                    <td><a href="/search?wd={{each_ranking.keyword}}" target="_blank">{{each_ranking.keyword}}</a></td>
-                    <td>{{each_ranking.count}}</td>
-                </tr>
-                {%endfor%}
-                </tbody>
-            </table>
-            {% else %}
-            {% endif %}
-        </div>
-    </div>
+<div class="mdui-typo">
+    <img class="mdui-chip-icon" src="static/novels/img/favicon.ico"/>
+    <a href="/"><span class="rank-list mdui-chip-title">QuickReading</span></a>
+</div>
+<div id="wrapper">
+    <h1>{{first_type_title}}</h1>
+    <table class="mdui-typo" id="keywords" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+            <th><span>Rank</span></th>
+            <th><span>Novel Name</span></th>
+            <th><span>Search Count</span></th>
+        </tr>
+        </thead>
+        <tbody>
+        {%for each_ranking in search_ranking%}
+        <tr class="lalign">
+            <td>{{each_ranking.index}}</td>
+            <td><a href="/search?wd={{each_ranking.keyword}}" target="_blank">{{each_ranking.keyword}}</a></td>
+            <td>{{each_ranking.count}}</td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
 </div>
 </body>
 {% endblock %}
 {% block script %}
+<script>
+    $(function () {
+        $('#keywords').tablesorter();
+    });
+</script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.28.14/js/jquery.tablesorter.min.js'></script>
 {% endblock %}

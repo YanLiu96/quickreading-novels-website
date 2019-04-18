@@ -6,7 +6,9 @@ table a {
     color: #337ab7 !important;
     text-decoration: none !important;
 }
-
+body {
+    background: #eee url('https://i.imgur.com/eeQeRmk.png'); /* https://subtlepatterns.com/weave/ */
+}
 table a:hover {
     color: black !important;
 }
@@ -35,7 +37,7 @@ table a:hover {
     margin: 5px;
 }
 
-.author-name-tag {
+.author-name-tag{
     margin-left: 10%;
     margin-top: 13px;
 }

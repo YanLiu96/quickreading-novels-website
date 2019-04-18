@@ -12,7 +12,7 @@ from sanic_session import RedisSessionInterface
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # Registering blueprints(to make server know this router and url routes)
 
-from quickreading.views import searchEngine_bp, novels_bp, operate_bp, payment_bp, userAdmin_bp, md_bp
+from quickreading.views import searchEngine_bp, novels_bp, operate_bp, payment_bp, userAdmin_bp, vip_service_bp
 from quickreading.database.redies import RedisSession
 from quickreading.config import LOGGER, CONFIG
 
@@ -23,7 +23,7 @@ app.blueprint(operate_bp)
 app.blueprint(searchEngine_bp)
 app.blueprint(payment_bp)
 app.blueprint(userAdmin_bp)
-app.blueprint(md_bp)
+app.blueprint(vip_service_bp)
 
 
 # Executed before the server begins to accept connections

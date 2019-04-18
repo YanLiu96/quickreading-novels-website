@@ -7,21 +7,19 @@
 {% endblock %}
 
 {% block content %}
-<body class="mdui-appbar-with-toolbar">
+<body>
 <div class="mdui-container">
     <div class="mdui-typo" style="margin-top: 3%">
         <div class="mdui-chip">
             <a href="/"><span class="rank-list mdui-chip-title">QuickReading</span></a>
         </div>
     </div>
-    <div class="mdui-divider" style="margin-top: 1%;"></div>
     <div class="mdui-typo" style="margin-top: 1%">
     </div>
     <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 2%"></div>
-
     <div class="mdui-table-fluid">
         {% if is_admin %}
-        <table class="mdui-table mdui-table-hoverable" style="margin-bottom: 50px;">
+        <table class="mdui-table mdui-table-hoverable" style="margin-bottom: 0px;">
             <thead>
             <tr align="center">
                 {%for each_head in head%}

@@ -26,8 +26,6 @@ class BaiduSearchEngine(BaseSearchEngine):
                 real_str_url = str(real_url)
                 # get the netloc in the url(urlparse function in urllib can do it)
                 netloc = urlparse(real_str_url).netloc
-                print("111111111")
-                print(netloc)
                 if "http://" + netloc + "/" == real_str_url:
                     return None
                 if 'baidu' in real_str_url or netloc in self.resource_domain:

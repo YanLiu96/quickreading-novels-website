@@ -17,7 +17,7 @@ def ver_question() -> tuple:
     :return: (question,answer)
     """
     cf = ConfigParser()
-    file_name = os.path.join(_dir, 'verification.conf')
+    file_name = os.path.join(_dir, 'robotcheck.conf')
     try:
         cf.read(file_name, encoding='utf-8')
         index = random.choice(cf.sections())
@@ -39,7 +39,7 @@ def get_real_answer(index) -> str:
     answer = ''
     try:
         cf = ConfigParser()
-        file_name = os.path.join(_dir, 'verification.conf')
+        file_name = os.path.join(_dir, 'robotcheck.conf')
         cf.read(file_name)
         answer = cf.get(index, "answer")
     except Exception as e:

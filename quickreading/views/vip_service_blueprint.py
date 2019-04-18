@@ -9,24 +9,24 @@ from quickreading.database.mongodb import MotorBase
 from quickreading.crawler.cache import get_the_latest_chapter, cache_search_ranking
 from quickreading.config import RULES, LOGGER, REPLACE_RULES, ENGINE_PRIORITY, CONFIG
 
-md_bp = Blueprint('rank_blueprint', url_prefix='md')
-md_bp.static('/static/md', CONFIG.BASE_DIR + '/static/md')
+vip_service_bp = Blueprint('vip_service_blueprint', url_prefix='md')
+vip_service_bp.static('/static/md', CONFIG.BASE_DIR + '/static/md')
 
 
-@md_bp.listener('before_server_start')
+@vip_service_bp.listener('before_server_start')
 def setup_db(rank_bp, loop):
     global motor_base
     motor_base = MotorBase()
 
 
-@md_bp.listener('after_server_stop')
+@vip_service_bp.listener('after_server_stop')
 def close_connection(rank_bp, loop):
     motor_base = None
 
 
 # jinjia2 config
 env = Environment(
-    loader=PackageLoader('views.md_blueprint', '../templates/md'),
+    loader=PackageLoader('views.vip_service_blueprint', '../templates/md'),
     autoescape=select_autoescape(['html', 'xml', 'tpl']))
 
 
@@ -35,7 +35,7 @@ def template(tpl, **kwargs):
     return html(template.render(kwargs))
 
 
-@md_bp.route("/bookmarks")
+@vip_service_bp.route("/bookmarks")
 async def bookmarks(request):
     user = request['session'].get('user', None)
     if user:
@@ -76,7 +76,7 @@ async def bookmarks(request):
         return redirect('/')
 
 
-@md_bp.route("/bookshelf")
+@vip_service_bp.route("/bookshelf")
 async def books(request):
     user = request['session'].get('user', None)
     if user:
@@ -127,11 +127,11 @@ async def books(request):
         return redirect('/')
 
 
-@md_bp.route("/")
+@vip_service_bp.route("/")
 async def index(request):
     user = request['session'].get('user', None)
     novels_head = ['#', 'Novel Name', 'Search Record']
-    first_type_title = "QuickReading——Search Ranking"
+    first_type_title = "Search Ranking"
     first_type = []
     search_ranking = await cache_search_ranking()
     if user:
