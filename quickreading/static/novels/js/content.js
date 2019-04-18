@@ -64,7 +64,7 @@ $(document).ready(function () {
 
     function ajax_content_init() {
         if (isSupport()) {
-            log("支持sessionStorage，将为你开启页面缓存");
+            log("support sessionStorage，cache page");
             search_url = window.location;
             // 来自书签页面的跳转不进行缓存
             if (search_url.search.indexOf("from_bookmarks") > 0) {

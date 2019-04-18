@@ -14,7 +14,7 @@
 {% include "search_bar.html" %}
 <div class="container">
     <div class="result row">
-        <div class="show-result col-sm-7 col-xs-12">
+        <div class="show-result col-sm-7 col-xs-11">
             <p style="color: #868383;font-size: 14px; ">find {{count}} results（time {{time}}s）</p>
             <div class="list-unstyled item">
                 {%for item in result%}
@@ -32,7 +32,7 @@
                             {% else %}
                             {% endif %}
                             {% if item.is_parse %}
-                            <span class="label label-info parse-label">already parsed </span>
+                            <span class="label label-info parse-label">parsed</span>
                             {% else %}
                             <span class="label label-danger parse-label">not parse</span>
                             {% endif %}
@@ -50,6 +50,47 @@
                 </div>
             </div>
         </div>
+
+        <div class="left_section col-sm-5 col-xs-1">
+            <div class="canvas">
+                <!-- The Flipbox -->
+                <div class="flipbox flipbox-toggle">
+                    <!-- Add classes, flipbox-vertical, flipbox-toggle -->
+                    <label>
+                        <input type="checkbox">
+                        <div class="flipbox-content">
+                            <div class="flipbox-front">
+                                <!-- Your custom content -->
+                                <div class="house-card house-lannister">
+                                    <div class="house-card-inner">
+                                        <h3>{{ name }}</h3>
+                                        <br>
+                                        <p>Choose best link to read</p>
+                                    </div>
+                                </div>
+                                <!-- Your custom content -->
+                            </div>
+                            <div class="flipbox-rear">
+                                <!-- Your custom content -->
+                                <div class="house-card house-stark">
+                                    <div class="house-card-inner">
+                                        <h3>{{ name }}</h3>
+                                        <br>
+                                        <p>Enjoy reading experience</p>
+                                        <a style="color: white" target="_blank"
+                                           href="/chapter?url={{result[0].url}}&novels_name={{name}}">Reading Now</a>
+                                    </div>
+                                </div>
+                                <!-- Your custom content -->
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <!-- #End of the flipbox -->
+
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}

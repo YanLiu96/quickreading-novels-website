@@ -213,7 +213,7 @@ async def chapter(request):
         return template(
             'chapter.html', novels_name=novels_name, url=url, content_url=content_url, soup=content)
     else:
-        return text('解析失败，请将失败页面反馈给本站，请重新刷新一次，或者访问源网页：{url}'.format(url=url))
+        return text('Parse fail you can read in original page：{url}'.format(url=url))
 
 
 @novels_bp.route("/quickreading_content")
