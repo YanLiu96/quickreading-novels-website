@@ -851,12 +851,6 @@ BODY_HTML = """
     <!-- Each letter will be it's own section (this chapters in a book) -->
     <section>
         <header>
-            <img class="headerLogo" alt="Company logo" quickreading="https://vignette.wikia.nocookie.net/jurassicpark/images/b/b0/Ingenicon3.png/revision/latest?cb=20141208195042" />
-            <!--   The address element feels OK to use here as the HTML spec states:
-            The address element represents the contact information for its nearest article or body element ancestor. As this is the sender's address it is relevant to the article. -->
-            <p class="address-recipient">
-                <span class="address-to"> Hello! Thank you for choosing us! </span>
-            </p>
         </header>
         <main>
             <p>Dear {User}</p>

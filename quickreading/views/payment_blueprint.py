@@ -1350,7 +1350,6 @@ BODY_HTML = """
           <table class="container">
             <tr>
               <td>
-
                 <table class="row">
                   <tr>
                     <td class="wrapper last">
@@ -1358,8 +1357,7 @@ BODY_HTML = """
                       <table class="twelve columns">
                         <tr>
                           <td>
-                            <h1>Dear {Usernamefor}</h1>
-                            <br>
+                            <h3>Dear {Usernamefor}</h3>
                             <p class="lead">You have already {message} VIP Service</p>
                             <p>This email aim to notify you that the payment has been completed and you have became the VIP in quick reading website</p>
                             <p>You can use the bookshelf function and download the novels you want to read</p>
@@ -1388,7 +1386,7 @@ BODY_HTML = """
                       <table class="twelve columns">
                         <tr>
                           <td class="panel">
-                            <p>Now turn to the website and enjoy reading! <a href="wwww.quickreading.net">Click it!</a></p>
+                            <p>Now turn to the website and enjoy reading! <a href="https://wwww.quickreading.net">Click it!</a></p>
                           </td>
                           <td class="expander"></td>
                         </tr>
@@ -1448,7 +1446,7 @@ BODY_HTML = """
                         <tr>
                           <td class="last right-text-pad">
                             <h5>Contact Info:</h5>
-                            <p>Phone: 0833863840/p>
+                            <p>Phone: 0833863840</p>
                             <p>Email: <a href="quickreadingnovelswebsite@gmail.com">quickreadingnovelswebsite@gmail.com</a></p>
                           </td>
                           <td class="expander"></td>
