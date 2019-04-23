@@ -29,10 +29,10 @@ app.blueprint(vip_service_bp)
 # Executed before the server begins to accept connections
 @app.listener('before_server_start')
 def init_cache(app, loop):
-    LOGGER.info("Starting aiocache : asyncio cache manager for redis")
+    LOGGER.info("Starting Aiocache : Asyncio Cache Manager For Redis")
     app.config.from_object(CONFIG)
     REDIS_DICT = CONFIG.REDIS_DICT
-    # configuration: Asyncio cache manager for redis
+    # configuration: use aiocache to asyncio manager redis(the port)
     # reference https://github.com/argaen/aiocache
     aiocache.settings.set_defaults(
         class_="aiocache.RedisCache",
@@ -42,7 +42,7 @@ def init_cache(app, loop):
         password=REDIS_DICT.get('REDIS_PASSWORD', None),
         loop=loop,
     )
-    LOGGER.info("Starting redis")
+    LOGGER.info("Starting Redis")
     # start redis
     redis_session = RedisSession()
     # redis instance for this app

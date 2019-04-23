@@ -1,11 +1,17 @@
 """
 Created by Yan Liu at 2019.1.17
 """
-# reference https://github.com/howie6879/owllook
+# reference https://github.com/howie6879/owllook (I have got the author's authorization)
 from collections import namedtuple
 
 # The resource website domain（get the novels resources）
-RESOURCE_DOMAIN = ['www.17k.com', 'mm.17k.com', 'www.xs8.cn', 'www.zongheng.com', 'yunqi.qq.com', 'chuangshi.qq.com',
+RESOURCE_DOMAIN = ["game.91.com", "www.11773.com", "mt.sohu.com", "book.dajianet.com",
+                   "haokan.17k.com", "www.qmdsj.com", "www.jjwxc.net", "ishare.iask.sina.com.cn", "www.cmread.com",
+                   "www.52ranwen.net", "www.dingdianzw.com", "www.topber.com", "www.391k.com", "www.qqxzb.com",
+                   "www.zojpw.com", "www.pp8.com", "www.bxwx.org", "www.hrsxb.com", "www.497.com", "www.d8qu.com",
+                   "www.duwanjuan.com", "www.05935.com", "book.zongheng.com", "www.55x.cn", "www.freexs.cn",
+                   "xiaoshuo.360.cn", "www.3kw.cc", "www.gzbpi.com", "book.sina.com.cn", "www.vodtw.com", 'www.17k.com',
+                   'mm.17k.com', 'www.xs8.cn', 'www.zongheng.com', 'yunqi.qq.com', 'chuangshi.qq.com',
                    'book.qidian.com', 'www.soduso.com', 'pages.book.qq.com', 'book.km.com', 'www.lread.net',
                    'www.0dsw.com', 'www.5200xsb.com', 'www.80txt.com', 'www.sodu.tw', 'www.shuquge.com',
                    'www.shenmanhua.com', 'xiaoshuo.sogou.com', 'www.999wx.com', 'zetianji8.com', 'www.bookso.net',
@@ -26,12 +32,7 @@ RESOURCE_DOMAIN = ['www.17k.com', 'mm.17k.com', 'www.xs8.cn', 'www.zongheng.com'
                    "me.qidian.com", "www.gengd.com", "www.77l.com", "www.geilwx.com", "www.97xiao.com", "www.anqu.com",
                    "www.wuxiaxs.com", "yuedu.163.com", "b.faloo.com", "bbs.qidian.com", "jingji.qidian.com",
                    "www.sodu.cc",
-                   "forum.qdmm.com", "www.qdmm.com", "game.91.com", "www.11773.com", "mt.sohu.com", "book.dajianet.com",
-                   "haokan.17k.com", "www.qmdsj.com", "www.jjwxc.net", "ishare.iask.sina.com.cn", "www.cmread.com",
-                   "www.52ranwen.net", "www.dingdianzw.com", "www.topber.com", "www.391k.com", "www.qqxzb.com",
-                   "www.zojpw.com", "www.pp8.com", "www.bxwx.org", "www.hrsxb.com", "www.497.com", "www.d8qu.com",
-                   "www.duwanjuan.com", "www.05935.com", "book.zongheng.com", "www.55x.cn", "www.freexs.cn",
-                   "xiaoshuo.360.cn", "www.3kw.cc", "www.gzbpi.com", "book.sina.com.cn", "www.vodtw.com",
+                   "forum.qdmm.com", "www.qdmm.com",
                    "wenda.so.com",
                    "product.dangdang.com", "www.chuiyao.com", "novel.slieny.com", "www.bilibili.com",
                    "donghua.dmzj.com",
@@ -69,8 +70,6 @@ REPLACE_RULES = {
 
 # use which engine to search novels
 ENGINE_PRIORITY = ['360', 'baidu', 'bing', 'google']
-# ENGINE_PRIORITY = ['bing', 'google', '360', 'baidu']
-# ENGINE_PRIORITY = ['360', 'google', 'bing', 'baidu']
 
 Rules = namedtuple('Rules', 'content_url chapter_selector content_selector')
 LatestRules = namedtuple('LatestRules', 'plan meta_value selector')
@@ -83,7 +82,6 @@ PLAN_01 = LatestRules(
 )
 
 LATEST_RULES = {
-    # "www.allnovel.net": PLAN_01,
     "www.biqugex.com": PLAN_01,
     "www.x23us.com": PLAN_01,
     "www.23us.la": PLAN_01,
@@ -674,7 +672,5 @@ RULES = {
     # 已解析
     'www.kanshuzhong.com': Rules('0', {'class': 'bookcontent'}, {'class': 'textcontent'}),
     # 已解析
-    'www.siluke.tw': Rules('http://www.siluke.tw/', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    # 'www.ttshu.com': Rules('http://www.ttshu.com', {'class': 'border'}, {'id': 'content'}),
+    'www.siluke.tw': Rules('http://www.siluke.tw/', {'class': 'box_con'}, {'id': 'content'})
 }

@@ -45,10 +45,14 @@ async def index(request):
     if user:
         motor_db = motor_base.get_db()
         data = await motor_db.user.find_one({'user': user})
-        user_role = data.get("role", None)
-        if user_role:
-            return template('index.html', title='quick reading - search and enjoy', is_login=1, user=user,
-                            user_role=user_role,
+        try:
+            user_role = data.get("role", None)
+            if user_role:
+                return template('index.html', title='quick reading - search and enjoy', is_login=1, user=user,
+                                user_role=user_role,
+                                search_ranking=search_ranking[:25])
+        except Exception as e:
+            return template('index.html', title='quick reading - search and enjoy', is_login=0,
                             search_ranking=search_ranking[:25])
     else:
         return template('index.html', title='quick reading - search and enjoy', is_login=0,

@@ -33,8 +33,6 @@ class BaiduSearchEngine(BaseSearchEngine):
                 is_parse = 1 if netloc in self.rules.keys() else 0
                 title = html.select('h3.t a')[0].get_text()
                 is_recommend = 1 if netloc in self.latest_rules.keys() else 0
-                # time = re.findall(r'\d+-\d+-\d+', source)
-                # time = time[0] if time else None
                 timestamp = 0
                 time = ""
                 return {'title': title, 'url': real_str_url.replace('index.html', ''), 'time': time,
@@ -82,7 +80,7 @@ class BaiduSearchEngine(BaseSearchEngine):
             return []
 
 
-# store the search novels' name in redies
+# store the search novels' name
 @cached(ttl=259200, key_from_attr='novels_name', serializer=PickleSerializer(), namespace="novels_name")
 async def start(novels_name):
     """

@@ -34,7 +34,8 @@ class DevConfig(Config):
         IS_RUNNING=os.getenv('QUICKREADING _IS_RUNNING', True),
         TOKEN=os.getenv('QUICKREADING_TOKEN', '')
     )
-
+    '''
     AUTH = {
         "QuickReading-Api-Key": os.getenv('QUICKREADING_API_KEY', "your key")
     }
+    '''
