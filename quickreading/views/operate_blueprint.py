@@ -1,18 +1,20 @@
+"""
+Latest modified by Yan Liu at 2019.4.15 10：59
+This file is the back-end of user login, logout, register, add or delete bookmark and bookshelf
+"""
 import datetime
-# Some of the most used hash functions are: MD5: Message digest algorithm producing a 128 bit hash value. This is
-# widely used to check data integrity. It is not suitable for use in other fields due to the security vulnerabilities
-#  of MD5.
-
 import hashlib
 import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+
 import email.utils
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 from jinja2 import Environment, PackageLoader, select_autoescape
 from sanic import Blueprint
-from sanic.response import html, json, redirect
+from sanic.response import html, json
 from urllib.parse import parse_qs, unquote
-from datetime import datetime as dt, timedelta
+from datetime import datetime as dt
 from quickreading.database.mongodb import MotorBase
 from quickreading.crawler.function import get_time
 from quickreading.utils import get_real_answer
@@ -27,7 +29,7 @@ except:
 
 operate_bp = Blueprint('operate_blueprint', url_prefix='operate')
 
-# This address must be verified.
+# amazon smtp sender name and email
 SENDER = 'quickreadingnovelswebsite@gmail.com'
 SENDERNAME = 'Yan Liu'
 
@@ -44,9 +46,6 @@ PORT = 587
 # The subject line of the email.
 SUBJECT1 = 'Register successfully'
 SUBJECT2 = 'Sorry you need to renew vip'
-
-
-# The email body for recipients with non-HTML email clients.
 
 
 @operate_bp.listener('before_server_start')
@@ -141,8 +140,8 @@ async def change_pass(request):
 @operate_bp.route("/login", methods=['POST'])
 async def quickreading_login(request):
     """
-    User Login
-    :param request:
+    User login
+    :param request:user name and password
     :return:
         :   -1  User name or password is null
         :   0   Wrong user name or password
@@ -182,11 +181,12 @@ async def quickreading_login(request):
                     return response
                 else:
                     if user_role == "VIP User":
-                        # 验证是否需要续费(定时发送邮件待实现)
+                        # check whether need to send renew vip notification email
                         expire_date = data.get("expireDate")
                         expire_date = dt.strptime(str(expire_date), "%Y-%m-%d %H:%M:%S")
                         date_now = dt.now()
                         rest_time = (expire_date - date_now).days
+                        print("The rest time of vip is :")
                         print(rest_time)
                         # **********************************************************
                         # whether user VIP service is almost over（2 days）send email
@@ -198,15 +198,7 @@ async def quickreading_login(request):
                                 msg['Subject'] = SUBJECT2
                                 msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                                 msg['To'] = RECIPIENT
-                                # Comment or delete the next line if you are not using a configuration set
-                                # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
-
-                                # Record the MIME types of both parts - text/plain and text/html.
                                 part2 = MIMEText(renewLetter.format(User=user, day=rest_time), 'html')
-
-                                # Attach parts into message container.
-                                # According to RFC 2046, the last part of a multipart message, in this case
-                                # the HTML message, is best and preferred.
                                 msg.attach(part2)
                                 try:
                                     server = smtplib.SMTP(HOST, PORT)
@@ -243,15 +235,16 @@ async def quickreading_login(request):
 @operate_bp.route("/logout", methods=['GET'])
 async def quickreading_logout(request):
     """
-    用户登出
+    User logout
     :param request:
     :return:
-        :   0   退出失败
-        :   1   退出成功
+        :   0   logout failed
+        :   1   logout successfully
     """
     user = request['session'].get('user', None)
     if user:
         response = json({'status': 1})
+        # delete cookies related with user
         del response.cookies['user']
         del response.cookies['quickReading_cookie']
         return response
@@ -262,12 +255,13 @@ async def quickreading_logout(request):
 @operate_bp.route("/register", methods=['POST'])
 async def user_register(request):
     """
-    User Register 不允许重名
+    User Register
     :param request:
     :return:
-        :   -1  用户名已存在
-        :   0   用户名或密码不能为空
-        :   1   注册成功
+        :   -2  question answer is wrong
+        :   -1  user name is existing
+        :   0   user name or password is null
+        :   1   register successfully
     """
     register_data = parse_qs(str(request.body, encoding='utf-8'))
     user = register_data.get('user', [None])[0]
@@ -279,9 +273,10 @@ async def user_register(request):
         motor_db = motor_base.get_db()
         is_exist = await motor_db.user.find_one({'user': user})
         if not is_exist:
-            # 验证问题答案是否准确
+            # check question whether right(non-robot check)
             real_answer = get_real_answer(str(reg_index))
             if real_answer and real_answer == answer:
+                # use md5 generate token+password to hash value
                 pass_first = hashlib.md5((CONFIG.WEBSITE["TOKEN"] + pwd).encode("utf-8")).hexdigest()
                 password = hashlib.md5(pass_first.encode("utf-8")).hexdigest()
                 time = get_time()
@@ -292,27 +287,18 @@ async def user_register(request):
                     "register_time": time,
                     "role": "General User"
                 }
+                # send register notification email
                 RECIPIENT = Email
-                # Create message container - the correct MIME type is multipart/alternative.
                 msg = MIMEMultipart('alternative')
                 msg['Subject'] = SUBJECT1
                 msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
                 msg['To'] = RECIPIENT
-                # Comment or delete the next line if you are not using a configuration set
-                # msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
-
-                # Record the MIME types of both parts - text/plain and text/html.
                 part2 = MIMEText(BODY_HTML.format(User=user), 'html')
-
-                # Attach parts into message container.
-                # According to RFC 2046, the last part of a multipart message, in this case
-                # the HTML message, is best and preferred.
                 msg.attach(part2)
                 try:
                     server = smtplib.SMTP(HOST, PORT)
                     server.ehlo()
                     server.starttls()
-                    # stmplib docs recommend calling ehlo() before & after starttls()
                     server.ehlo()
                     server.login(USERNAME_SMTP, PASSWORD_SMTP)
                     server.sendmail(SENDER, RECIPIENT, msg.as_string())
@@ -333,33 +319,31 @@ async def user_register(request):
 
 
 @operate_bp.route("/add_bookmark", methods=['POST'])
-async def quickreading_add_bookmark(request):
+async def add_bookmark(request):
     """
-    添加书签
+    Add bookmark (any user can)
     :param request:
     :return:
-        :   -1  用户session失效  需要重新登录
-        :   0   添加书签失败
-        :   1   添加书签成功
+        :   -1  user's session expire, need to login again
+        :   0   not add
+        :   1   add successfully
     """
-    print("1")
     user = request['session'].get('user', None)
     data = parse_qs(str(request.body, encoding='utf-8'))
+    # get the bookmark url
     bookmark_url = data.get('bookmark_url', '')
     if user and bookmark_url:
         url = unquote(bookmark_url[0])
         time = get_time()
-        print("2")
         try:
             motor_db = motor_base.get_db()
             res = await motor_db.user_message.update_one({'user': user}, {'$set': {'last_update_time': time}},
                                                          upsert=True)
-            print("3")
             if res:
+                # store the bookmark data in the mongodb, user_message collection
                 await motor_db.user_message.update_one(
                     {'user': user, 'bookmarks.bookmark': {'$ne': url}},
                     {'$push': {'bookmarks': {'bookmark': url, 'add_time': time}}})
-                print("4")
                 LOGGER.info('bookmark has been added')
                 return json({'status': 1})
         except Exception as e:
@@ -370,14 +354,14 @@ async def quickreading_add_bookmark(request):
 
 
 @operate_bp.route("/add_bookshelf", methods=['POST'])
-async def quickreading_add_bookshelf(request):
+async def add_bookshelf(request):
     """
-    添加书架
+    Add bookshelf (any user can)
     :param request:
     :return:
-        :   -1  用户session失效  需要重新登录
-        :   0   添加书架失败
-        :   1   添加书架成功
+        :   -1  user's session expire, need to login again
+        :   0   not add
+        :   1   add successfully
     """
     user = request['session'].get('user', None)
     data = parse_qs(str(request.body, encoding='utf-8'))
@@ -397,7 +381,7 @@ async def quickreading_add_bookshelf(request):
                     {'user': user, 'books_url.book_url': {'$ne': url}},
                     {'$push': {
                         'books_url': {'book_url': url, 'add_time': time, 'last_read_url': unquote(last_read_url[0])}}})
-                LOGGER.info('You have added this page sucessfully in you bookshelf!')
+                LOGGER.info('You have added this page successfully in your bookshelf!')
                 return json({'status': 1})
         except Exception as e:
             LOGGER.exception(e)
@@ -407,25 +391,25 @@ async def quickreading_add_bookshelf(request):
 
 
 @operate_bp.route("/delete_bookmark", methods=['POST'])
-async def owllook_delete_bookmark(request):
+async def delete_bookmark(request):
     """
-    删除书签
+    Delete bookmark
     :param request:
     :return:
-        :   -1  用户session失效  需要重新登录
-        :   0   删除书签失败
-        :   1   删除书签成功
+        :   -1  user's session expire, need to login again
+        :   0   not delete
+        :   1   delete successfully
     """
     user = request['session'].get('user', None)
     data = parse_qs(str(request.body, encoding='utf-8'))
-    bookmarkurl = data.get('bookmarkurl', '')
-    if user and bookmarkurl:
-        bookmark = unquote(bookmarkurl[0])
+    bookmark_url = data.get('bookmarkurl', '')
+    if user and bookmark_url:
+        bookmark = unquote(bookmark_url[0])
         try:
             motor_db = motor_base.get_db()
             await motor_db.user_message.update_one({'user': user},
                                                    {'$pull': {'bookmarks': {"bookmark": bookmark}}})
-            LOGGER.info('删除书签成功')
+            LOGGER.info('You have already delete one bookmark')
             return json({'status': 1})
         except Exception as e:
             LOGGER.exception(e)
@@ -435,14 +419,14 @@ async def owllook_delete_bookmark(request):
 
 
 @operate_bp.route("/delete_book", methods=['POST'])
-async def delete_book(request):
+async def delete_bookshelf(request):
     """
-    删除书架
+    Delete bookshelf
     :param request:
     :return:
-        :   -1  用户session失效  需要重新登录
-        :   0   删除书架失败
-        :   1   删除书架成功
+        :   -1  user's session expire, need to login again
+        :   0   not delete
+        :   1   delete successfully
     """
     user = request['session'].get('user', None)
     data = parse_qs(str(request.body, encoding='utf-8'))
@@ -469,10 +453,19 @@ async def delete_book(request):
 
 @operate_bp.route("/delete_user", methods=['POST'])
 async def delete_user(request):
+    """
+    Delte users(administrator can do it)
+    :param request:
+    :return:
+        :   -1  administrator's session expire, need to login again
+        :   0   not delete
+        :   1   delete successfully
+    """
     user = request['session'].get('user', None)
     role = request['session'].get('role', None)
     data = parse_qs(str(request.body, encoding='utf-8'))
     motor_db = motor_base.get_db()
+    # check whether user is administrator
     if user and role == "Admin":
         if data.get('user_name', None):
             user_name_delete = data.get('user_name', None)[0]
@@ -695,9 +688,6 @@ BODY_HTML = """
     margin: 70pt 60pt 70pt;
 
     @top-center {{
-        /* Yes, you can use an image here - exactly like a background-image rule*/
-        content: url(../images/headerlogos.png);
-
         /* and you can move it around 
         margin-top: 20pt;
         */

@@ -2,8 +2,7 @@ from urllib.parse import urlparse, parse_qs
 
 from jinja2 import Environment, PackageLoader, select_autoescape
 from sanic import Blueprint
-from sanic.response import html, redirect, json
-from datetime import datetime
+from sanic.response import html, redirect
 from quickreading.database.mongodb import MotorBase
 from quickreading.crawler.cache import get_the_latest_chapter
 from quickreading.config import LOGGER, CONFIG

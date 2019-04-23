@@ -2,7 +2,6 @@ $(function () {
     $('[data-toggle="popover"]').popover()
 });
 
-
 $(document).ready(function () {
     $('.move_up').click(function () {
         $('html, body').animate({scrollTop: 0}, 'slow');
@@ -112,7 +111,7 @@ $(document).ready(function () {
         var user_name = $("#user_name").val();
         var user_password = $("#user_password").val();
         if (user_name == "" || user_password == "") {
-            alert('Content should not be NULL!!!');
+            alert('Content can not be NULL!!!');
         } else {
             var login_pd = {'user': user_name, 'pwd': user_password};
             $.ajax({

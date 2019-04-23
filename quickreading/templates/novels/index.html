@@ -6,8 +6,8 @@
 {% endblock %}
 {% block content %}
 <div class="header">
+    <a href="https://paypal.me/YanLiu96?locale.x=en_US" class="donate_button">Donate</a>
     {% if is_login %}
-        <a href="https://paypal.me/YanLiu96?locale.x=en_US" class="donate_button">Donate</a>
     {% include "login.html" %}
     {% else %}
     <div class="login">
@@ -17,7 +17,7 @@
 </div>
 <div class="container">
     <div class="logo">
-        <img class="img-responsive center-block" src="static/novels/img/logo_home.png" alt="quickreading">
+        <img class="img-responsive center-block" src="static/novels/img/logo_home.png" alt="Quick Reading">
     </div>
     <form action="/search" method="get" class="home_search center-block">
         <div class="search center-block">
@@ -33,7 +33,7 @@
         </div>
     </form>
     <br>
-    <div class="owl_search_ranking center-block">
+    <div class="search_ranking center-block">
         <span style="font-size: 100%" class="label label-success">Search Rank:</span>
         {%for novels_name in search_ranking%}
         <a target="_blank" href="/search?wd={{novels_name.keyword}}"><span
@@ -43,29 +43,3 @@
     </div>
 </div>
 {% endblock %}
-<style>
-    .donate_button {
-        display: inline-block;
-        padding: 15px 25px;
-        font-size: 24px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        outline: none;
-        color: #fff;
-        background-color: #4CAF50;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #999;
-    }
-
-    .donate_button:hover {
-        background-color: #3e8e41
-    }
-
-    .donate_button:active {
-        background-color: #3e8e41;
-        box-shadow: 0 5px #666;
-        transform: translateY(4px);
-    }
-</style>

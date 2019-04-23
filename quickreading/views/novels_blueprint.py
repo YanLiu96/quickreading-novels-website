@@ -1,3 +1,7 @@
+"""
+Latest modified by Yan Liu at 2019.4.23 5：59
+This file is the back-end of novels searching, search ranking, searching result, novels chapter page, content page
+"""
 import time
 
 from jinja2 import Environment, PackageLoader, select_autoescape
@@ -40,7 +44,17 @@ def template(tpl, **kwargs):
 
 @novels_bp.route("/")
 async def index(request):
+    """
+    Index Page
+    :param request:
+    :return:
+        index.html:
+            is_login=0: User not login before(or session expired)
+            is_login=1: User login before and not logout
+            search_ranking: The top 25 searching rank novels' name
+    """
     user = request['session'].get('user', None)
+    # get novels name from search ranking cache(which update every 5 min)
     search_ranking = await cache_search_ranking()
     if user:
         motor_db = motor_base.get_db()
@@ -73,19 +87,28 @@ async def user_register(request):
             request['session']['index'] = ver_que_ans
             return template(
                 'register.html',
-                title='quick reading websit - register - novels searching and reading website',
+                title='quick reading website - register - novels searching and reading website',
                 question=ver_que_ans[1]
             )
         else:
             return redirect('/')
 
 
+# do this when click search button
 @novels_bp.route("/search", methods=['GET'])
 async def quickreading_search(request):
+    """
+    Search Button
+    :param request:novel's name
+    :return:
+        result.html: search result(original website link, chapter page link, Whether parsed or recommended)
+        html("No result"): There is an error
+    """
     start = time.time()
-    # delete space in the fore and aft
+    # delete space in the beginning and the ending of input novel's name
     name = str(request.args.get('wd', '')).strip()
     novels_keyword = name.split(' ')[0]
+    # use motor to manage mongodb
     motor_db = motor_base.get_db()
     if not name:
         return redirect('/')
@@ -140,11 +163,8 @@ async def quickreading_search(request):
                 if parse_result:
                     break
     if parse_result:
-        # md domain which is parsed first
-        result_sorted = sorted(
-            parse_result,
-            reverse=True,
-            key=itemgetter('is_recommend', 'is_parse', 'timestamp'))
+        # sort the search result (is_recommend, is_parse put first place)
+        result_sorted = sorted(parse_result, reverse=True, key=itemgetter('is_recommend', 'is_parse', 'timestamp'))
         user = request['session'].get('user', None)
         if user:
             data = await motor_db.user.find_one({'user': user})
@@ -188,7 +208,7 @@ async def quickreading_search(request):
                 count=len(parse_result))
 
     else:
-        return html("No Result! The website not been crawler")
+        return html("No Result!")
 
 
 @novels_bp.route("/chapter")
@@ -286,7 +306,7 @@ async def quickreading_content(request):
                     # 保存最后一次阅读记录
                     if is_ajax == "quickReading_cache":
                         quickReading_referer = \
-                        request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
+                            request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
                         latest_read = "/quickreading_content" + quickReading_referer
                         await motor_db.user_message.update_one(
                             {'user': user, 'books_url.book_url': book_url},

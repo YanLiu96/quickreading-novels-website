@@ -58,12 +58,12 @@ div.search > .btn-warning:hover {
     background: -webkit-linear-gradient(top, #4387fd, #4683ea);
 }
 
-div.owl_search_ranking {
+div.search_ranking {
     margin-top: 5%;
     width: 55%;
 }
 
-div.owl_search_ranking span {
+div.search_ranking span {
     display: inline-block;
     font-size: 12px;
     padding: .3em .6em .3em;
@@ -80,7 +80,7 @@ div.owl_search_ranking span {
         height: 45px;
     }
 
-    div.owl_search_ranking {
+    div.search_ranking {
         display: none;
     }
 }
