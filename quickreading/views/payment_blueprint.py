@@ -1,11 +1,14 @@
+"""
+Latest modified by Yan Liu at 2019.4.15 20：47
+This file is the back-end of user login, logout, register, add or delete bookmark and bookshelf
+"""
 from sanic import Blueprint
 from sanic.response import json, html, redirect
 from jinja2 import Environment, PackageLoader, select_autoescape
 from quickreading.database.mongodb import MotorBase
-from urllib.parse import parse_qs, unquote
 from quickreading.crawler.function import get_time
 import paypalrestsdk
-from quickreading.config import CONFIG, LOGGER
+from quickreading.config import LOGGER
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -18,18 +21,16 @@ SENDER = 'quickreadingnovelswebsite@gmail.com'
 SENDERNAME = 'Yan Liu'
 # Amazon SES SMTP user name.
 USERNAME_SMTP = "AKIAZFQQSWKGREV4YKVF"
-
 # Amazon SES SMTP password.
 PASSWORD_SMTP = "BJQu3MFe1a6d3cO1+8wiBbJ7nRdFa5nbC3G8+mGB4Bdx"
-
 HOST = "email-smtp.eu-west-1.amazonaws.com"
 PORT = 587
 
 # The subject line of the email.
 SUBJECT1 = 'Becoming VIP successfully'
 SUBJECT2 = 'Renew VIP successfully'
-# The email body for recipients with non-HTML email clients.
 
+# pay pal rest sdk configuration
 paypalrestsdk.configure({
     "mode": "sandbox",  # sandbox or live
     "client_id": "AaF3e62lDn44mSmuWdc9g4jLwyWVkow22M24mHMak57LzGM76BJ1AUCdkJu3XDR342U8eo5ldkaHY998",
@@ -41,13 +42,13 @@ env = Environment(
 
 
 @payment_bp.listener('before_server_start')
-def setup_db(operate_bp, loop):
+def setup_db(payment_bp, loop):
     global motor_base
     motor_base = MotorBase()
 
 
 @payment_bp.listener('after_server_stop')
-def close_connection(operate_bp, loop):
+def close_connection(payment_bp, loop):
     motor_base = None
 
 
@@ -58,6 +59,13 @@ def template(tpl, **kwargs):
 
 @payment_bp.route('/pay')
 async def pay(request):
+    """
+    Payment page (based on different roles)
+    :param request: payment.html
+    :return:
+        is_VIP: role is Vip user
+        is_admin: role is Admin
+    """
     user = request['session'].get('user', None)
     if user:
         motor_db = motor_base.get_db()
@@ -74,14 +82,20 @@ async def pay(request):
         return redirect('/')
 
 
-@payment_bp.route('/paymentOneMonth', methods=['POST'])
+@payment_bp.route('/payOneMonth', methods=['POST'])
 async def payment(request):
+    """
+    Pay for one month vip service
+    :param request:
+    :return:
+        paymentID: the payment id (payment create successfully)
+    """
     payment = paypalrestsdk.Payment({
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"},
         "redirect_urls": {
-            "return_url": "http://0.0.0.0:8001/paymentOneMonth/execute",
+            "return_url": "http://0.0.0.0:8001/payOneMonth/execute",
             "cancel_url": "http://0.0.0.0:8001/"},
         "transactions": [{
             "item_list": {
@@ -98,19 +112,26 @@ async def payment(request):
     if payment.create():
         print("One Month Service Payment created successfully")
     else:
+        # the error of creating payment
         print(payment.error)
     print(payment.id)
     return json({'paymentID': payment.id})
 
 
-@payment_bp.route('/paymentSixMonth', methods=['POST'])
+@payment_bp.route('/paySixMonth', methods=['POST'])
 async def payment(request):
+    """
+    Pay for six month vip service
+    :param request:
+    :return:
+            paymentID: the payment id (payment create successfully)
+    """
     payment = paypalrestsdk.Payment({
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"},
         "redirect_urls": {
-            "return_url": "http://0.0.0.0:8001/paymentSixMonth/execute",
+            "return_url": "http://0.0.0.0:8001/paySixMonth/execute",
             "cancel_url": "http://0.0.0.0:8001/"},
         "transactions": [{
             "item_list": {
@@ -132,14 +153,20 @@ async def payment(request):
     return json({'paymentID': payment.id})
 
 
-@payment_bp.route('/paymentOneYear', methods=['POST'])
+@payment_bp.route('/payOneYear', methods=['POST'])
 async def payment(request):
+    """
+    Pay for one year vip service
+    :param request:
+    :return:
+        paymentID: the payment id (payment create successfully)
+    """
     payment = paypalrestsdk.Payment({
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"},
         "redirect_urls": {
-            "return_url": "http://0.0.0.0:8001/paymentOneYear/execute",
+            "return_url": "http://0.0.0.0:8001/payOneYear/execute",
             "cancel_url": "http://0.0.0.0:8001/"},
         "transactions": [{
             "item_list": {
@@ -161,9 +188,15 @@ async def payment(request):
     return json({'paymentID': payment.id})
 
 
-# 30 days
 @payment_bp.route('/executeOneMonth', methods=['POST'])
 async def execute(request):
+    """
+    Execute one month vip service payment
+    :param request:
+        payerID: the pay's id of the payment
+    :return:
+        success: The payment is successful and the transaction is completed
+    """
     success = False
     payment = paypalrestsdk.Payment.find(request.form.get('paymentID'))
     if payment.execute({'payer_id': request.form.get('payerID')}):
@@ -174,7 +207,7 @@ async def execute(request):
         user_data = await motor_db.user.find_one({'user': user})
         user_role = user_data.get("role")
         if user:
-            print(user_role)
+            # if user is general user
             if user_role == "General User":
                 try:
                     become_vip_time = get_time()
@@ -279,9 +312,15 @@ async def execute(request):
     return json({'success': success})
 
 
-# 60 days
 @payment_bp.route('/executeSixMonth', methods=['POST'])
 async def execute(request):
+    """
+    Execute six month vip service payment
+    :param request:
+        payerID: the pay's id of the payment
+    :return:
+        success: The payment is successful and the transaction is completed
+    """
     success = False
     payment = paypalrestsdk.Payment.find(request.form.get('paymentID'))
     if payment.execute({'payer_id': request.form.get('payerID')}):
@@ -400,9 +439,15 @@ async def execute(request):
     return json({'success': success})
 
 
-# 30 days
 @payment_bp.route('/executeOneYear', methods=['POST'])
 async def execute(request):
+    """
+    Execute one year vip service payment
+    :param request:
+        payerID: the pay's id of the payment
+    :return:
+        success: The payment is successful and the transaction is completed
+    """
     success = False
     payment = paypalrestsdk.Payment.find(request.form.get('paymentID'))
     if payment.execute({'payer_id': request.form.get('payerID')}):
@@ -512,8 +557,13 @@ async def execute(request):
     return json({'success': success})
 
 
-@payment_bp.route("/getVIPInformation")
-async def get_vip_information(request):
+@payment_bp.route("/user/personal/info")
+async def get_personal_information(request):
+    """
+    Get the user's information
+    :param request: user name (session)
+    :return: userInformation.html based on different roles
+    """
     user = request['session'].get('user', None)
     # role = request['session'].get('role', None)
     if user:
@@ -536,7 +586,7 @@ async def get_vip_information(request):
                 result.append(item_result)
                 message = "Honorable administrator"
                 item_result['admin_message'] = message
-                return template('payerInformation.html',
+                return template('userInformation.html',
                                 title='Admin information',
                                 is_login=1,
                                 user=user,
@@ -547,7 +597,7 @@ async def get_vip_information(request):
                 item_result['user_become_vip_time'] = user_become_vip_time
                 item_result['expireDate'] = use_expire_date
                 result.append(item_result)
-                return template('payerInformation.html',
+                return template('userInformation.html',
                                 title='VIP user information',
                                 is_login=1,
                                 user=user,
@@ -557,7 +607,7 @@ async def get_vip_information(request):
                 warning_message = "Sorry,you are not VIP!"
                 item_result['warning_message'] = warning_message
                 result.append(item_result)
-                return template('payerInformation.html',
+                return template('userInformation.html',
                                 title='General user information',
                                 is_login=1,
                                 user=user,

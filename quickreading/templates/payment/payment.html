@@ -152,21 +152,21 @@
         payment: function () {
             // 2. Make a request to your server
             if (document.getElementById("control_01").checked) {
-                return paypal.request.post('http://0.0.0.0:8001/paymentOneMonth')
+                return paypal.request.post('http://0.0.0.0:8001/payOneMonth')
                     .then(function (data) {
                         // 3. Return res.id from the response
                         return data.paymentID;
                     });
             }
             if (document.getElementById("control_02").checked) {
-                return paypal.request.post('http://0.0.0.0:8001/paymentSixMonth')
+                return paypal.request.post('http://0.0.0.0:8001/paySixMonth')
                     .then(function (data) {
                         // 3. Return res.id from the response
                         return data.paymentID;
                     });
             }
             if (document.getElementById("control_03").checked) {
-                return paypal.request.post('http://0.0.0.0:8001/paymentOneYear')
+                return paypal.request.post('http://0.0.0.0:8001/payOneYear')
                     .then(function (data) {
                         // 3. Return res.id from the response
                         return data.paymentID;
@@ -186,7 +186,7 @@
                         console.log(res.success)
                         var msg = "You have paid one month vip service!";
                         if (confirm(msg)) {
-                            window.location.href = '/getVIPInformation';
+                            window.location.href = '/user/personal/info';
                         }
                     });
             }
@@ -201,7 +201,7 @@
                         console.log(res.success)
                         var msg = "You have paid six months vip service!";
                         if (confirm(msg)) {
-                            window.location.href = '/getVIPInformation';
+                            window.location.href = '/user/personal/info';
                         }
                     });
             }
@@ -216,7 +216,7 @@
                         console.log(res.success)
                         var msg = "You have paid one year vip service!";
                         if (confirm(msg)) {
-                            window.location.href = '/getVIPInformation';
+                            window.location.href = '/user/personal/info';
                         }
                     });
             }
