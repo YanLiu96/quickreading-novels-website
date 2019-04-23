@@ -76,7 +76,9 @@ async def index(request):
 @novels_bp.route("/register")
 async def user_register(request):
     """
-    User Register
+    Enter register page
+    :param request: user name in session
+    :return: register.html, question
     """
     user = request['session'].get('user', None)
     if user:
@@ -94,7 +96,6 @@ async def user_register(request):
             return redirect('/')
 
 
-# do this when click search button
 @novels_bp.route("/search", methods=['GET'])
 async def quickreading_search(request):
     """
@@ -214,21 +215,22 @@ async def quickreading_search(request):
 @novels_bp.route("/chapter")
 async def chapter(request):
     """
-    返回小说章节目录页
-    : content_url   这决定当前U页面url的生成方式
-    : url           章节目录页源url
-    : novels_name   小说名称
-    :return: 小说章节内容页
+    Chapter of novel
+    :param request:
+        url: the url of original chapter page(where I get novels chapter data)
+        novels_name: the name of novel which is input by user
+    :return:
+        template: chapter.html
+        content_url: element of generated chapter page url
     """
     url = request.args.get('url', None)
     novels_name = request.args.get('novels_name', None)
-    # 小说网站的地址
+    # resource website
     netloc = get_netloc(url)
     if netloc not in RULES.keys():
         return redirect(url)
     if netloc in REPLACE_RULES.keys():
         url = url.replace(REPLACE_RULES[netloc]['old'], REPLACE_RULES[netloc]['new'])
-
     content_url = RULES[netloc].content_url
     content = await cache_novels_chapter(url=url, netloc=netloc)
     if content:
@@ -243,12 +245,11 @@ async def chapter(request):
 @novels_bp.route("/quickreading_content")
 async def quickreading_content(request):
     """
-    返回小说章节内容页
-    : content_url   这决定当前U页面url的生成方式
-    : url           章节内容页源url
-    : chapter_url   小说目录源url
-    : novels_name   小说名称
-    :return: 小说章节内容页
+    Content of selected chapter
+    :param request:
+        url: resource content url
+    :return:
+        content_url: the url of selected chapter's content in this quickreading
     """
     url = request.args.get('url', None)
     chapter_url = request.args.get('chapter_url', None)
@@ -384,6 +385,13 @@ async def quickreading_content(request):
 
 @novels_bp.route('/admininterface')
 async def admininterface(request):
+    """
+    Administrator interface
+    :param request:
+    :return:
+        template: adminInterface.html
+        is_admin: role is admin
+    """
     admin = request['session'].get('user', None)
     role = request['session'].get('role', None)
     head = ['User name', 'email', 'role', 'delete']
