@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="587b909e-c3e2-4598-9069-91325317a33c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/quickreading/tests/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quickreading/views/novels_blueprint.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/novels_blueprint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,28 +19,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1556053196064" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_in__pytest_cache.coverage" NAME="Unittests in .pytest_cache Coverage Results" MODIFIED="1556110683076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.pytest_cache" />
+    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1556114777270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="545661314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="194" />
-          <entry key="project.open.time.0" value="19" />
+          <entry key="project.closed" value="202" />
+          <entry key="project.open.time.0" value="24" />
           <entry key="project.open.time.1" value="12" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.3" value="17" />
-          <entry key="project.open.time.4" value="69" />
+          <entry key="project.open.time.3" value="18" />
+          <entry key="project.open.time.4" value="71" />
           <entry key="project.open.time.5" value="65" />
           <entry key="project.open.time.6" value="12" />
-          <entry key="project.opened" value="196" />
+          <entry key="project.opened" value="204" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="JavaScript-modules-diagram//Users/finalYearProject/quickreading" value="2" />
           <entry key="Pipfile" value="16" />
-          <entry key="Procfile" value="3" />
+          <entry key="Procfile" value="4" />
           <entry key="Python/#/Users/finalYearProject/quickreading/src" value="2" />
           <entry key="Python/#/Users/finalYearProject/quickreading/src/views" value="1" />
           <entry key="conf" value="26" />
@@ -41,13 +49,17 @@
           <entry key="gitignore" value="9" />
           <entry key="html" value="565" />
           <entry key="ico" value="8" />
+          <entry key="ini" value="3" />
           <entry key="jpg" value="1" />
           <entry key="js" value="194" />
           <entry key="json" value="1" />
-          <entry key="lock" value="13" />
+          <entry key="lastfailed" value="1" />
+          <entry key="lock" value="14" />
+          <entry key="nodeids" value="1" />
           <entry key="png" value="81" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="1189" />
+          <entry key="py" value="1215" />
+          <entry key="stepwise" value="1" />
           <entry key="ts" value="1" />
           <entry key="txt" value="5" />
         </counts>
@@ -57,11 +69,12 @@
           <entry key="CSS" value="110" />
           <entry key="HTML" value="565" />
           <entry key="Image" value="90" />
+          <entry key="Ini" value="3" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="194" />
-          <entry key="PLAIN_TEXT" value="57" />
+          <entry key="PLAIN_TEXT" value="62" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="1188" />
+          <entry key="Python" value="1214" />
           <entry key="TOML" value="15" />
           <entry key="TypeScript" value="1" />
           <entry key="UML" value="6" />
@@ -73,10 +86,10 @@
           <entry key="Procfile" value="13" />
           <entry key="conf" value="33" />
           <entry key="css" value="236" />
-          <entry key="dummy" value="308" />
+          <entry key="dummy" value="330" />
           <entry key="html" value="6983" />
           <entry key="js" value="813" />
-          <entry key="py" value="16361" />
+          <entry key="py" value="16779" />
           <entry key="txt" value="21" />
         </counts>
       </usages-collector>
@@ -85,8 +98,8 @@
           <entry key="CSS" value="236" />
           <entry key="HTML" value="6983" />
           <entry key="JavaScript" value="813" />
-          <entry key="PLAIN_TEXT" value="375" />
-          <entry key="Python" value="16361" />
+          <entry key="PLAIN_TEXT" value="397" />
+          <entry key="Python" value="16779" />
           <entry key="TOML" value="1" />
         </counts>
       </usages-collector>
@@ -95,10 +108,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quickreading/views/novels_blueprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="392" column="18" selection-start-line="392" selection-start-column="18" selection-end-line="392" selection-end-column="18" />
+            <state relative-caret-position="88">
+              <caret line="386" column="24" selection-start-line="386" selection-start-column="10" selection-end-line="386" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -110,8 +135,8 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -139,12 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/quickreading/crawler/searchEngine/base_searchEngine_spider.py" />
-        <option value="$PROJECT_DIR$/quickreading/static/novels/js/searchEngine.js" />
-        <option value="$PROJECT_DIR$/quickreading/crawler/searchEngine/google_searchEngine_spider.py" />
-        <option value="$PROJECT_DIR$/quickreading/static/novels/js/adminoperation.js" />
-        <option value="$PROJECT_DIR$/quickreading/static/novels/css/content.css" />
-        <option value="$PROJECT_DIR$/quickreading/crawler/searchEngine/so_searchEngine_spider.py" />
         <option value="$PROJECT_DIR$/quickreading/static/novels/css/register.css" />
         <option value="$PROJECT_DIR$/quickreading/static/novels/css/main.css" />
         <option value="$PROJECT_DIR$/quickreading/config/__init__.py" />
@@ -153,9 +172,7 @@
         <option value="$PROJECT_DIR$/quickreading/templates/novels/search_bar.html" />
         <option value="$PROJECT_DIR$/quickreading/templates/payment/payerInformation.html" />
         <option value="$PROJECT_DIR$/quickreading/views/md_blueprint.py" />
-        <option value="$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py" />
         <option value="$PROJECT_DIR$/quickreading/utils/verification/verification.py" />
-        <option value="$PROJECT_DIR$/quickreading/views/__init__.py" />
         <option value="$PROJECT_DIR$/quickreading/static/md/js/index.js" />
         <option value="$PROJECT_DIR$/quickreading/templates/md/main.html" />
         <option value="$PROJECT_DIR$/quickreading/views/vip_service_blueprint.py" />
@@ -175,7 +192,6 @@
         <option value="$PROJECT_DIR$/quickreading/config/dev_gunicorn.py" />
         <option value="$PROJECT_DIR$/quickreading/run.py" />
         <option value="$PROJECT_DIR$/quickreading/config/gunicorn.py" />
-        <option value="$PROJECT_DIR$/quickreading/server.py" />
         <option value="$PROJECT_DIR$/quickreading/config/config.py" />
         <option value="$PROJECT_DIR$/quickreading/config/dev_config.py" />
         <option value="$PROJECT_DIR$/quickreading/config/resource_website_rules.py" />
@@ -190,6 +206,15 @@
         <option value="$PROJECT_DIR$/quickreading/templates/novels/login.html" />
         <option value="$PROJECT_DIR$/quickreading/views/payment_blueprint.py" />
         <option value="$PROJECT_DIR$/quickreading/views/novels_blueprint.py" />
+        <option value="$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py" />
+        <option value="$PROJECT_DIR$/quickreading/views/__init__.py" />
+        <option value="$PROJECT_DIR$/quickreading/server.py" />
+        <option value="$PROJECT_DIR$/test/novels_blueprint_test.py" />
+        <option value="$PROJECT_DIR$/test/routes_test.py" />
+        <option value="$PROJECT_DIR$/tests/routes_test.py" />
+        <option value="$PROJECT_DIR$/quickreading/pytest.ini" />
+        <option value="$PROJECT_DIR$/quickreading/tests/routes_test.py" />
+        <option value="$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py" />
       </list>
     </option>
   </component>
@@ -199,8 +224,8 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="28" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="45" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="821" />
@@ -227,12 +252,6 @@
               <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="quickreading" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -251,16 +270,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Background" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/quickreading/static/novels/img" />
-      <recent name="$PROJECT_DIR$/src/static/novels/js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/quickreading/static/payment/js" />
       <recent name="$PROJECT_DIR$/quickreading/static/payment/css" />
       <recent name="$PROJECT_DIR$/quickreading/static/novels/img" />
       <recent name="$PROJECT_DIR$/quickreading/templates/payment" />
       <recent name="$PROJECT_DIR$/src/static/novels/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/quickreading" />
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/quickreading/static/novels/img" />
+      <recent name="$PROJECT_DIR$/src/static/novels/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -326,15 +348,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests in .pytest_cache" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="quickreading" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.pytest_cache" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/.pytest_cache&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.payment.html" />
       <item itemvalue="JavaScript Debug.payerInformation.html" />
       <item itemvalue="Python.run" />
       <item itemvalue="Python.operate_blueprint" />
+      <item itemvalue="Python tests.Unittests in .pytest_cache" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
+        <item itemvalue="Python tests.Unittests in .pytest_cache" />
         <item itemvalue="Python.operate_blueprint" />
         <item itemvalue="JavaScript Debug.payerInformation.html" />
         <item itemvalue="JavaScript Debug.payment.html" />
@@ -354,6 +393,11 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in__pytest_cache - 2019.04.24 at 13h 58m 03s.xml">
+      <configuration name="Unittests in .pytest_cache" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -364,10 +408,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="23" width="1440" height="821" extended-state="6" />
+    <frame x="45" y="23" width="1440" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26108727" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29041487" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -381,15 +425,15 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.17097701" side_tool="true" weight="0.33333334" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.8591954" visible="true" weight="0.22222222" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49570817" weight="0.32462174" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.8591954" visible="true" weight="0.42524007" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49570817" weight="0.32373112" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" sideWeight="0.49856323" weight="0.32900432" />
-      <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21336207" />
@@ -423,77 +467,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/quickreading/static/novels/img/chapter_bg.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/static/md/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/static/novels/css/content.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/utils/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" selection-start-column="24" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/utils/tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/static/novels/js/content.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/chapter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="20" column="62" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/search_bar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/static/novels/css/chapter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/static/novels/css/result.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="267" column="1" selection-start-line="267" selection-start-column="1" selection-end-line="267" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="84" selection-start-line="60" selection-start-column="84" selection-end-line="60" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
@@ -515,48 +488,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/crawler/function.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="885">
           <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes.png" />
-    <entry file="file://$PROJECT_DIR$/quickreading/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="63" column="53" lean-forward="true" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="53" />
-          <folding>
-            <element signature="e#23#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -571,9 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-          <folding>
-            <element signature="e#36#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -615,13 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/crawler/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/crawler/response_base.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -643,9 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="70">
           <caret line="15" column="30" lean-forward="true" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -677,19 +607,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="84" column="50" lean-forward="true" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/config/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="3" selection-end-column="3" />
-          <folding>
-            <element signature="e#61#70#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -697,10 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#1;n#div#1;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,13 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="137" column="41" lean-forward="true" selection-start-line="137" selection-start-column="41" selection-end-line="137" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/views/userAdmin_blueprint.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2233">
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -739,9 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="794">
           <caret line="190" column="23" lean-forward="true" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -756,10 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#2;n#ul#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,10 +679,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py" />
+    <entry file="file://$PROJECT_DIR$/quickreading/views/userAdmin_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile" />
+    <entry file="file://$PROJECT_DIR$/Pipfile.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/views/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#37#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="e#61#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/crawler/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pytest_cache/v/cache/lastfailed" />
+    <entry file="file://$PROJECT_DIR$/.pytest_cache/v/cache/nodeids" />
+    <entry file="file://$PROJECT_DIR$/.pytest_cache/v/cache/stepwise" />
+    <entry file="file://$PROJECT_DIR$/quickreading/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/share/virtualenvs/quickreading-ow61-Voa/lib/python3.6/site-packages/jinja2/loaders.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pytest.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/views/novels_blueprint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="392" column="18" selection-start-line="392" selection-start-column="18" selection-end-line="392" selection-end-column="18" />
+        <state relative-caret-position="88">
+          <caret line="386" column="24" selection-start-line="386" selection-start-column="10" selection-end-line="386" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
