@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="587b909e-c3e2-4598-9069-91325317a33c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/quickreading/tests/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quickreading/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quickreading/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/views/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quickreading/views/searchEngine_blueprint.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/templates/novels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/templates/novels/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.conf" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.conf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,21 +17,24 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/quickreading$Unittests_in__pytest_cache.coverage" NAME="Unittests in .pytest_cache Coverage Results" MODIFIED="1556110683076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.pytest_cache" />
-    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1556114777270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_UserLogin_test_register.coverage" NAME="Unittests for user_register_test.UserLogin.test_register Coverage Results" MODIFIED="1556138020694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$autotest.coverage" NAME="autotest Coverage Results" MODIFIED="1556141157638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1556140639959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
+    <SUITE FILE_PATH="coverage/quickreading$login_test.coverage" NAME="login_test Coverage Results" MODIFIED="1556139382278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="545661314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="202" />
-          <entry key="project.open.time.0" value="24" />
+          <entry key="project.closed" value="205" />
+          <entry key="project.open.time.0" value="25" />
           <entry key="project.open.time.1" value="12" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.3" value="18" />
-          <entry key="project.open.time.4" value="71" />
+          <entry key="project.open.time.3" value="19" />
+          <entry key="project.open.time.4" value="72" />
           <entry key="project.open.time.5" value="65" />
           <entry key="project.open.time.6" value="12" />
-          <entry key="project.opened" value="204" />
+          <entry key="project.opened" value="207" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -44,10 +44,10 @@
           <entry key="Procfile" value="4" />
           <entry key="Python/#/Users/finalYearProject/quickreading/src" value="2" />
           <entry key="Python/#/Users/finalYearProject/quickreading/src/views" value="1" />
-          <entry key="conf" value="26" />
+          <entry key="conf" value="27" />
           <entry key="css" value="110" />
           <entry key="gitignore" value="9" />
-          <entry key="html" value="565" />
+          <entry key="html" value="573" />
           <entry key="ico" value="8" />
           <entry key="ini" value="3" />
           <entry key="jpg" value="1" />
@@ -55,10 +55,11 @@
           <entry key="json" value="1" />
           <entry key="lastfailed" value="1" />
           <entry key="lock" value="14" />
+          <entry key="log" value="2" />
           <entry key="nodeids" value="1" />
           <entry key="png" value="81" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="1215" />
+          <entry key="py" value="1235" />
           <entry key="stepwise" value="1" />
           <entry key="ts" value="1" />
           <entry key="txt" value="5" />
@@ -67,14 +68,14 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="110" />
-          <entry key="HTML" value="565" />
+          <entry key="HTML" value="573" />
           <entry key="Image" value="90" />
           <entry key="Ini" value="3" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="194" />
-          <entry key="PLAIN_TEXT" value="62" />
+          <entry key="PLAIN_TEXT" value="65" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="1214" />
+          <entry key="Python" value="1234" />
           <entry key="TOML" value="15" />
           <entry key="TypeScript" value="1" />
           <entry key="UML" value="6" />
@@ -84,22 +85,22 @@
         <counts>
           <entry key="Pipfile" value="1" />
           <entry key="Procfile" value="13" />
-          <entry key="conf" value="33" />
+          <entry key="conf" value="48" />
           <entry key="css" value="236" />
-          <entry key="dummy" value="330" />
-          <entry key="html" value="6983" />
+          <entry key="dummy" value="355" />
+          <entry key="html" value="7006" />
           <entry key="js" value="813" />
-          <entry key="py" value="16779" />
+          <entry key="py" value="17764" />
           <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="236" />
-          <entry key="HTML" value="6983" />
+          <entry key="HTML" value="7006" />
           <entry key="JavaScript" value="813" />
-          <entry key="PLAIN_TEXT" value="397" />
-          <entry key="Python" value="16779" />
+          <entry key="PLAIN_TEXT" value="437" />
+          <entry key="Python" value="17764" />
           <entry key="TOML" value="1" />
         </counts>
       </usages-collector>
@@ -107,23 +108,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/quickreading/tests/login_logout_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="195">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1556139321762" expanded="true" signature="2644:2649" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/quickreading/views/novels_blueprint.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="386" column="24" selection-start-line="386" selection-start-column="10" selection-end-line="386" selection-end-column="24" />
+            <state relative-caret-position="299">
+              <caret line="44" column="45" lean-forward="true" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -164,12 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/quickreading/static/novels/css/register.css" />
-        <option value="$PROJECT_DIR$/quickreading/static/novels/css/main.css" />
-        <option value="$PROJECT_DIR$/quickreading/config/__init__.py" />
-        <option value="$PROJECT_DIR$/quickreading/crawler/decorators.py" />
-        <option value="$PROJECT_DIR$/quickreading/templates/novels/chapter.html" />
-        <option value="$PROJECT_DIR$/quickreading/templates/novels/search_bar.html" />
         <option value="$PROJECT_DIR$/quickreading/templates/payment/payerInformation.html" />
         <option value="$PROJECT_DIR$/quickreading/views/md_blueprint.py" />
         <option value="$PROJECT_DIR$/quickreading/utils/verification/verification.py" />
@@ -184,7 +179,6 @@
         <option value="$PROJECT_DIR$/quickreading/static/novels/js/content.js" />
         <option value="$PROJECT_DIR$/quickreading/static/novels/css/chapter.css" />
         <option value="$PROJECT_DIR$/quickreading/templates/novels/logout.html" />
-        <option value="$PROJECT_DIR$/quickreading/templates/novels/result.html" />
         <option value="$PROJECT_DIR$/quickreading/static/novels/css/result.css" />
         <option value="$PROJECT_DIR$/quickreading/templates/novels/register.html" />
         <option value="$PROJECT_DIR$/quickreading/templates/novels/content.html" />
@@ -199,7 +193,6 @@
         <option value="$PROJECT_DIR$/quickreading/data/user_agents.txt" />
         <option value="$PROJECT_DIR$/quickreading/templates/novels/main.html" />
         <option value="$PROJECT_DIR$/quickreading/views/userAdmin_blueprint.py" />
-        <option value="$PROJECT_DIR$/quickreading/templates/novels/index.html" />
         <option value="$PROJECT_DIR$/quickreading/static/novels/js/main.js" />
         <option value="$PROJECT_DIR$/quickreading/views/operate_blueprint.py" />
         <option value="$PROJECT_DIR$/quickreading/templates/payment/payment.html" />
@@ -215,6 +208,14 @@
         <option value="$PROJECT_DIR$/quickreading/pytest.ini" />
         <option value="$PROJECT_DIR$/quickreading/tests/routes_test.py" />
         <option value="$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py" />
+        <option value="$PROJECT_DIR$/quickreading/templates/novels/index.html" />
+        <option value="$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.conf" />
+        <option value="$PROJECT_DIR$/quickreading/tests/user_register_test.py" />
+        <option value="$PROJECT_DIR$/quickreading/tests/login_test.py" />
+        <option value="$PROJECT_DIR$/quickreading/tests/login_logout_test.py" />
+        <option value="$PROJECT_DIR$/quickreading/tests/autotest.py" />
+        <option value="$PROJECT_DIR$/quickreading/templates/novels/result.html" />
+        <option value="$PROJECT_DIR$/quickreading/tests/search_novels_test.py" />
       </list>
     </option>
   </component>
@@ -225,7 +226,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="45" />
+    <option name="x" value="19" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="821" />
@@ -252,7 +253,7 @@
               <item name="quickreading" type="b2602c69:ProjectViewProjectNode" />
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
               <item name="quickreading" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -297,14 +298,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="payerInformation.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/quickreading/src/templates/payment/payerInformation.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="payment.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/quickreading/src/templates/payment/payment.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="operate_blueprint" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.autotest">
+    <configuration name="autotest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="quickreading" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -312,12 +307,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/views" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quickreading/views/operate_blueprint.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quickreading/tests/search_novels_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="login_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="quickreading" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quickreading/tests/login_logout_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -348,7 +365,22 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in .pytest_cache" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for user_register_test.UserLogin.test_register" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="quickreading" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;user_register_test.UserLogin.test_register&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in /Users/finalYearProject/quickreading/.pytest_cache" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="quickreading" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -364,19 +396,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JavaScript Debug.payment.html" />
-      <item itemvalue="JavaScript Debug.payerInformation.html" />
       <item itemvalue="Python.run" />
-      <item itemvalue="Python.operate_blueprint" />
-      <item itemvalue="Python tests.Unittests in .pytest_cache" />
+      <item itemvalue="Python tests.Unittests in /Users/finalYearProject/quickreading/.pytest_cache" />
+      <item itemvalue="Python.autotest" />
+      <item itemvalue="Python.login_test" />
+      <item itemvalue="Python tests.Unittests for user_register_test.UserLogin.test_register" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.autotest" />
         <item itemvalue="Python.run" />
-        <item itemvalue="Python tests.Unittests in .pytest_cache" />
-        <item itemvalue="Python.operate_blueprint" />
-        <item itemvalue="JavaScript Debug.payerInformation.html" />
-        <item itemvalue="JavaScript Debug.payment.html" />
+        <item itemvalue="Python.login_test" />
+        <item itemvalue="Python tests.Unittests for user_register_test.UserLogin.test_register" />
+        <item itemvalue="Python tests.Unittests in /Users/finalYearProject/quickreading/.pytest_cache" />
       </list>
     </recent_temporary>
   </component>
@@ -397,6 +429,9 @@
     <history-entry file="Unittests_in__pytest_cache - 2019.04.24 at 13h 58m 03s.xml">
       <configuration name="Unittests in .pytest_cache" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UserLogin_test_register - 2019.04.24 at 21h 33m 49s.xml">
+      <configuration name="Unittests for user_register_test.UserLogin.test_register" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -408,15 +443,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="45" y="23" width="1440" height="821" extended-state="0" />
+    <frame x="19" y="23" width="1440" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29041487" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30329043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4893773" weight="0.36762688" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.829023" weight="0.33333334" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.829023" visible="true" weight="0.2578875" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4920977" weight="0.30285713" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -425,7 +460,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.17097701" side_tool="true" weight="0.33333334" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.8591954" visible="true" weight="0.42524007" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.8591954" weight="0.30041152" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49570817" weight="0.32373112" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" sideWeight="0.49856323" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -463,91 +498,14 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/static/novels/js/theme.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/crawler/function.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes.png" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/config/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="42" lean-forward="true" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/config/dev_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/config/gunicorn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/config/resource_website_rules.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6277">
-          <caret line="665" column="9" lean-forward="true" selection-start-line="665" selection-start-column="9" selection-end-line="665" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/crawler/searchEngine/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/crawler/searchEngine/bing_searchEngine_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/crawler/searchEngine/base_searchEngine_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/data/user_agents.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -603,20 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/crawler/cache.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="84" column="50" lean-forward="true" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="10" lean-forward="true" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/static/novels/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -635,9 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="3" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -673,9 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="453" column="33" lean-forward="true" selection-start-line="453" selection-start-column="33" selection-end-line="453" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -684,9 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,9 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#37#76#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,9 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="3" selection-end-column="3" />
-          <folding>
-            <element signature="e#61#70#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,18 +694,122 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/views/novels_blueprint.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="386" column="24" selection-start-line="386" selection-start-column="10" selection-end-line="386" selection-end-column="24" />
+        <state relative-caret-position="-1649">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/crawler/cache.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-737">
+          <caret line="84" column="50" lean-forward="true" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/crawler/extract_novels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/crawler/function.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/utils/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/chapter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+          <folding>
+            <element signature="e#298#305#0" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="40" column="50" lean-forward="true" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/register.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/templates/novels/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/user_register_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+            <marker date="1556138100217" expanded="true" signature="441:3646" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/search_novels_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/geckodriver.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/login_logout_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <marker date="1556139321762" expanded="true" signature="2644:2649" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="299">
+          <caret line="44" column="45" lean-forward="true" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
         </state>
       </provider>
     </entry>

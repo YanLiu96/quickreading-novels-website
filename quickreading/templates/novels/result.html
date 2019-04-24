@@ -21,7 +21,7 @@
                 {%for item in result%}
                 <div class="result_item col-sm-9 col-xs-12">
                     <li>
-                        <a target="_blank" href="/chapter?url={{item.url}}&novels_name={{name}}">{{item.title}}</a>
+                        <a target="_self" href="/chapter?url={{item.url}}&novels_name={{name}}">{{item.title}}</a>
                         <div class="netloc">
                             <i>{{item.netloc}}</i>
                             <i><a target="_blank" href="{{item.url}}">turn to original website</a></i>
