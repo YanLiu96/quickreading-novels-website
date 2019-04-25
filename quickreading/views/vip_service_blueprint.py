@@ -60,12 +60,12 @@ async def bookmarks(request):
                         item_result['bookmark'] = bookmark
                         item_result['add_time'] = i.get('add_time', '')
                         result.append(item_result)
-                    return template('admin_bookmarks.html', title='{user}的书签 - owllook'.format(user=user),
+                    return template('bookmark.html', title='{user}的书签 - owllook'.format(user=user),
                                     is_login=1,
                                     user=user,
                                     is_bookmark=1,
                                     result=result[::-1])
-            return template('admin_bookmarks.html', title='{user}的书签 - owllook'.format(user=user),
+            return template('bookmark.html', title='{user}的书签 - owllook'.format(user=user),
                             is_login=1,
                             user=user,
                             is_bookmark=0)
@@ -111,12 +111,12 @@ async def books(request):
                         item_result["last_read_url"] = last_read_url if last_read_url else book_url
                         item_result["last_read_chapter_name"] = last_read_chapter_name
                         result.append(item_result)
-                    return template('admin_bookshelf.html', title='{user}的书架 - owllook'.format(user=user),
+                    return template('bookshelf.html', title='{user}的书架 - owllook'.format(user=user),
                                     is_login=1,
                                     user=user,
                                     is_bookmark=1,
                                     result=result[::-1])
-            return template('admin_bookshelf.html', title='{user}的书架 - owllook'.format(user=user),
+            return template('bookshelf.html', title='{user}的书架 - owllook'.format(user=user),
                             is_login=1,
                             user=user,
                             is_bookmark=0)

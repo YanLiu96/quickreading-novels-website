@@ -1,4 +1,5 @@
 from selenium import webdriver
+from time import sleep
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest
@@ -18,14 +19,16 @@ class UserLogin(unittest.TestCase):
         driver.find_element_by_link_text("Login").click()
         driver.find_element_by_id("user_name").click()
         driver.find_element_by_id("user_name").clear()
-        driver.find_element_by_id("user_name").send_keys("test5")
+        driver.find_element_by_id("user_name").send_keys("YanLiuTest")
         driver.find_element_by_id("user_password").click()
         driver.find_element_by_id("user_password").clear()
         driver.find_element_by_id("user_password").send_keys("123456")
         driver.find_element_by_id("user_login").click()
-        driver.find_element_by_link_text("test5").click()
+        driver.find_element_by_link_text("YanLiuTest").click()
+        sleep(1)
         driver.find_element_by_xpath(
             "(.//*[normalize-space(text()) and normalize-space(.)='Payment'])[1]/following::span[2]").click()
+        sleep(1)
 
         # VIP user
         driver.find_element_by_link_text("Login").click()
@@ -37,7 +40,9 @@ class UserLogin(unittest.TestCase):
         driver.find_element_by_id("user_password").send_keys("123456")
         driver.find_element_by_id("user_login").click()
         driver.find_element_by_link_text("test1").click()
+        sleep(1)
         driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Renew VIP'])[1]/following::span[2]").click()
+        sleep(1)
 
         # admin login logout
         driver.find_element_by_link_text("Login").click()
@@ -49,6 +54,7 @@ class UserLogin(unittest.TestCase):
         driver.find_element_by_id("user_password").send_keys("LY19961222..")
         driver.find_element_by_id("user_login").click()
         driver.find_element_by_link_text("AdminYanLiu").click()
+        sleep(1)
         driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='Payment'])[1]/following::span[2]").click()
         driver.close()
 

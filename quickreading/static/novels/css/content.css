@@ -1,9 +1,3 @@
-body {
-    background: url(../img/bg2.png) #ede7da !important;
-    color: #333 !important;
-    font-family: "Microsoft YaHei" !important;
-}
-
 .navbar {
     background: rgb(242, 238, 230) !important;
 }
@@ -34,8 +28,13 @@ body {
     -moz-transition: border .5s; /* Firefox 4 */
     -webkit-transition: border .5s; /* Safari and Chrome */
     -o-transition: border .5s;
-
 }
+body {
+    background: url(../img/bg2.png) #ede7da !important;
+    color: #333 !important;
+    font-family: "Microsoft YaHei" !important;
+}
+
 
 .login > a {
     margin-top: 8px;

@@ -61,13 +61,13 @@ async def bookmarks(request):
                             item_result['bookmark'] = bookmark
                             item_result['add_time'] = i.get('add_time', '')
                             result.append(item_result)
-                        return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
+                        return template('bookmark.html', title='the bookmarks of {user}'.format(user=user),
                                         is_login=1,
                                         user=user,
                                         user_role=role,
                                         is_bookmark=1,
                                         result=result[::-1])
-                return template('admin_bookmarks.html', title='the bookmarks of {user}'.format(user=user),
+                return template('bookmark.html', title='the bookmarks of {user}'.format(user=user),
                                 is_login=1,
                                 user=user,
                                 user_role=role,
@@ -123,14 +123,14 @@ async def bookshelf(request):
                             item_result["last_read_url"] = last_read_url if last_read_url else book_url
                             item_result["last_read_chapter_name"] = last_read_chapter_name
                             result.append(item_result)
-                        return template('admin_bookshelf.html',
+                        return template('bookshelf.html',
                                         title='bookshelf of {user}'.format(user=user),
                                         is_login=1,
                                         user=user,
                                         user_role=role,
                                         is_bookmark=1,
                                         result=result[::-1])
-                return template('admin_bookshelf.html', title='bookshelf of {user}'.format(user=user),
+                return template('bookshelf.html', title='bookshelf of {user}'.format(user=user),
                                 is_login=1, user=user, user_role=role, is_bookmark=0)
             except Exception as e:
                 LOGGER.error(e)

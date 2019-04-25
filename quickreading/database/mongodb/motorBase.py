@@ -80,7 +80,6 @@ class PyMongoDb:
     def db(self):
         if self._db is None:
             self._db = self.client()[self.MONGODB['DATABASE']]
-
         return self._db
 
 

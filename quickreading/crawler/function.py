@@ -15,7 +15,7 @@ from quickreading.config import LOGGER, CONFIG
 
 async def _get_data(filename, default='') -> list:
     """
-    Get data from a file
+    Get data from a file（for random_user_agent）
     :param filename: filename
     :param default: default value
     :return: data

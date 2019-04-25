@@ -21,7 +21,7 @@ class UntitledTestCase(unittest.TestCase):
         driver.find_element_by_id("searchbtn").click()
         driver.find_element_by_link_text(u"重燃最新章节列表_重燃全文阅读- 天籁小说").click()
         driver.find_element_by_link_text(u"第二章 不一样的世界").click()
-        sleep(1)
+        sleep(2)
         driver.close()
 
     def is_element_present(self, how, what):

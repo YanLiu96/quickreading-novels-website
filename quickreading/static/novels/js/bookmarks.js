@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".del-bookmark").click(function () {
-        var msg = "您真的确定要删除吗？请确认！";
+        var msg = "Are you sure to delete it??";
         if (confirm(msg)) {
             var bookmarkurl = $(this).find('a.bookmark_url').attr("data-value");
             var del_bm_pd = {"bookmarkurl": bookmarkurl};
@@ -16,7 +16,7 @@ $(document).ready(function () {
                         del_bm_object.remove();
                     }
                     if (data.status == -1) {
-                        alert('您还没有登录');
+                        alert('You should login!');
                     }
                 }
             });

@@ -1,3 +1,4 @@
+// reference https://developer.paypal.com/docs/checkout/integrate/#
 paypal.Button.render({
     env: 'sandbox', // Or 'production'
     commit: true,

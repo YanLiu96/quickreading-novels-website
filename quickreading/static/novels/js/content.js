@@ -1,31 +1,24 @@
 $(document).ready(function () {
-
     var page_btn_pre = $("div.pre_next > a:nth-child(1)");
     var page_btn_next = $("div.pre_next > a:nth-child(2)");
     var page_title = $("title");
     var page_chapter_name = $("#content_name");
-    // var page_chapter_content = $(".show-content>div");//正文
-    var page_chapter_content = $($(".show-content").children("*").get(0)); //正文
-    var page_bookmark = $("#bookMark");//书签，需要修改样式
-    var page_url = $("#url");//页面隐藏表单，本页地址
+    //main content
+    var page_chapter_content = $($(".show-content").children("*").get(0));
+    //bookmark
+    var page_bookmark = $("#bookMark");
+    var page_url = $("#url");
 
     function get_chapter(n_url) {
         $.ajax({
-            //提交数据的类型 POST GET
             type: "GET",
-            //提交的网址
             url: n_url,
-            //提交的数据
             data: {is_ajax: "quickReading_cache"},
-            //返回数据的格式
-            datatype: "json",//"xml", "html", "script", "json", "jsonp", "text".
-            //在请求之前调用的函数
-            //beforeSend:function(){$("#msg").html("logining");},
-            //成功返回之后调用的函数
+            datatype: "json",
             success: function (data) {
                 if (typeof data.name == "undefined") {
 
-                } else { // 正确获取到数据
+                } else {
                     var obj = {
                         url: data.url,
                         pre_chapter_url: transform(data.next_chapter)[0],
@@ -39,13 +32,11 @@ $(document).ready(function () {
                     store(n_url, obj);
                 }
             },
-            //调用执行后调用的函数
             complete: function () {
 
             },
             //调用出错执行的函数
             error: function () {
-                //请求出错处理
             }
         });
     }
@@ -68,7 +59,7 @@ $(document).ready(function () {
             search_url = window.location;
             // 来自书签页面的跳转不进行缓存
             if (search_url.search.indexOf("from_bookmarks") > 0) {
-                log('来自书签页面的跳转不进行缓存')
+                log('not cache page which open in bookmark')
             } else {
                 ajax_task();
                 page_bookmark.bind("click", function () {
@@ -76,18 +67,18 @@ $(document).ready(function () {
                 });
             }
         } else {
-            //不支持
             return;
         }
     }
 
     function ajax_task() {
-        store_query();//检查是否已缓存
+        // check whether cache
+        store_query();
         page_btn_pre.unbind("click");
         page_btn_pre.click(function () {
             event.preventDefault();
             if (window.sessionStorage.getItem(page_btn_pre.attr("href")) === null) {
-                //若未缓存
+                //not cache
                 window.location.href = page_btn_pre.attr("href");
             } else {
                 try {
@@ -102,7 +93,7 @@ $(document).ready(function () {
         page_btn_next.click(function () {
             event.preventDefault();
             if (window.sessionStorage.getItem(page_btn_next.attr("href")) === null) {
-                //若未缓存
+                //not cache
                 window.location.href = page_btn_next.attr("href");
             } else {
                 try {
@@ -135,7 +126,8 @@ $(document).ready(function () {
         page_title.html(data.name + " - quickreading");
     }
 
-    function stripscript(s) {//用于过滤script标签
+    // delete script
+    function stripscript(s) {
         return s.replace(/<script>.*?<\/script>/ig, '').replace(/<.*?div.*?>/, '');
     }
 
@@ -157,11 +149,11 @@ $(document).ready(function () {
         var pos = th_url.indexOf("/quickreading_content?");
         var td_url = "/quickreading_content?url=" + data.url + "&name=" + data.name + "&chapter_url=" + data.chapter_url + "&novels_name=" + data.novels_name;
         th_url += td_url;
-        //log(th_url);
         window.history.replaceState({}, data.name + " - quick reading", td_url);
     }
 
-    function load(index) {//从缓存中加载内容
+    //load data from cache(session)
+    function load(index) {
         var data = JSON.parse(window.sessionStorage.getItem(index));
         load_bookmark(data);
         load_hiddenForm(data);
@@ -170,7 +162,7 @@ $(document).ready(function () {
         load_chapter_name(data);
         load_btn_href(data);
         load_location_url(data);
-        $("body > div.container.all-content > div.move > div.move_up").click();//回到顶部
+        $("body > div.container.all-content > div.move > div.move_up").click();
         ajax_task();
     }
 
@@ -213,7 +205,7 @@ $(document).ready(function () {
     ajax_content_init();
 
 
-    //按键事件
+    //support keyboard up and down
     $(document).keydown(function (event) {
         var e = event || window.event;
         var k = e.keyCode || e.which;
@@ -237,6 +229,3 @@ $(document).ready(function () {
     });
 
 });
-
-
-//---------------------------------------------------------------------------------------

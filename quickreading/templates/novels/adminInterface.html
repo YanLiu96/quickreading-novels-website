@@ -8,6 +8,8 @@
 
 {% block content %}
 <body>
+{% if is_admin %}
+{% include "user_dropdown_list.html" %}
 <div class="mdui-container">
     <div class="mdui-typo" style="margin-top: 3%">
         <div class="mdui-chip">
@@ -18,7 +20,6 @@
     </div>
     <div class="mdui-divider" style="margin-top: 1%; margin-bottom: 2%"></div>
     <div class="mdui-table-fluid">
-        {% if is_admin %}
         <table class="mdui-table mdui-table-hoverable" style="margin-bottom: 0px;">
             <thead>
             <tr align="center">

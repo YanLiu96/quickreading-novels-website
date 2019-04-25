@@ -15,8 +15,8 @@ from quickreading.config import LOGGER
 def extract_chapters(chapters_url, html):
     """
     parse chapter page
-    :param chapter_url: 小说目录页url
-    :param res: 当前页面html
+    :param chapter_url: novels chapter url
+    :param res: html of chapter
     :return:
     """
     # reference https://greasyfork.org/zh-CN/scripts/292-my-novel-reader and https://github.com/howie6879/owllook
@@ -26,6 +26,7 @@ def extract_chapters(chapters_url, html):
     str_chapters_res = '\n'.join(chapters_res)
     chapters_res_soup = BeautifulSoup(str_chapters_res, 'html5lib')
     all_chapters = []
+    # link
     for link in chapters_res_soup.find_all('a'):
         each_data = {}
         url = urljoin(chapters_url, link.get('href')) or ''
@@ -40,7 +41,7 @@ def extract_chapters(chapters_url, html):
 
 def extract_pre_next_chapter(chapter_url, html):
     """
-    获取单章节上一页下一页
+    Get the next chapter and pre chapter
     :param chapter_url:
     :param html:
     :return:
@@ -50,7 +51,7 @@ def extract_pre_next_chapter(chapter_url, html):
         # reference https://greasyfork.org/zh-CN/scripts/292-my-novel-reader
         next_reg = r'(<a\s+.*?>.*[第上前下后][一]?[0-9]{0,6}?[页张个篇章节步].*?</a>)'
         judge_reg = r'[第上前下后][一]?[0-9]{0,6}?[页张个篇章节步]'
-        # 这里同样需要利用bs再次解析
+        # parse again
         next_res = re.findall(next_reg, html.replace('<<', '').replace('>>', ''), re.I)
         str_next_res = '\n'.join(next_res)
         next_res_soup = BeautifulSoup(str_next_res, 'html5lib')
@@ -63,8 +64,6 @@ def extract_pre_next_chapter(chapter_url, html):
                 if is_next:
                     url = urljoin(chapter_url, link.get('href')) or ''
                     next_chapter[text[:5]] = url
-
-        # nextDic = [{v[0]: v[1]} for v in sorted(next_chapter.items(), key=lambda d: d[1])]
         return next_chapter
     except Exception as e:
         LOGGER.exception(e)

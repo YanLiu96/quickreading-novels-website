@@ -11,6 +11,51 @@ $(document).ready(function () {
         $('html, body, .content').animate({scrollTop: $(document).height()}, 300);
         return false;
     });
+
+    // user login
+    $("#user_login").click(function () {
+        var user_name = $("#user_name").val();
+        var user_password = $("#user_password").val();
+        if (user_name == "" || user_password == "") {
+            alert('Content can not be NULL!!!');
+        } else {
+            var login_pd = {'user': user_name, 'pwd': user_password};
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/operate/login",
+                data: login_pd,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.status == 1) {
+                        location.reload();
+                    }
+                    if (data.status == -1) {
+                        alert('User name wrong');
+                    }
+                    if (data.status == -2) {
+                        alert('Password wrong');
+                    }
+                }
+            });
+        }
+    });
+
+    // user logout
+    $("#user_logout").click(function () {
+        $.ajax({
+            type: "get",
+            contentType: "application/json",
+            url: "/operate/logout",
+            dataType: 'json',
+            success: function (data) {
+                if (data.status == 1) {
+                    location.reload();
+                }
+            }
+        });
+    })
+
     // bookshelf
     $('#owllook_book').click(function () {
         var chapter_url = $("#chapter_url").val();
@@ -106,48 +151,6 @@ $(document).ready(function () {
         }
     });
 
-    // user login
-    $("#user_login").click(function () {
-        var user_name = $("#user_name").val();
-        var user_password = $("#user_password").val();
-        if (user_name == "" || user_password == "") {
-            alert('Content can not be NULL!!!');
-        } else {
-            var login_pd = {'user': user_name, 'pwd': user_password};
-            $.ajax({
-                type: "post",
-                contentType: "application/json",
-                url: "/operate/login",
-                data: login_pd,
-                dataType: 'json',
-                success: function (data) {
-                    if (data.status == 1) {
-                        location.reload();
-                    }
-                    if (data.status == -1) {
-                        alert('User name wrong');
-                    }
-                    if (data.status == -2) {
-                        alert('Password wrong');
-                    }
-                }
-            });
-        }
-    });
-    // user logout
-    $("#user_logout").click(function () {
-        $.ajax({
-            type: "get",
-            contentType: "application/json",
-            url: "/operate/logout",
-            dataType: 'json',
-            success: function (data) {
-                if (data.status == 1) {
-                    location.reload();
-                }
-            }
-        });
-    })
 });
 
 
