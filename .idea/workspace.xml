@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="587b909e-c3e2-4598-9069-91325317a33c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quickreading/templates/novels/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quickreading/templates/novels/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/templates/novels/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.conf" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/tests/search_novels_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/tests/search_novels_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quickreading/tests/user_register_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/quickreading/tests/user_register_login_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +13,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_in_user_register_test_py.coverage" NAME="Unittests in user_register_test.py Coverage Results" MODIFIED="1556191780458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
     <SUITE FILE_PATH="coverage/quickreading$Unittests_in__pytest_cache.coverage" NAME="Unittests in .pytest_cache Coverage Results" MODIFIED="1556110683076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.pytest_cache" />
-    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_UserLogin_test_register.coverage" NAME="Unittests for user_register_test.UserLogin.test_register Coverage Results" MODIFIED="1556138020694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_UserLogin_test_register.coverage" NAME="Unittests for user_register_test.UserLogin.test_register Coverage Results" MODIFIED="1556141399164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_search_novels_test_UntitledTestCase.coverage" NAME="Unittests for search_novels_test.UntitledTestCase Coverage Results" MODIFIED="1556193519303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_Register.coverage" NAME="Unittests for user_register_test.Register Coverage Results" MODIFIED="1556192033960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_AppDynamicsJob.coverage" NAME="Unittests for user_register_test.AppDynamicsJob Coverage Results" MODIFIED="1556143972216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_UntitledTestCase_test_register.coverage" NAME="Unittests for user_register_test.UntitledTestCase.test_register Coverage Results" MODIFIED="1556193434345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1556192650697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_AppDynamicsJob_test_app_dynamics_job.coverage" NAME="Unittests for user_register_test.AppDynamicsJob.test_app_dynamics_job Coverage Results" MODIFIED="1556143728835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
     <SUITE FILE_PATH="coverage/quickreading$autotest.coverage" NAME="autotest Coverage Results" MODIFIED="1556141157638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
-    <SUITE FILE_PATH="coverage/quickreading$run.coverage" NAME="run Coverage Results" MODIFIED="1556140639959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_UntitledTestCase.coverage" NAME="Unittests for user_register_test.UntitledTestCase Coverage Results" MODIFIED="1556193275875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
     <SUITE FILE_PATH="coverage/quickreading$login_test.coverage" NAME="login_test Coverage Results" MODIFIED="1556139382278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
+    <SUITE FILE_PATH="coverage/quickreading$Unittests_for_user_register_test_UntitledTestCase_test_untitled_test_case.coverage" NAME="Unittests for user_register_test.UntitledTestCase.test_untitled_test_case Coverage Results" MODIFIED="1556142298972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quickreading/tests" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="545661314">
@@ -59,7 +64,7 @@
           <entry key="nodeids" value="1" />
           <entry key="png" value="81" />
           <entry key="pstat" value="1" />
-          <entry key="py" value="1235" />
+          <entry key="py" value="1241" />
           <entry key="stepwise" value="1" />
           <entry key="ts" value="1" />
           <entry key="txt" value="5" />
@@ -75,7 +80,7 @@
           <entry key="JavaScript" value="194" />
           <entry key="PLAIN_TEXT" value="65" />
           <entry key="Profiler Session" value="1" />
-          <entry key="Python" value="1234" />
+          <entry key="Python" value="1240" />
           <entry key="TOML" value="15" />
           <entry key="TypeScript" value="1" />
           <entry key="UML" value="6" />
@@ -87,10 +92,10 @@
           <entry key="Procfile" value="13" />
           <entry key="conf" value="48" />
           <entry key="css" value="236" />
-          <entry key="dummy" value="355" />
+          <entry key="dummy" value="361" />
           <entry key="html" value="7006" />
           <entry key="js" value="813" />
-          <entry key="py" value="17764" />
+          <entry key="py" value="17912" />
           <entry key="txt" value="21" />
         </counts>
       </usages-collector>
@@ -99,8 +104,8 @@
           <entry key="CSS" value="236" />
           <entry key="HTML" value="7006" />
           <entry key="JavaScript" value="813" />
-          <entry key="PLAIN_TEXT" value="437" />
-          <entry key="Python" value="17764" />
+          <entry key="PLAIN_TEXT" value="443" />
+          <entry key="Python" value="17912" />
           <entry key="TOML" value="1" />
         </counts>
       </usages-collector>
@@ -111,19 +116,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quickreading/tests/login_logout_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="255">
+              <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="57" />
               <folding>
+                <element signature="e#0#30#0" expanded="true" />
                 <marker date="1556139321762" expanded="true" signature="2644:2649" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/quickreading/tests/user_register_login_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+              <folding>
+                <element signature="e#24#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/quickreading/tests/search_novels_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+              <folding>
+                <element signature="e#24#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
+            <state relative-caret-position="462">
               <caret line="44" column="45" lean-forward="true" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
             </state>
           </provider>
@@ -210,11 +240,11 @@
         <option value="$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py" />
         <option value="$PROJECT_DIR$/quickreading/templates/novels/index.html" />
         <option value="$PROJECT_DIR$/quickreading/utils/robotcheck/robotcheck.conf" />
-        <option value="$PROJECT_DIR$/quickreading/tests/user_register_test.py" />
         <option value="$PROJECT_DIR$/quickreading/tests/login_test.py" />
         <option value="$PROJECT_DIR$/quickreading/tests/login_logout_test.py" />
         <option value="$PROJECT_DIR$/quickreading/tests/autotest.py" />
         <option value="$PROJECT_DIR$/quickreading/templates/novels/result.html" />
+        <option value="$PROJECT_DIR$/quickreading/tests/user_register_test.py" />
         <option value="$PROJECT_DIR$/quickreading/tests/search_novels_test.py" />
       </list>
     </option>
@@ -226,8 +256,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="19" />
-    <option name="y" value="23" />
+    <option name="x" value="95" />
+    <option name="y" value="34" />
     <option name="width" value="1440" />
     <option name="height" value="821" />
   </component>
@@ -298,51 +328,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.autotest">
-    <configuration name="autotest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="quickreading" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quickreading/tests/search_novels_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="login_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="quickreading" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quickreading/tests/login_logout_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests for search_novels_test.UntitledTestCase">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="quickreading" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -365,7 +351,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for user_register_test.UserLogin.test_register" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for quickreading.tests.user_register_login_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="quickreading" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -376,39 +362,69 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;user_register_test.UserLogin.test_register&quot;" />
+      <option name="_new_target" value="&quot;quickreading.tests.user_register_login_test&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in /Users/finalYearProject/quickreading/.pytest_cache" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for quickreading.tests.user_register_login_test.UntitledTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="quickreading" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.pytest_cache" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/.pytest_cache&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;quickreading.tests.user_register_login_test.UntitledTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for quickreading.tests.user_register_login_test.UntitledTestCase.test_register" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="quickreading" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;quickreading.tests.user_register_login_test.UntitledTestCase.test_register&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for search_novels_test.UntitledTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="quickreading" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/quickreading/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;search_novels_test.UntitledTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.run" />
-      <item itemvalue="Python tests.Unittests in /Users/finalYearProject/quickreading/.pytest_cache" />
-      <item itemvalue="Python.autotest" />
-      <item itemvalue="Python.login_test" />
-      <item itemvalue="Python tests.Unittests for user_register_test.UserLogin.test_register" />
+      <item itemvalue="Python tests.Unittests for quickreading.tests.user_register_login_test" />
+      <item itemvalue="Python tests.Unittests for quickreading.tests.user_register_login_test.UntitledTestCase.test_register" />
+      <item itemvalue="Python tests.Unittests for quickreading.tests.user_register_login_test.UntitledTestCase" />
+      <item itemvalue="Python tests.Unittests for search_novels_test.UntitledTestCase" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.autotest" />
+        <item itemvalue="Python tests.Unittests for search_novels_test.UntitledTestCase" />
+        <item itemvalue="Python tests.Unittests for quickreading.tests.user_register_login_test.UntitledTestCase.test_register" />
+        <item itemvalue="Python tests.Unittests for quickreading.tests.user_register_login_test.UntitledTestCase" />
         <item itemvalue="Python.run" />
-        <item itemvalue="Python.login_test" />
-        <item itemvalue="Python tests.Unittests for user_register_test.UserLogin.test_register" />
-        <item itemvalue="Python tests.Unittests in /Users/finalYearProject/quickreading/.pytest_cache" />
+        <item itemvalue="Python tests.Unittests for quickreading.tests.user_register_login_test" />
       </list>
     </recent_temporary>
   </component>
@@ -426,11 +442,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in__pytest_cache - 2019.04.24 at 13h 58m 03s.xml">
-      <configuration name="Unittests in .pytest_cache" configurationId="tests" />
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase_test_register - 2019.04.25 at 12h 43m 23s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase.test_register" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_user_register_test_UserLogin_test_register - 2019.04.24 at 21h 33m 49s.xml">
-      <configuration name="Unittests for user_register_test.UserLogin.test_register" configurationId="tests" />
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase - 2019.04.25 at 12h 44m 31s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase - 2019.04.25 at 12h 45m 28s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase - 2019.04.25 at 12h 47m 09s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase - 2019.04.25 at 12h 51m 14s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase - 2019.04.25 at 12h 53m 52s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase - 2019.04.25 at 12h 56m 29s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase_test_register - 2019.04.25 at 12h 56m 45s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase.test_register" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_user_register_test_UntitledTestCase_test_register - 2019.04.25 at 12h 57m 32s.xml">
+      <configuration name="Unittests for user_register_test.UntitledTestCase.test_register" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_search_novels_test_UntitledTestCase - 2019.04.25 at 12h 58m 59s.xml">
+      <configuration name="Unittests for search_novels_test.UntitledTestCase" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView" selected-index="1">
@@ -443,15 +483,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="19" y="23" width="1440" height="821" extended-state="0" />
+    <frame x="95" y="34" width="1440" height="821" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30329043" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30329043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4893773" weight="0.36762688" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.829023" visible="true" weight="0.2578875" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.829023" visible="true" weight="0.42249656" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4920977" weight="0.30285713" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -770,27 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/tests/user_register_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-            <marker date="1556138100217" expanded="true" signature="441:3646" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quickreading/tests/search_novels_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/tests/geckodriver.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3204" />
@@ -798,9 +817,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/tests/login_logout_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" selection-end-column="57" />
           <folding>
+            <element signature="e#0#30#0" expanded="true" />
             <marker date="1556139321762" expanded="true" signature="2644:2649" ph="..." />
           </folding>
         </state>
@@ -808,8 +828,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/quickreading/tests/novels_blueprint_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
+        <state relative-caret-position="462">
           <caret line="44" column="45" lean-forward="true" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/user_register_login_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="32" column="67" selection-start-line="32" selection-start-column="67" selection-end-line="32" selection-end-column="67" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/quickreading/tests/search_novels_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
