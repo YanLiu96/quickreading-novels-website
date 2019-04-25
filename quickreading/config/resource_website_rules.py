@@ -1,11 +1,15 @@
 """
 Created by Yan Liu at 2019.1.17
 """
-# reference https://github.com/howie6879/owllook (I have got the author's authorization)
+# reference https://github.com/howie6879/owllook
+# (got the author's authorization)
 from collections import namedtuple
 
 # The resource website domain（get the novels resources）
-RESOURCE_DOMAIN = ["game.91.com", "www.11773.com", "mt.sohu.com", "book.dajianet.com",
+RESOURCE_DOMAIN = ["game.91.com", "www.11773.com", "mt.sohu.com", "book.dajianet.com","www.yaojingweiba.com", "www.qb5200.com", "www.520tingshu.com", "www.567zw.com", "www.zjrxz.com",
+                   "v.qq.com", "blog.sina.com.cn", "www.hackhome.com", "news.fznews.com.cn", "www.jingyu.com",
+                   "news.so.com", "www.sodu3.com", "vipreader.qidian.com", "www.mozhua9.com", "www.iqiyi.com",
+                   "xs.sogou.com", "www.novel.tingroom.com", "www.allnovel.net",
                    "haokan.17k.com", "www.qmdsj.com", "www.jjwxc.net", "ishare.iask.sina.com.cn", "www.cmread.com",
                    "www.52ranwen.net", "www.dingdianzw.com", "www.topber.com", "www.391k.com", "www.qqxzb.com",
                    "www.zojpw.com", "www.pp8.com", "www.bxwx.org", "www.hrsxb.com", "www.497.com", "www.d8qu.com",
@@ -35,38 +39,8 @@ RESOURCE_DOMAIN = ["game.91.com", "www.11773.com", "mt.sohu.com", "book.dajianet
                    "forum.qdmm.com", "www.qdmm.com",
                    "wenda.so.com",
                    "product.dangdang.com", "www.chuiyao.com", "novel.slieny.com", "www.bilibili.com",
-                   "donghua.dmzj.com",
-                   "www.yaojingweiba.com", "www.qb5200.com", "www.520tingshu.com", "www.567zw.com", "www.zjrxz.com",
-                   "v.qq.com", "blog.sina.com.cn", "www.hackhome.com", "news.fznews.com.cn", "www.jingyu.com",
-                   "news.so.com", "www.sodu3.com", "vipreader.qidian.com", "www.mozhua9.com", "www.iqiyi.com",
-                   "xs.sogou.com", "www.novel.tingroom.com", "www.allnovel.net"]
+                   "donghua.dmzj.com"]
 
-REPLACE_RULES = {
-    "www.miaobige.com": {
-        'old': 'miaobige.com/book/',
-        'new': 'miaobige.com/read/'
-    },
-    "www.5ccc.net": {
-        'old': '5ccc.net/wksz_info/',
-        'new': '5ccc.net/xiaoshuo/'
-    },
-    "www.7kankan.com": {
-        'old': '7kankan.com/files/article/info/',
-        'new': '7kankan.com/files/article/html/'
-    },
-    "www.xqingdou.net": {
-        'old': 'xqingdou.net/book_',
-        'new': 'xqingdou.net/chapter_'
-    },
-    "www.wuyanxia.net": {
-        'old': 'wuyanxia.net/book/',
-        'new': 'wuyanxia.net/read/'
-    },
-    "www.263zw.com": {
-        'old': '263zw.com/402770/',
-        'new': '263zw.com/402770/list/'
-    },
-}
 
 # use which engine to search novels
 ENGINE_PRIORITY = ['360', 'baidu', 'bing', 'google']
@@ -673,4 +647,31 @@ RULES = {
     'www.kanshuzhong.com': Rules('0', {'class': 'bookcontent'}, {'class': 'textcontent'}),
     # 已解析
     'www.siluke.tw': Rules('http://www.siluke.tw/', {'class': 'box_con'}, {'id': 'content'})
+}
+
+REPLACE_RULES = {
+    "www.miaobige.com": {
+        'old': 'miaobige.com/book/',
+        'new': 'miaobige.com/read/'
+    },
+    "www.5ccc.net": {
+        'old': '5ccc.net/wksz_info/',
+        'new': '5ccc.net/xiaoshuo/'
+    },
+    "www.7kankan.com": {
+        'old': '7kankan.com/files/article/info/',
+        'new': '7kankan.com/files/article/html/'
+    },
+    "www.xqingdou.net": {
+        'old': 'xqingdou.net/book_',
+        'new': 'xqingdou.net/chapter_'
+    },
+    "www.wuyanxia.net": {
+        'old': 'wuyanxia.net/book/',
+        'new': 'wuyanxia.net/read/'
+    },
+    "www.263zw.com": {
+        'old': '263zw.com/402770/',
+        'new': '263zw.com/402770/list/'
+    },
 }

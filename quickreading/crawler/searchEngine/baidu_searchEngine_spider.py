@@ -80,7 +80,7 @@ class BaiduSearchEngine(BaseSearchEngine):
             return []
 
 
-# store the search novels' name
+# store the search novels' name in cache
 @cached(ttl=259200, key_from_attr='novels_name', serializer=PickleSerializer(), namespace="novels_name")
 async def start(novels_name):
     """
@@ -102,5 +102,7 @@ if __name__ == '__main__':
         db=REDIS_DICT.get('CACHE_DB', 0),
         password=REDIS_DICT.get('REDIS_PASSWORD', None),
     )
+    '''
     res = asyncio.get_event_loop().run_until_complete(start('intitle:雪中悍刀行 小说 阅读'))
     print(res)
+    '''

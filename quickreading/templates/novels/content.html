@@ -1,5 +1,4 @@
 {% extends "main.html" %}
-
 {% block header %}
 <title>{{ name }} - quick reading</title>
 <link rel="stylesheet" href="static/novels/css/content.css">
@@ -91,7 +90,15 @@
         {{item|safe}}
         {%- endfor %}
     </div>
-    <div id="disqus_thread"></div>
+    <div class="pre_next">
+        {% for v in next_chapter%}
+        <a href="/quickreading_content?url={{next_chapter[v]}}&chapter_url={{chapter_url}}&novels_name={{novels_name}}"
+           class="btn btn-default">
+            {{v}}
+        </a>
+        {% endfor %}
+    </div>
+        <div id="disqus_thread"></div>
 <script>
 /*
 var disqus_config = function () {
@@ -107,15 +114,6 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-    <div class="pre_next">
-        {% for v in next_chapter%}
-        <a href="/quickreading_content?url={{next_chapter[v]}}&chapter_url={{chapter_url}}&novels_name={{novels_name}}"
-           class="btn btn-default">
-            {{v}}
-        </a>
-        {% endfor %}
-    </div>
     <div class="move">
         <div class="move_up">
             <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>

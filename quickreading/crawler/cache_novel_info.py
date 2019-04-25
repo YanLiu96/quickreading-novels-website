@@ -7,7 +7,7 @@ from urllib.parse import urlparse, parse_qs, urljoin
 from quickreading.database.mongodb import MotorBase
 from quickreading.crawler.decorators import cached
 from quickreading.crawler.function import target_fetch, get_time, get_html_by_requests, get_random_user_agent
-from quickreading.crawler.extract_novels import extract_pre_next_chapter
+from quickreading.crawler.novels_chapter_spider import extract_pre_next_chapter
 from quickreading.config import RULES, LATEST_RULES, LOGGER
 
 
@@ -30,7 +30,7 @@ async def cache_novels_content(url, netloc):
         else:
             content = soup.find_all(selector.get('tag'))
         if content:
-            # 提取出真正的章节标题
+            # get the chapter's name( chinese)
             title_reg = r'(第?\s*[一二两三四五六七八九十○零百千万亿0-9１２３４５６７８９０]{1,6}\s*[章回卷节折篇幕集]\s*.*?)[_,-]'
             title = soup.title.string
             extract_title = re.findall(title_reg, title, re.I)
@@ -40,10 +40,6 @@ async def cache_novels_content(url, netloc):
                 title = soup.select('h1')[0].get_text()
             if not title:
                 title = soup.title.string
-            # if "_" in title:
-            #     title = title.split('_')[0]
-            # elif "-" in title:
-            #     title = title.split('-')[0]
             next_chapter = extract_pre_next_chapter(chapter_url=url, html=str(soup))
             content = [str(i) for i in content]
             data = {
@@ -74,7 +70,6 @@ async def cache_novels_chapter(url, netloc):
             content = soup.find_all(class_=selector['class'])
         else:
             content = soup.find_all(selector.get('tag'))
-        # 防止章节被display:none
         return str(content).replace('style', '') if content else None
     return None
 
@@ -147,10 +142,8 @@ async def get_the_latest_chapter(chapter_url, timeout=15):
                             latest_chapter_soup = soup.select(selector.get('tag'))
                         if latest_chapter_soup:
                             if content_url == '1':
-                                # TODO
                                 pass
                             elif content_url == '0':
-                                # TODO
                                 pass
                             else:
                                 latest_chapter_url = content_url + latest_chapter_soup[0].get('href', None)
@@ -169,7 +162,7 @@ async def get_the_latest_chapter(chapter_url, timeout=15):
                                 novels_name=novels_name,
                             ),
                         }
-                        # 存储最新章节
+                        # store latest chapter
                         motor_db = MotorBase().get_db()
                         await motor_db.latest_chapter.update_one(
                             {"novels_name": novels_name, 'quickreading_chapter_url': chapter_url},
@@ -183,7 +176,7 @@ async def get_the_latest_chapter(chapter_url, timeout=15):
 async def update_all_books(loop, timeout=15):
     try:
         motor_db = MotorBase().get_db()
-        # 获取所有书架链接游标
+        # get all the url of bookshelf
         books_url_cursor = motor_db.user_message.find({}, {'books_url.book_url': 1, '_id': 0})
         book_urls = []
         already_urls = set()
@@ -199,14 +192,6 @@ async def update_all_books(loop, timeout=15):
                         except Exception as e:
                             LOGGER.exception(e)
                         already_urls.add(chapter_url)
-                        # 一组书架链接列表数据
-                        #         book_urls += [book_url['book_url'] for book_url in books_url]
-                        # url_tasks = [get_the_latest_chapter(each_url, loop) for each_url in set(book_urls)]
-                        # tasks = [asyncio.ensure_future(i) for i in url_tasks]
-                        # try:
-                        #     await asyncio.gather(*tasks)
-                        # except asyncio.TimeoutError as e:
-                        #     pass
     except Exception as e:
         LOGGER.exception(e)
         return False

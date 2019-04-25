@@ -6,11 +6,11 @@ from sanic import Blueprint
 from sanic.response import html, text, redirect
 
 from quickreading.database.mongodb import MotorBase
-from quickreading.crawler.cache import get_the_latest_chapter, cache_search_ranking
+from quickreading.crawler.cache_novel_info import get_the_latest_chapter, cache_search_ranking
 from quickreading.config import RULES, LOGGER, REPLACE_RULES, ENGINE_PRIORITY, CONFIG
 
-vip_service_bp = Blueprint('vip_service_blueprint', url_prefix='md')
-vip_service_bp.static('/static/md', CONFIG.BASE_DIR + '/static/md')
+vip_service_bp = Blueprint('vip_service_blueprint', url_prefix='searchrank')
+vip_service_bp.static('/static/searchrank', CONFIG.BASE_DIR + '/static/searchrank')
 
 
 @vip_service_bp.listener('before_server_start')
@@ -26,7 +26,7 @@ def close_connection(rank_bp, loop):
 
 # jinjia2 config
 env = Environment(
-    loader=PackageLoader('views.vip_service_blueprint', '../templates/md'),
+    loader=PackageLoader('views.vip_service_blueprint', '../templates/searchrank'),
     autoescape=select_autoescape(['html', 'xml', 'tpl']))
 
 

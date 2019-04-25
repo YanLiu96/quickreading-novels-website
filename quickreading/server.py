@@ -8,7 +8,7 @@ from sanic import Sanic
 from sanic.response import html, redirect
 from sanic_session import RedisSessionInterface
 
-# reference
+# build package path(otherwise can load the package i created)
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # Registering blueprints(to make server know this router and url routes)
 from quickreading.views import novels_bp, operate_bp, payment_bp, userAdmin_bp, vip_service_bp

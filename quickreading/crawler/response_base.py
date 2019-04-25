@@ -19,18 +19,19 @@ class ResponseReply():
     Define field description
     """
     # ERROR
-    UNKNOWN_ERR = '未知错误'
-    PARAM_ERR = '参数错误!'
-    PARAM_PARSE_ERR = "参数解析错误!"
-    DB_ERROR = "数据库操作错误"
+    UNKNOWN_ERR = 'error'
+    PARAM_ERR = 'param error!'
+    PARAM_PARSE_ERR = "param fail to parse!"
+    DB_ERROR = "database error"
     # FORBIDDEN
-    IP_FORBIDDEN = "ip被禁"
+    IP_FORBIDDEN = "ip is forbidden"
     # NOT AUTHORIZED
-    NOT_AUTHORIZED = "验证未通过"
+    NOT_AUTHORIZED = "not authorized"
     # SUCCESS
     SUCCESS = 'ok'
 
 
+# set the response status
 class ResponseCode():
     """
     Define the response code
@@ -62,3 +63,4 @@ class UniResponse():
                           ResponseField.STATUS: ResponseCode.SERVER_ERR}
     SUCCESS = {ResponseField.MESSAGE: ResponseReply.SUCCESS,
                ResponseField.STATUS: ResponseCode.SUCCESS}
+

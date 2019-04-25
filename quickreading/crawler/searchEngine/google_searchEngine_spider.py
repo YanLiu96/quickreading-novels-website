@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """
  Created by Yan Liu at 2019/1/22.
+ This spider still need to make it better
 """
 import asyncio
 
@@ -95,5 +96,3 @@ if __name__ == '__main__':
         db=REDIS_DICT.get('CACHE_DB', 0),
         password=REDIS_DICT.get('REDIS_PASSWORD', None),
     )
-    res = asyncio.get_event_loop().run_until_complete(start('雪中悍刀行 小说 阅读 最新章节'))
-    print(res)

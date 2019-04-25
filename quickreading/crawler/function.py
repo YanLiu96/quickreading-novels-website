@@ -34,8 +34,8 @@ async def _get_data(filename, default='') -> list:
 
 async def get_random_user_agent() -> str:
     """
-    Get a random user agent string.
-    :return: Random user agent string.
+    Get a random user agent to prevent from being banned(web spider)
+    :return: Random user agent string
     """
     return random.choice(await _get_data('user_agents.txt', CONFIG.USER_AGENT))
 
@@ -43,13 +43,14 @@ async def get_random_user_agent() -> str:
 def get_time() -> str:
     utc = arrow.utcnow()
     local = utc.to(CONFIG.TIMEZONE)
+    # set the format of time
     time = local.format("YYYY-MM-DD HH:mm:ss")
     return time
 
 
 def get_netloc(url):
     """
-    获取netloc
+    get netloc from a url
     :param url:
     :return:  netloc
     """

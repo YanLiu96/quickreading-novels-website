@@ -14,14 +14,14 @@ from quickreading.config import LOGGER
 
 def extract_chapters(chapters_url, html):
     """
-    通用解析小说目录
+    parse chapter page
     :param chapter_url: 小说目录页url
     :param res: 当前页面html
     :return:
     """
-    # 参考https://greasyfork.org/zh-CN/scripts/292-my-novel-reader
+    # reference https://greasyfork.org/zh-CN/scripts/292-my-novel-reader and https://github.com/howie6879/owllook
     chapters_reg = r'(<a\s+.*?>.*第?\s*[一二两三四五六七八九十○零百千万亿0-9１２３４５６７８９０]{1,6}\s*[章回卷节折篇幕集].*?</a>)'
-    # 这里不能保证获取的章节分得很清楚，但能保证这一串str是章节目录。可以利用bs安心提取a
+    # find all the chapter
     chapters_res = re.findall(chapters_reg, str(html), re.I)
     str_chapters_res = '\n'.join(chapters_res)
     chapters_res_soup = BeautifulSoup(str_chapters_res, 'html5lib')

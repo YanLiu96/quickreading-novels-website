@@ -2,7 +2,7 @@
 {% block header %}
 <title>{{ title }} - Yan Liu's Project</title>
 <link rel="stylesheet" href="static/novels/css/index.css">
-<link rel="stylesheet" href="/md/static/md/css/md.css">
+<link rel="stylesheet" href="/searchrank/static/searchrank/css/index.css">
 {% endblock %}
 {% block content %}
 <div class="header">
@@ -39,7 +39,7 @@
         <a target="_blank" href="/search?wd={{novels_name.keyword}}"><span
                 class="label label-info">{{novels_name.keyword}}</span></a>
         {%endfor%}
-        <a target="_blank" href="/md"><span class="label label-danger" style="background: #d4507d">More</span></a>
+        <a target="_blank" href="/searchrank"><span class="label label-danger" style="background: #d4507d">More</span></a>
     </div>
 </div>
 {% endblock %}

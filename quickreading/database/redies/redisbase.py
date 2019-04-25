@@ -5,9 +5,9 @@ from quickreading.config import CONFIG
 
 
 # Token from https://github.com/subyraman/sanic_session
-# Reference https://sanic-session.readthedocs.io/en/latest/
 class RedisSession:
     """
+    # Reference https://sanic-session.readthedocs.io/en/latest/
     A simple wrapper class that allows you to share a connection pool across your application.
     """
     _pool = None

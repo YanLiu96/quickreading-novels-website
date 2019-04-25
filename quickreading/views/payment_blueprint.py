@@ -8,7 +8,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 from quickreading.database.mongodb import MotorBase
 from quickreading.crawler.function import get_time
 import paypalrestsdk
-from quickreading.config import LOGGER
+from quickreading.config import LOGGER, CONFIG
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -16,6 +16,7 @@ import email.utils
 from datetime import datetime, timedelta
 
 payment_bp = Blueprint('payment_blueprint')
+payment_bp.static('/static/payment', CONFIG.BASE_DIR + '/static/payment')
 
 SENDER = 'quickreadingnovelswebsite@gmail.com'
 SENDERNAME = 'Yan Liu'

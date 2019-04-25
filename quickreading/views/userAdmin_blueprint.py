@@ -4,7 +4,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 from sanic import Blueprint
 from sanic.response import html, redirect
 from quickreading.database.mongodb import MotorBase
-from quickreading.crawler.cache import get_the_latest_chapter
+from quickreading.crawler.cache_novel_info import get_the_latest_chapter
 from quickreading.config import LOGGER, CONFIG
 
 userAdmin_bp = Blueprint('userAdmin_blueprint', url_prefix='userAdmin')
@@ -137,37 +137,5 @@ async def bookshelf(request):
                 return redirect('/')
         else:
             return redirect('/pay')
-    else:
-        return redirect('/')
-
-
-@userAdmin_bp.route("/similar_user")
-async def similar_user(request):
-    user = request['session'].get('user', None)
-    if user:
-        try:
-            motor_db = motor_base.get_db()
-            similar_info = await motor_db.user_recommend.find_one({'user': user})
-            if similar_info:
-                similar_user = similar_info['similar_user'][:20]
-                user_tag = similar_info['user_tag']
-                updated_at = similar_info['updated_at']
-                return template('similar_user.html',
-                                title='与' + user + '相似的书友',
-                                is_login=1,
-                                is_similar=1,
-                                user=user,
-                                similar_user=similar_user,
-                                user_tag=user_tag,
-                                updated_at=updated_at)
-            else:
-                return template('similar_user.html',
-                                title='与' + user + '相似的书友',
-                                is_login=1,
-                                is_similar=0,
-                                user=user)
-        except Exception as e:
-            LOGGER.error(e)
-            return redirect('/')
     else:
         return redirect('/')
