@@ -19,10 +19,6 @@ class GoogleSearchEngine(BaseSearchEngine):
         super(GoogleSearchEngine, self).__init__()
 
     async def novels_search(self, novels_name):
-        """
-        小说搜索入口函数
-        :return:
-        """
         url = self.config.GOOGLE_URL
         headers = {
             'user-agent': await get_random_user_agent(),
@@ -44,10 +40,6 @@ class GoogleSearchEngine(BaseSearchEngine):
             return []
 
     async def data_extraction(self, html):
-        """
-        小说信息抓取函数
-        :return:
-        """
         try:
             # find the title
             title = html.select('h3 a')[0].get_text()

@@ -1,8 +1,6 @@
 """
  Created by Yan Liu at 2019/2/2.
 """
-from functools import wraps
-
 from sanic import response
 from aiocache.log import logger
 from aiocache.utils import get_args_dict, get_cache
@@ -14,72 +12,6 @@ try:
 except:
     from json import loads as json_loads
     from json import dumps as json_dumps
-
-from quickreading.crawler import UniResponse
-from quickreading.config import CONFIG, LOGGER
-
-'''
-def authenticator(key):
-    """
-    :param keys: 验证方式 Quickreading-Api-Key : Magic Key,  Authorization : Token
-    :return: 返回值
-    """
-
-    def wrapper(func):
-        @wraps(func)
-        async def authenticate(request, *args, **kwargs):
-            value = request.headers.get(key, None)
-            if value and CONFIG.AUTH[key] == value:
-                response = await func(request, *args, **kwargs)
-                return response
-            else:
-                return response_handle(request, UniResponse.NOT_AUTHORIZED, status=401)
-
-        return authenticate
-
-    return wrapper
-
-
-def auth_params(*keys):
-    """
-    :param keys: 判断必须要有的参数
-    :return: 返回值
-    """
-    def wrapper(func):
-        @wraps(func)
-        async def auth_param(request, *args, **kwargs):
-            request_params = {}
-            # POST request
-            if request.method == 'POST' or request.method == 'DELETE':
-                try:
-                    post_data = json_loads(str(request.body, encoding='utf-8'))
-                except Exception as e:
-                    LOGGER.exception(e)
-                    return response_handle(request, UniResponse.PARAM_PARSE_ERR, status=400)
-                else:
-                    request_params.update(post_data)
-                    params = [key for key, value in post_data.items() if value]
-            elif request.method == 'GET':
-                request_params.update(request.args)
-                params = [key for key, value in request.args.items() if value]
-            else:
-                # TODO
-                return response_handle(request, UniResponse.PARAM_UNKNOWN_ERR, status=400)
-            if set(keys).issubset(set(params)):
-                try:
-                    kwargs['request_params'] = request_params
-                    response = await func(request, *args, **kwargs)
-                    return response
-                except Exception as e:
-                    LOGGER.exception(e)
-                    return response_handle(request, UniResponse.SERVER_UNKNOWN_ERR, 500)
-            else:
-                return response_handle(request, UniResponse.PARAM_ERR, status=400)
-
-        return auth_param
-
-    return wrapper
-'''
 
 
 # Token from https://github.com/argaen/aiocache/blob/master/aiocache/decorators.py

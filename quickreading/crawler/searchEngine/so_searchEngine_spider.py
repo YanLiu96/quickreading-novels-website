@@ -16,10 +16,6 @@ class SoSearchEngine(BaseSearchEngine):
         super(SoSearchEngine, self).__init__()
 
     async def novels_search(self, novels_name):
-        """
-        小说搜索入口函数
-        :return:
-        """
         # The url of search engine
         url = self.config.SO_URL
         headers = {
@@ -44,10 +40,6 @@ class SoSearchEngine(BaseSearchEngine):
             return []
 
     async def data_extraction(self, html):
-        """
-        小说信息抓取函数
-        :return:
-        """
         try:
             try:
                 title = html.select('h3 a')[0].get_text()

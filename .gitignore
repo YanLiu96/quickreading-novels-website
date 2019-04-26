@@ -18,5 +18,4 @@ dist/
 *.egg-info/
 mdui.css
 mdui.js
-owllook.env
 test_extractor.py

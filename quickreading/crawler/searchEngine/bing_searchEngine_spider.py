@@ -18,10 +18,6 @@ class BingSearchEngine(BaseSearchEngine):
         super(BingSearchEngine, self).__init__()
 
     async def data_extraction(self, html):
-        """
-        小说信息抓取函数
-        :return:
-        """
         try:
             title = html.select('h2 a')[0].get_text()
             url = html.select('h2 a')[0].get('href', None)
@@ -46,10 +42,6 @@ class BingSearchEngine(BaseSearchEngine):
             return None
 
     async def novels_search(self, novels_name):
-        """
-        小说搜索入口函数
-        :return:
-        """
         url = self.config.BY_URL
         headers = {
             'user-agent': await get_random_user_agent(),
