@@ -3,7 +3,6 @@
 """
 
 import re
-
 from bs4 import BeautifulSoup
 from collections import OrderedDict
 from operator import itemgetter

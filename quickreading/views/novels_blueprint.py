@@ -302,9 +302,9 @@ async def quickreading_content(request):
                 book = await motor_db.user_message.find_one({'user': user, 'books_url.book_url': book_url})
                 bookmark = 1 if bookmark else 0
                 if book:
-                    # 当书架中存在该书源
+                    # hs exsitence
                     book = 1
-                    # 保存最后一次阅读记录
+                    # save latest reading history
                     if is_ajax == "quickReading_cache":
                         quickReading_referer = \
                             request.headers.get('Referer', bookmark_url).split('quickreading_content')[1]
@@ -409,7 +409,7 @@ async def admininterface(request):
                                    'role': document['role'], 'index': indexs})
                     indexs += 1
                 return template('adminInterface.html', title='QuickReading Admin Interface',
-                                is_login=1, user=admin, alluser=result, is_admin=1, head=head)
+                                is_login=1, user=admin, alluser=result, user_role=role, is_admin=1, head=head)
             else:
                 return redirect('/')
         except Exception as e:

@@ -18,7 +18,6 @@ except:
 # Reference https://github.com/argaen/aiocache
 def cached(ttl=0, key=None, key_from_attr=None, cache=None, serializer=None, plugins=None, **kwargs):
     cache_kwargs = kwargs
-
     def cached_decorator(func):
         async def wrapper(*args, **kwargs):
             cache_instance = get_cache(

@@ -55,7 +55,7 @@ class SoSearchEngine(BaseSearchEngine):
             netloc = urlparse(url).netloc
             if not url or 'baidu' in url or 'baike.so.com' in url or netloc in self.resource_domain:
                 return None
-            # if the domain in the rule(which has been parsed)
+            # if the domain in the rule (which has been parsed)
             is_parse = 1 if netloc in self.rules.keys() else 0
             is_recommend = 1 if netloc in self.latest_rules.keys() else 0
             time = ''

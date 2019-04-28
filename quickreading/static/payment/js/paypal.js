@@ -1,4 +1,4 @@
-// reference https://developer.paypal.com/docs/checkout/integrate/#
+// reference https://developer.paypal.com/docs/checkout/integrate/#  https://codepen.io/adamstuartclark/pen/pbYVYR
 paypal.Button.render({
     env: 'sandbox', // Or 'production'
     commit: true,

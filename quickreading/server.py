@@ -51,6 +51,7 @@ def init_cache(app, loop):
 
 
 # two types of middleware: request and response
+# https://sanic.readthedocs.io/en/latest/sanic/middleware.html
 @app.middleware('request')
 async def add_session_to_request(request):
     # before each request initialize a session

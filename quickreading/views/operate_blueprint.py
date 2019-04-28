@@ -123,31 +123,30 @@ async def quickreading_login(request):
                         print(rest_time)
                         # **********************************************************
                         # whether user VIP service is almost over（2 days）send email
-                        if rest_time > 0 & rest_time < 2:
-                            if rest_time < 2 & rest_time > 0:
-                                RECIPIENT = user_email
-                                # Create message container - the correct MIME type is multipart/alternative.
-                                msg = MIMEMultipart('alternative')
-                                msg['Subject'] = SUBJECT2
-                                msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
-                                msg['To'] = RECIPIENT
-                                part2 = MIMEText(renewLetter.format(User=user, day=rest_time), 'html')
-                                msg.attach(part2)
-                                try:
-                                    server = smtplib.SMTP(HOST, PORT)
-                                    server.ehlo()
-                                    server.starttls()
-                                    # stmplib docs recommend calling ehlo() before & after starttls()
-                                    server.ehlo()
-                                    server.login(USERNAME_SMTP, PASSWORD_SMTP)
-                                    server.sendmail(SENDER, RECIPIENT, msg.as_string())
-                                    server.close()
-                                # Display an error message if something goes wrong.
-                                except Exception as e:
-                                    print("Error: ", e)
-                                else:
-                                    print("Email sent!")
-                                return response
+                        if 0 < rest_time < 2:
+                            RECIPIENT = user_email
+                            # Create message container - the correct MIME type is multipart/alternative.
+                            msg = MIMEMultipart('alternative')
+                            msg['Subject'] = SUBJECT2
+                            msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
+                            msg['To'] = RECIPIENT
+                            part2 = MIMEText(renewLetter.format(User=user, day=rest_time), 'html')
+                            msg.attach(part2)
+                            try:
+                                server = smtplib.SMTP(HOST, PORT)
+                                server.ehlo()
+                                server.starttls()
+                                # stmplib docs recommend calling ehlo() before & after starttls()
+                                server.ehlo()
+                                server.login(USERNAME_SMTP, PASSWORD_SMTP)
+                                server.sendmail(SENDER, RECIPIENT, msg.as_string())
+                                server.close()
+                            # Display an error message if something goes wrong.
+                            except Exception as e:
+                                print("Error: ", e)
+                            else:
+                                print("Email sent!")
+                            return response
                         elif rest_time < 0:
                             await motor_db.user.update_one({'user': user}, {'$set': {'role': "General User"}},
                                                            upsert=True)
