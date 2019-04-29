@@ -2,6 +2,12 @@ body {
     background: #eee url('https://i.imgur.com/eeQeRmk.png');
 }
 
+@media (min-width: 1680px) {
+        .container {
+            margin-left: 3% !important;
+        }
+}
+
 .navbar {
     border-radius: 0 !important;
     min-height: 65px !important;

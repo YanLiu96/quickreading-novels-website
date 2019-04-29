@@ -2,14 +2,6 @@
 {% block header %}
 <title>{{ name }} - search result - </title>
 <link rel="stylesheet" href="static/novels/css/result.css">
-<style>
-
-    @media (min-width: 1680px) {
-        .container {
-            margin-left: 3% !important;
-        }
-    }
-</style>
 {% endblock %}
 {% block content %}
 {% include "search_bar.html" %}
@@ -54,14 +46,11 @@
 
         <div class="left_section col-sm-5 col-xs-1">
             <div class="canvas">
-                <!-- The Flipbox -->
                 <div class="flipbox flipbox-toggle">
-                    <!-- Add classes, flipbox-vertical, flipbox-toggle -->
                     <label>
                         <input type="checkbox">
                         <div class="flipbox-content">
                             <div class="flipbox-front">
-                                <!-- Your custom content -->
                                 <div class="house-card house-lannister">
                                     <div class="house-card-inner">
                                         <h3>{{ name }}</h3>
@@ -69,10 +58,8 @@
                                         <p>Choose best link to read</p>
                                     </div>
                                 </div>
-                                <!-- Your custom content -->
                             </div>
                             <div class="flipbox-rear">
-                                <!-- Your custom content -->
                                 <div class="house-card house-stark">
                                     <div class="house-card-inner">
                                         <h3>{{ name }}</h3>
@@ -82,12 +69,10 @@
                                            href="/chapter?url={{result[0].url}}&novels_name={{name}}">Reading Now</a>
                                     </div>
                                 </div>
-                                <!-- Your custom content -->
                             </div>
                         </div>
                     </label>
                 </div>
-                <!-- #End of the flipbox -->
 
             </div>
         </div>

@@ -37,7 +37,7 @@ $(function () {
                         if (data.status == 1) {
                             let msg = "You have registered, please login in!";
                             if (confirm(msg)) {
-                            window.location.href = '/';
+                                window.location.href = '/';
                             }
                         }
                         if (data.status == -1) {

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".del-bookmark").click(function () {
-        var msg = "Are you sure to delete it??";
+        var msg = "Are you sure to delete it?";
         if (confirm(msg)) {
             var bookmarkurl = $(this).find('a.bookmark_url').attr("data-value");
             var del_bm_pd = {"bookmarkurl": bookmarkurl};

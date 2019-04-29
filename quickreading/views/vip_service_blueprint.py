@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 from urllib.parse import urlparse, parse_qs
 
 from jinja2 import Environment, PackageLoader, select_autoescape

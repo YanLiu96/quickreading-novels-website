@@ -1,3 +1,4 @@
+// reference https://github.com/howie6879/owllook (Same structure, but different functions)
 $(document).ready(function () {
     var page_btn_pre = $("div.pre_next > a:nth-child(1)");
     var page_btn_next = $("div.pre_next > a:nth-child(2)");
@@ -57,7 +58,6 @@ $(document).ready(function () {
         if (isSupport()) {
             log("support sessionStorage，cache page");
             search_url = window.location;
-            // 来自书签页面的跳转不进行缓存
             if (search_url.search.indexOf("from_bookmarks") > 0) {
                 log('not cache page which open in bookmark')
             } else {

@@ -20,6 +20,8 @@ payment_bp.static('/static/payment', CONFIG.BASE_DIR + '/static/payment')
 
 SENDER = 'quickreadingnovelswebsite@gmail.com'
 SENDERNAME = 'Yan Liu'
+
+# reference amazon office document
 # Amazon SES SMTP user name.
 USERNAME_SMTP = "AKIAZFQQSWKGREV4YKVF"
 # Amazon SES SMTP password.

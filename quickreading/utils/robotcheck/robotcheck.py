@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# reference https://github.com/howie6879/owllook
 import logging
 import os
 import random
@@ -10,12 +10,6 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s: %(m
 
 
 def ver_question() -> tuple:
-    """
-    针对注册问题验证
-    问： 小说名
-    答： 作者名
-    :return: (question,answer)
-    """
     cf = ConfigParser()
     file_name = os.path.join(_dir, 'robotcheck.conf')
     try:
@@ -31,11 +25,6 @@ def ver_question() -> tuple:
 
 
 def get_real_answer(index) -> str:
-    """
-    通过index值获取问题答案
-    :param index:
-    :return: bool
-    """
     answer = ''
     try:
         cf = ConfigParser()

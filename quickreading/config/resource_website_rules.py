@@ -178,9 +178,81 @@ RULES = {
     # demo  'name': Rules('content_url', {chapter_selector}, {content_selector})
     # content_url=1 表示章节链接使用本身自带的链接，不用拼接
     # content_url=0 表示章节网页需要当前页面url拼接
-    # 'www.biqule.com': Rules('www.biqule.com', {'class': 'box_con'},{}),
-    # 'www.lingdiankanshu.com': Rules('www.lingdiankanshu.com', {'class': 'box_con'}, {}),
-    # 'www.hhlwx.com': Rules('www.hhlwx.co', {'class': 'chapterlist'},{}),
+    'www.quanben.net': Rules('http://www.quanben.net/', {'class': 'chapterlist'}, {'id': 'BookText'}),
+    # 已解析
+    # 'www.zhetian.org': Rules('http://www.zhetian.org', {'class': 'body '}, {'class': 'content'}),
+    # 已解析
+    'www.lingdianksw.com': Rules('0', {'class': 'acss'}, {'id': 'ccontent'}),
+    # 已解析
+    'www.qb5.tw': Rules('http://www.qb5.tw/', {'class': 'zjbox'}, {'id': 'content'}),
+    # 已解析
+    'www.ybdu.com': Rules('0', {'class': 'mulu_list'}, {'id': 'htmlContent'}),
+    # 已解析
+    'www.quanben.com': Rules('0', {'class': 'mulu_list'}, {'id': 'htmlContent'}),
+    # 已解析
+    'www.fhxs.com': Rules('1', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.biquge.biz': Rules('http://www.biquge.biz/', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.58xs.com': Rules('http://www.58xs.com/', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.biqukan.com': Rules('http://www.biqukan.com/', {'class': 'listmain'}, {'id': 'content'}),
+    # 已解析
+    'www.shuyuelou.com': Rules('http://www.shuyuelou.com/', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.mangg.com': Rules('http://www.mangg.com/', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.50zw.com': Rules('0', {'class': 'chapterlist'}, {'id': 'htmlContent'}),
+    # 已解析
+    'www.lingdiankanshu.co': Rules('0', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.biqiku.com': Rules('http://www.biqiku.com/', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.duilianku.com': Rules('http://www.duilianku.com/', {'id': 'list'}, {'class': 'chapter'}),
+    # 已解析
+    'www.5xiaxiaoshuo.com': Rules('http://www.5xiaxiaoshuo.com/', {'class': 'art_listmain_main'}, {'id': 'content'}),
+    # 已解析
+    'www.81xsw.com': Rules('0', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.wxguan.com': Rules('http://www.wxguan.com/', {'class': 'listmain'}, {'id': 'content'}),
+    # 已解析
+    'www.qb5200.tw': Rules('http://www.qb5200.tw/', {'class': 'listmain'}, {'id': 'content'}),
+    # 已解析
+    'www.fox2008.cn': Rules('http://www.fox2008.cn/', {'class': 'book'}, {'id': 'chapterContent'}),
+    # 已解析
+    'www.22zw.com': Rules('0', {'class': 'acss'}, {'id': 'content'}),
+    # 已解析
+    'www.k6uk.com': Rules('0', {'class': 'acss'}, {'id': 'content'}),
+    # 已解析
+    'www.126shu.com': Rules('http://www.126shu.com/', {'id': 'list'}, {'id': 'content'}),
+    # 已解析
+    'www.kooxs.com': Rules('0', {'class': 'list'}, {'id': 'content'}),
+    # 已解析
+    'www.shubaotxt.com': Rules('0', {'class': 'list'}, {'id': 'content'}),
+    # 已解析
+    'www.muyuge.com': Rules('1', {'id': 'xslist'}, {'id': 'content'}),
+    # 已解析
+    # 'www.daizhuzai.com': Rules('http://www.daizhuzai.com', {'class': 'dirlist'}, {'class': 'content'}),
+    # 已解析
+    'www.biqu.la': Rules('0', {'class': 'book_list'}, {'id': 'htmlContent'}),
+    # 已解析
+    'shushu.com.cn': Rules('http://shushu.com.cn/', {'id': 'dirsort01'}, {'id': 'content'}),
+    # 已解析
+    'www.shuhai.com': Rules('0', {'class': 'box_chap'}, {'id': 'readcon'}),
+    # 已解析
+    'www.37yue.com': Rules('0', {'class': 'list-chapter'}, {'class': 'chapter'}),
+    # 已解析
+    'www.35zw.com': Rules('0', {'class': 'book_list'}, {'id': 'htmlContent'}),
+    # 已解析
+    'www.xinshu.in': Rules('http://www.xinshu.in/', {'class': 'list_box'}, {'class': 'box_box'}),
+    # 已解析
+    'www.lwxs520.com': Rules('0', {'class': 'dccss'}, {'id': 'content'}),
+    # 已解析
+    'www.lwxs.la': Rules('http://www.lwxs.la/', {'id': 'defaulthtml4'}, {'id': 'content'}),
+    # 已解析
+    'www.biqule.com': Rules('0', {'class': 'box_con'}, {'id': 'content'}),
+    # 已解析
+    'www.33yq.com': Rules('1', {'class': 'box_con'}, {'class': 'zhangjieTXT'}),
     # 已解析
     'www.allnovel.net': Rules('0', {'class': 'list-page-novel'}, {'class': 'content_novel'}),
     'www.novel.tingroom.com': Rules('0', {'class': 'box1'}, {''}),
@@ -444,81 +516,6 @@ RULES = {
     # 已解析
     'tianyibook.la': Rules('http://tianyibook.la/', {'class': 'chapterlist'}, {'id': 'BookText'}),
     # 已解析
-    'www.quanben.net': Rules('http://www.quanben.net/', {'class': 'chapterlist'}, {'id': 'BookText'}),
-    # 已解析
-    # 'www.zhetian.org': Rules('http://www.zhetian.org', {'class': 'body '}, {'class': 'content'}),
-    # 已解析
-    'www.lingdianksw.com': Rules('0', {'class': 'acss'}, {'id': 'ccontent'}),
-    # 已解析
-    'www.qb5.tw': Rules('http://www.qb5.tw/', {'class': 'zjbox'}, {'id': 'content'}),
-    # 已解析
-    'www.ybdu.com': Rules('0', {'class': 'mulu_list'}, {'id': 'htmlContent'}),
-    # 已解析
-    'www.quanben.com': Rules('0', {'class': 'mulu_list'}, {'id': 'htmlContent'}),
-    # 已解析
-    'www.fhxs.com': Rules('1', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.biquge.biz': Rules('http://www.biquge.biz/', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.58xs.com': Rules('http://www.58xs.com/', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.biqukan.com': Rules('http://www.biqukan.com/', {'class': 'listmain'}, {'id': 'content'}),
-    # 已解析
-    'www.shuyuelou.com': Rules('http://www.shuyuelou.com/', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.mangg.com': Rules('http://www.mangg.com/', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.50zw.com': Rules('0', {'class': 'chapterlist'}, {'id': 'htmlContent'}),
-    # 已解析
-    'www.lingdiankanshu.co': Rules('0', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.biqiku.com': Rules('http://www.biqiku.com/', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.duilianku.com': Rules('http://www.duilianku.com/', {'id': 'list'}, {'class': 'chapter'}),
-    # 已解析
-    'www.5xiaxiaoshuo.com': Rules('http://www.5xiaxiaoshuo.com/', {'class': 'art_listmain_main'}, {'id': 'content'}),
-    # 已解析
-    'www.81xsw.com': Rules('0', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.wxguan.com': Rules('http://www.wxguan.com/', {'class': 'listmain'}, {'id': 'content'}),
-    # 已解析
-    'www.qb5200.tw': Rules('http://www.qb5200.tw/', {'class': 'listmain'}, {'id': 'content'}),
-    # 已解析
-    'www.fox2008.cn': Rules('http://www.fox2008.cn/', {'class': 'book'}, {'id': 'chapterContent'}),
-    # 已解析
-    'www.22zw.com': Rules('0', {'class': 'acss'}, {'id': 'content'}),
-    # 已解析
-    'www.k6uk.com': Rules('0', {'class': 'acss'}, {'id': 'content'}),
-    # 已解析
-    'www.126shu.com': Rules('http://www.126shu.com/', {'id': 'list'}, {'id': 'content'}),
-    # 已解析
-    'www.kooxs.com': Rules('0', {'class': 'list'}, {'id': 'content'}),
-    # 已解析
-    'www.shubaotxt.com': Rules('0', {'class': 'list'}, {'id': 'content'}),
-    # 已解析
-    'www.muyuge.com': Rules('1', {'id': 'xslist'}, {'id': 'content'}),
-    # 已解析
-    # 'www.daizhuzai.com': Rules('http://www.daizhuzai.com', {'class': 'dirlist'}, {'class': 'content'}),
-    # 已解析
-    'www.biqu.la': Rules('0', {'class': 'book_list'}, {'id': 'htmlContent'}),
-    # 已解析
-    'shushu.com.cn': Rules('http://shushu.com.cn/', {'id': 'dirsort01'}, {'id': 'content'}),
-    # 已解析
-    'www.shuhai.com': Rules('0', {'class': 'box_chap'}, {'id': 'readcon'}),
-    # 已解析
-    'www.37yue.com': Rules('0', {'class': 'list-chapter'}, {'class': 'chapter'}),
-    # 已解析
-    'www.35zw.com': Rules('0', {'class': 'book_list'}, {'id': 'htmlContent'}),
-    # 已解析
-    'www.xinshu.in': Rules('http://www.xinshu.in/', {'class': 'list_box'}, {'class': 'box_box'}),
-    # 已解析
-    'www.lwxs520.com': Rules('0', {'class': 'dccss'}, {'id': 'content'}),
-    # 已解析
-    'www.lwxs.la': Rules('http://www.lwxs.la/', {'id': 'defaulthtml4'}, {'id': 'content'}),
-    # 已解析
-    'www.biqule.com': Rules('0', {'class': 'box_con'}, {'id': 'content'}),
-    # 已解析
-    'www.33yq.com': Rules('1', {'class': 'box_con'}, {'class': 'zhangjieTXT'}),
     # 已解析
     'www.dishuge.com': Rules('1', {'class': 'update'}, {'tag': 'p'}),
     # 已解析

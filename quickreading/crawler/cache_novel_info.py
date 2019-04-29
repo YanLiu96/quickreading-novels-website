@@ -89,6 +89,8 @@ async def cache_search_ranking():
     return result
 
 
+# reference https://github.com/howie6879/owllook/tree/master/examples/novels
+# use it's crawler framework.
 async def get_the_latest_chapter(chapter_url, timeout=15):
     try:
         with async_timeout.timeout(timeout):

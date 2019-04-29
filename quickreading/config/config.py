@@ -4,7 +4,7 @@ Created by Yan Liu at 2019.1.17
 import os
 
 
-# configr class
+# config class
 class Config():
     # Application config
     DEBUG = True
@@ -23,10 +23,10 @@ class Config():
     )
 
     # Search Engine config
+    GOOGLE_URL = "https://www.google.com/search"
     URL_PHONE = 'https://m.baidu.com/s'
     URL_PC = 'http://www.baidu.com/s'
     BAIDU_RN = 15
     SO_URL = "https://www.so.com/s"
     BY_URL = "https://www.bing.com/search"
-    GOOGLE_URL = "https://www.google.com/search"
 

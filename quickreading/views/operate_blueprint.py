@@ -413,7 +413,8 @@ async def delete_user(request):
     else:
         return json({'status': -1})
 
-
+# reference https://codepen.io/jonnowitts/pen/gZBVxL
+# reference https://codepen.io/WebJoker/pen/LVKBez
 renewLetter = """
 <html>
 <head>

@@ -1,6 +1,6 @@
-#!/usr/bin/env python
 """
  Created by Yan Liu at 2019-1-20.
+ reference https://github.com/howie6879/owllook/blob/master/owllook/fetcher/response_base.py
 """
 
 

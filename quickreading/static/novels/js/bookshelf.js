@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".del-book").click(function () {
-        var msg = "You really want to delete this one????";
+        var msg = "You really want to delete this one?";
         if (confirm(msg)) {
             var book_url = $(this).find('a.book_url').attr("data-value");
             var del_pd = {"book_url": book_url};

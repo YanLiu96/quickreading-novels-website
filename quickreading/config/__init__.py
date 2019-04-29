@@ -1,6 +1,6 @@
 """
 Created by Yan Liu at 2019.1.17
-This file config the
+This file determine the config of project(dev or pro)
 """
 import os
 import logging

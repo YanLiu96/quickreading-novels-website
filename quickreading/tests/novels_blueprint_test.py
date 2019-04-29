@@ -22,7 +22,6 @@ def loop():
     yield loop
 
 # reference https://github.com/yunstanford/pytest-sanic/issues/3,
-# https://github.com/howie6879/Sanic-For-Pythoneer/blob/master/docs/part1/8.%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%83%A8%E7%BD%B2.md
 # test novels blue_print
 
 

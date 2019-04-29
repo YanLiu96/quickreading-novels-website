@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".delete-user").click(function () {
-        var msg = "Are you sure to delete this user!!!?";
+        var msg = "Are you sure to delete this user?";
         if (confirm(msg)) {
             var user_name = $(this).find('a.delete-user').attr("data-value");
             var del_pd = {"user_name": user_name};
