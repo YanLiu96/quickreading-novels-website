@@ -17,12 +17,13 @@ class SoSearchEngine(BaseSearchEngine):
     async def novels_search(self, novels_name):
         # The url of search engine
         url = self.config.SO_URL
+        # referer means the page where you come from
         headers = {
             'User-Agent': await get_random_user_agent(),
-            'Referer': "http://www.so.com/haosou.html?quickreading=home"
+            'Referer': "http://www.so.com/haosou.html?src=home"
         }
         # set the params in the search (request) url
-        params = {'ie': 'utf-8', 'quickreading': 'noscript_home', 'shb': 1, 'q': novels_name, }
+        params = {'ie': 'utf-8', 'src': 'noscript_home', 'shb': 1, 'q': novels_name, }
         # the source code in search result page(360 search result)
         html = await self.fetch_url(url=url, params=params, headers=headers)
         if html:
@@ -90,4 +91,6 @@ if __name__ == '__main__':
         db=REDIS_DICT.get('CACHE_DB', 0),
         password=REDIS_DICT.get('REDIS_PASSWORD', None),
     )
+    res = asyncio.get_event_loop().run_until_complete(start('雪中悍刀行 小说 最新章节'))
+    print(res)
 

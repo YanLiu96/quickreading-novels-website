@@ -217,15 +217,16 @@ async def chapter(request):
     """
     Chapter of novel
     :param request:
-        url: the url of original chapter page(where I get novels chapter data)
+        url: the url of chapter page(url in quickreading )
         novels_name: the name of novel which is input by user
     :return:
         template: chapter.html
         content_url: element of generated chapter page url
     """
+    # the request (url) contains search name and original website url.
     url = request.args.get('url', None)
     novels_name = request.args.get('novels_name', None)
-    # resource website
+    # resource website(domian name)
     netloc = get_netloc(url)
     if netloc not in RULES.keys():
         return redirect(url)
@@ -234,6 +235,7 @@ async def chapter(request):
     content_url = RULES[netloc].content_url
     content = await cache_novels_chapter(url=url, netloc=netloc)
     if content:
+        # delete the js script and useless url
         content = str(content).strip('[],, Jjs').replace(', ', '').replace('onerror', '').replace('js', '').replace(
             '加入书架', '')
         return template(

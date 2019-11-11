@@ -20,7 +20,7 @@ class BaseSearchEngine:
     async def fetch_url(self, url, params, headers):
         with async_timeout.timeout(15):
             try:
-                # Asynchronous HTTP client-To get something from the web:.
+                # Asynchronous HTTP client-To get something from the web:.ß
                 #  reference: https://github.com/aio-libs/aiohttp
                 async with aiohttp.ClientSession() as client:
                     async with client.get(url, params=params, headers=headers) as response:

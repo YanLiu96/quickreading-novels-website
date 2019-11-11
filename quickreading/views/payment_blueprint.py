@@ -1414,7 +1414,7 @@ BODY_HTML = """
                             <p class="lead">You have already {message} VIP Service</p>
                             <p>This email aim to notify you that the payment has been completed and you have became the VIP in quick reading website</p>
                             <p>You can use the bookshelf function and download the novels you want to read</p>
-                            <p>However, you only have 30 days for the membership. After the deadline, your cache record will be deleted. In order to avoid affecting your reading, please renew your account in time </p>
+                            <p>However,after the deadline, your will lost your membership. In order to avoid affecting your reading, please renew your account in time </p>
                             <br>
                             <p>Yours sincerely</p>
                             <p>Yan Liu</p>
@@ -1439,7 +1439,7 @@ BODY_HTML = """
                       <table class="twelve columns">
                         <tr>
                           <td class="panel">
-                            <p>Now turn to the website and enjoy reading! <a href="https://wwww.quickreading.net">Click it!</a></p>
+                            <p>Now turn to the website and enjoy reading! <a href="http://www.quickreading.net">Click it!</a></p>
                           </td>
                           <td class="expander"></td>
                         </tr>
